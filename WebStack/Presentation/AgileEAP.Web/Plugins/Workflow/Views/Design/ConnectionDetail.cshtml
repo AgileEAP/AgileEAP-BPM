@@ -1,0 +1,189 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using System.Collections.Generic
+@using System.Text
+@using AgileEAP.MVC
+@using Telerik.Web.Mvc.UI
+@using AgileEAP.Core
+@using AgileEAP.Core.Data
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@using AgileEAP.Workflow.Domain;
+@using AgileEAP.Workflow.Definition;
+@using AgileEAP.Workflow.Enums;
+@using AgileEAP.Workflow.Definition;
+@{
+    Style.Require("tab_" + Theme);
+    Script.Require("tab").AtHead();
+    Script.Require("angularjs").AtHead();
+    Layout = "../Shared/_Layout.cshtml";
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var currentUser = workContext.User;
+    var currentSkin = workContext.Theme;
+}
+<style type="text/css">
+    html, body, #main_bg, #main_bg2
+    {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #mainbody
+    {
+        width: 99%;
+        height: 94%;
+    }
+
+    #tabbasic
+    {
+        margin: 0 auto;
+        width: 750px;
+    }
+
+    #tabbasic
+    {
+        padding-top: 20px;
+    }
+
+    fieldset
+    {
+        padding: 10px;
+        border: 1px solid #cecece;
+    }
+
+    legend
+    {
+        font-size: 15px;
+        color: black;
+    }
+
+    .left
+    {
+        width: 100px;
+        float: left;
+        text-align: right;
+        line-height: 25px;
+        height: 25px;
+    }
+
+    .content
+    {
+        line-height: 25px;
+        height: 25px;
+        vertical-align: middle;
+    }
+
+    .rightcontent
+    {
+        width: 400px;
+    }
+
+    .split
+    {
+        padding: 10px;
+    }
+
+    #defaultline, #complexexpression, #simpleexpression
+    {
+        vertical-align: text-bottom;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        switchTab('basic');
+    });
+    function initConnection($scope) {
+        $scope.processDefine = window.parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.processDefine;
+        $scope.transition = function () {
+            var transition = new Object();
+            var processDefID = $.query.get("ProcessDefID");
+            var transitionID = $.query.get("TransitionID");
+            angular.forEach($scope.processDefine.Transitions, function (Transition) {
+                if (processDefID == $scope.processDefine.ID && Transition.ID == transitionID) {
+                    transition = Transition;
+                }
+            });
+                window.parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.setConnectionLabel(transition.Name);
+            return transition;
+        };
+    }
+</script>
+<ul id="tabcontainer">
+    <li id="basic" class="tabBg1" onclick="switchTab('basic');">基本</li>
+</ul>
+<div id="main_bg">
+    <div id="main_bg2" ng-controller="initConnection">
+        <div id="tabbasic">
+            <fieldset>
+                <legend>基本属性</legend>
+                <div class="left">显示名称</div>
+                <div class="content">
+                    <input type="text" class="rightcontent" ng-model="transition().Name" />
+                </div>
+                <div class="left">优先级</div>
+                <div class="content">
+                    <select class="rightcontent" style="width: 405px;" ng-model="transition().Priority">
+                        <option value="High">高</option>
+                        <option value="SecondaryHigh">次高</option>
+                        <option value="Middle">中</option>
+                        <option value="SecondaryMiddle">次中</option>
+                        <option value="Low">低</option>
+                        <option value="SecondaryLow">次低</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset style="margin-top: 30px;">
+                <legend>高级属性</legend>
+                <div>
+                    <input type="checkbox" id="defaultline" ng-model="transition().IsDefault" />默认连线
+                </div>
+                <div>
+                    @*     <div class="split">
+                        <div>
+                            <input type="radio" name="expression" id="simpleexpression" />简单表达式
+                        </div>
+                        <table style="text-align: center">
+                            <thead>
+                                <tr>
+                                    <td>左值:</td>
+                                    <td>比较操作:</td>
+                                    <td>右值:</td>
+                                    <td>右值类型:</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" /></td>
+                                    <td>
+                                        <select>
+                                            <option value="1">==</option>
+                                            <option value="2">></option>
+                                            <option value="3"><</option>
+                                            <option value="4"><=</option>
+                                            <option value="5">>=</option>
+                                        </select></td>
+                                    <td>
+                                        <input type="text" /></td>
+                                    <td>
+                                        <select>
+                                            <option value="constant">常量</option>
+                                            <option value="bool">布尔值</option>
+                                            <option value="variable">变量</option>
+                                        </select></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>*@
+                    <div class="split">
+                        <div>
+                            <input type="radio" name="expression" id="complexexpression" checked="checked" />复杂表达式
+                        </div>
+                        <div>
+                            <input type="text" class="rightcontent" ng-model="transition().Expression" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

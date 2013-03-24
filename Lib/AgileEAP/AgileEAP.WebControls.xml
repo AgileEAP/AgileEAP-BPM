@@ -1,0 +1,2412 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgileEAP.WebControls</name>
+    </assembly>
+    <members>
+        <member name="T:AgileEAP.WebControls.AjaxTree">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTree.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTree.InitScript">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTree.InitWebResource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTree.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_bottom_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_middle_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_root_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_top_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_vertical_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ParentNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ParentNode_Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_minus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.LeafNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_plus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Checkbox_checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Checkbox_half_checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Checkbox_unchecked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Context_menu_gradient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Drag_drop_ind1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Drag_drop_ind2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_dots">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_folder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_lastsub">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Folder_sub">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_onload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_drag_enable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTree_drag_disable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Nodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ContainerCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.TreeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ParentNodeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.DragContainerCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.LeafNodeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ShowCheckBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.ShowNodeIco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Nodedblclick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.EnableOndblclick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.EnableDrag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.IsAjaxLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.PostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.SelectNodeIds">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.CurrentNodeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.AjaxTreeTag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.SelectionMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTree.Runat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.AjaxTreeNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNode.InitIcoSrc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNode.GetIcoSrc">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNode.RenderControl(System.Web.UI.HtmlTextWriter,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+            <param name="brotherCount"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.CssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.CssStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Owner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Depth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Runat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ChildNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ShowNodeIco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.NodeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.LinkUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Target">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ShowCheckBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.EnableDrag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.NodeState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.Checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.IcoSrc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.NodeIcoSrc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.ParentNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.LeafNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.IsLast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.VirtualNodeCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.HasChildren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.IsAjaxLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNode.PostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.AjaxTreeNodeCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.IndexOf(AgileEAP.WebControls.AjaxTreeNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.Insert(System.Int32,AgileEAP.WebControls.AjaxTreeNode)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.Add(AgileEAP.WebControls.AjaxTreeNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.Contains(AgileEAP.WebControls.AjaxTreeNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.CopyTo(AgileEAP.WebControls.AjaxTreeNode[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.Remove(AgileEAP.WebControls.AjaxTreeNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.GetCssClass(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.GetStyle(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxTreeNodeCollection.AjaxRender(System.Web.UI.HtmlTextWriter,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="depth"></param>
+            <param name="parentIsLast"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.InnerNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.Owner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxTreeNodeCollection.NodesState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.AjaxTreeNodeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxTreeNodeType.LeafNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxTreeNodeType.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PostType.NoPost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PostType.AjaxPost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PostType.Post">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PostType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.AjaxTreeSkin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxTreeSkin.Defalut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxTreeSkin.Foler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.NodeState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.NodeState.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.NodeState.Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.SelectionMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.SelectionMode.Single">
+            <summary>
+            单选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.SelectionMode.Multiple">
+            <summary>
+            多选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.SelectionMode.RelatedMultiple">
+            <summary>
+            级联多选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.SelectionMode.LeafSingle">
+            <summary>
+            叶子结点单选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.SelectionMode.LeafMultiple">
+            <summary>
+            叶子结点多选，不向上级联
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.ChooseBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.ChooseBox.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.ChooseBox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.Value">
+            <summary>
+            控件值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.Tag">
+            <summary>
+            控件扩展值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.OpenUrl">
+            <summary>
+            打开页面路径
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.QueryString">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.InbuiltClick">
+            <summary>
+            是否包含单击事件，如果为False 则不加载相应方法事件 外部可自定义
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.DialogHeight">
+            <summary>
+            弹出窗体高度
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.DialogWidth">
+            <summary>
+            弹出窗体宽度
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ChooseBox.DialogTitle">
+            <summary>
+            弹出窗体标头
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.ComboBox">
+            <summary>
+            可编辑下拉控件
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.ComboBox.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            文本框的数据回传
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.ComboBox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.ComboBox.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboBox.ShowSelectTip">
+            <summary>
+            是否在得到焦点的时候显示选择项文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboBox.Value">
+            <summary>
+            ComboBox的Text值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboBox.Items">
+            <summary>
+            ComboBox的Items内容
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboBox.Attribute">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboBox.DropDownStyle">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.ComboBox.DropDownType">
+            <summary>
+            控件类型
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.ComboBox.DropDownType.DropDownList">
+            <summary>
+            下拉控件
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.ComboBox.DropDownType.DropDown">
+            <summary>
+            可写下拉控件
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.Combox">
+             <summary>
+            组合框 
+             </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.Combox.InitWebResource">
+            <summary>
+            注册控件资源
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.Combox.OnPreRender(System.EventArgs)">
+            <summary>
+            预呈现事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.Combox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            呈现
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.Combox.RenderSingle(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            转换为Html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.Combox.RenderMultiple(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            转换为Html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.ComboxIcon">
+            <summary>
+            组合框图标
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.OnChanged">
+            <summary>
+            Change事件响应方法
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.Items">
+            <summary>
+            组合项
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.SelectedValue">
+            <summary>
+            选中项
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.SelectedText">
+            <summary>
+            选中项文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.Combox.IsSingle">
+            <summary>
+            是否单选
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.ComboxItem">
+            <summary>
+            组合框项
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboxItem.Text">
+            <summary>
+            显示文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboxItem.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.ComboxItem.Tag">
+            <summary>
+            标记
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.CommandBar">
+             <summary>
+            命令按钮栏 
+             </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.OnPreRender(System.EventArgs)">
+            <summary>
+            预呈现事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            呈现
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.InitWebResource">
+            <summary>
+            注册控件资源
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            呈现开始标记
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            呈现内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            呈现结束标记
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandBar.RaisePostBackEvent(System.String)">
+            <summary>
+            触发回发事件
+            </summary>
+            <param name="argument"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandBar.Items">
+            <summary>
+            命令项列表
+            </summary>
+        </member>
+        <member name="E:AgileEAP.WebControls.CommandBar.CommandExecute">
+            <summary>
+            命令事件
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.CommandBar.CommandExecuteEventHandler">
+            <summary>
+            命令执行委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:AgileEAP.WebControls.CommandExecuteEventArgs">
+            <summary>
+            命令执行参数
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandExecuteEventArgs.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.CommandExecuteEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="commandName">命令名称</param>
+            <param name="commandArgument">命令参数</param>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandExecuteEventArgs.CommandName">
+            <summary>
+            命令名称
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandExecuteEventArgs.CommandArgument">
+            <summary>
+            命令参数
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.CommandItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.CommandName">
+            <summary>
+            操作按钮名称
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.CommandArgument">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.ImageUrl">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.Runat">
+            <summary>
+            触发方式0：通过jvavscript弹出
+            1：转向
+            2：ajax实现
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.Text">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.OnClientClick">
+            <summary>
+            暂无用
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.CommandItem.DoValid">
+            <summary>
+            是否要验证true:需要验证；false：不需要验证
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.DatePicker">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.DatePicker.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.DatePicker.Skin">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.DatePicker.SkinType">
+            <summary>
+            皮肤类型
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.DatePicker.SkinType.Wdate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.DatePicker.SkinType.Odate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.DatePicker.SkinType.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.DateQuantum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.DateQuantum.CreateChildControls">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.DateQuantum.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.DateQuantum.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.DateQuantum.Value">
+            <summary>
+            DateQuantum的Text值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.DateQuantum.Signs">
+            <summary>
+            DateQuantum的Text值
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.DateQuantum.RepeatDirection">
+            <summary>
+            排列方式
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.DateQuantum.LableText">
+            <summary>
+            标签名字前缀
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.AjaxGrid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxGrid.iconCondition">
+            <summary>
+            增删条件按钮
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.AjaxGrid.iconDisplay">
+            <summary>
+            增删显示列按钮
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.InitResource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.RenderToolbar(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.OnPreRender(System.EventArgs)">
+            <summary>
+             预呈现处理
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.OnRowDataBound(System.Web.UI.WebControls.GridViewRowEventArgs)">
+            <summary>
+            绑定处理
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.RenderEmptyGridView(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出空表
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.AjaxGrid.AjaxRender">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.EnableToolbox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.PageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.PageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.ItemCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.PageCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.EnableRowDbClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.GridBarStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.AutoGenerateColumns">
+            <summary>
+            是否自动生成列
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconFirst">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconCsv">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconTxt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconGo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconLast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconNext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconPrevious">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconRefresh">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconExcel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconAdd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconEdit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconLoading">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconCondition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IconDisplay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.AjaxGrid.IsAjaxSort">
+            <summary>
+            是否Ajax查询
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.GridAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.First">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Next">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Previous">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Last">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Go">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.EditModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.ExportExcel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Query">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.Refresh">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.ExportCsv">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridAction.ExportTxt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.GridBarStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridBarStyle.Top">
+            <summary>
+            顶部
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridBarStyle.Bottom">
+            <summary>
+            底部
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.GridBarStyle.None">
+            <summary>
+            不显示
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PageArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PageArgs.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="count"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="pageCount"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.PageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.PageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.PageCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.NewPageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PageArgs.Cancel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.WriteSpacingStyle(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出空白
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.GetPageIndexPostBackEvent(System.Int32)">
+            <summary>
+             生成页面事件
+            </summary>
+            <param name="PageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.AddToolTip(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            添加提示符
+            </summary>
+            <param name="writer"></param>
+            <param name="pageIndex"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RenderNavigationButton(System.Web.UI.HtmlTextWriter,System.String,System.Int32)">
+            <summary>
+            输出导航按钮
+            </summary>
+            <param name="output">输出对象</param>
+            <param name="PageText">页面文本</param>
+            <param name="PageIndex">页码</param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RenderNavigationButton(System.Web.UI.HtmlTextWriter,System.String,System.Int32,AgileEAP.WebControls.PagedGridView.Navigation)">
+            <summary>
+            输出导航按钮
+            </summary>
+            <param name="output">输出对象</param>
+            <param name="pageText">页面文本</param>
+            <param name="pageIndex">页码</param>
+            <param name="nav">导航操作</param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.CreateNavigationButton(System.Web.UI.HtmlTextWriter,AgileEAP.WebControls.PagedGridView.Navigation)">
+            <summary>
+            创建导航按钮
+            </summary>
+            <param name="output"></param>
+            <param name="nav"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RenderPagerLeft(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出左自定义文本
+            </summary>
+            <param name="output">输出对象</param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RenderPagerRight(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出右边内容
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.OnPageChanging(AgileEAP.WebControls.PagedGridView.PageChangingEventArgs)">
+            <summary>
+            分页处理
+            </summary>
+            <param name="e">分页参数</param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.OnPageChanged(AgileEAP.WebControls.PagingArgs)">
+            <summary>
+            分页处理后
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            加载回发数据
+            </summary>
+            <param name="pkey"></param>
+            <param name="pcol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RaisePostDataChangedEvent">
+            <summary>
+            回发处理
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RaisePostBackEvent(System.String)">
+            <summary>
+            回发处理事件
+            </summary>
+            <param name="postArgs"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.OnRowDataBound(System.Web.UI.WebControls.GridViewRowEventArgs)">
+            <summary>
+            绑定处理
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.OnPreRender(System.EventArgs)">
+            <summary>
+             预呈现处理
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.RenderEmptyGridView(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出空表
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出表格内容
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.AjaxRender">
+            <summary>
+            ajax输出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.IncludeRowDoubleClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.FirstPageText">
+            <summary>
+            首页按钮文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.PrevPageText">
+            <summary>
+            上一页按钮文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.CurrentPageText">
+            <summary>
+            当前页文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.NextPageText">
+            <summary>
+            下一页文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.LastPageText">
+            <summary>
+            最后一页文本
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.AllowPaging">
+            <summary>
+            是否允许分页
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.AllowPager">
+            <summary>
+            是否分页
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.CurrentPageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.ItemCount">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.PageSize">
+            <summary>
+            页面大小
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.PageCount">
+            <summary>
+            页面数
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.AutoGenerateColumns">
+            <summary>
+            是否自动生成列
+            </summary>
+        </member>
+        <member name="E:AgileEAP.WebControls.PagedGridView.PageChanging">
+            <summary>
+            分页事件
+            </summary>
+        </member>
+        <member name="E:AgileEAP.WebControls.PagedGridView.PageChanged">
+            <summary>
+             分页后事件
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView.PagedGridViewDesigner">
+            <summary>
+            PagedGridView设计器类
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.PagedGridViewDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)">
+            <summary>
+            获取编辑内容
+            </summary>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.PagedGridViewDesigner.GetDesignTimeHtml">
+            <summary>
+            生成设计时html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.PagedGridViewDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            生成错误时，html
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView.PageChangingEventArgs">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagedGridView.PageChangingEventArgs.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="newPageIndex"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagedGridView.PageChangingEventArgs.NewPageIndex">
+            <summary>
+            新页
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView.Navigation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PagedGridView.Navigation.First">
+            <summary>
+            首页
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PagedGridView.Navigation.Previous">
+            <summary>
+            上一页
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PagedGridView.Navigation.Current">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PagedGridView.Navigation.Next">
+            <summary>
+            下一页
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.PagedGridView.Navigation.Last">
+            <summary>
+            最后一页
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView.PageChangingEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagedGridView.PagintEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:AgileEAP.WebControls.PagingArgs">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.PagingArgs.#ctor(System.Int64,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="itemCount">记录总数</param>
+            <param name="pageIndex">当前页</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageCount">页数</param>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagingArgs.ItemCount">
+            <summary>
+            数据记录总数
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagingArgs.PageIndex">
+            <summary>
+            当前页面
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagingArgs.PageSize">
+            <summary>
+            页面大小
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.PagingArgs.PageCount">
+            <summary>
+            总共页数
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.HidTextBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.HidTextBox.ClientID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.HidTextBox.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.NavigateItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateItem.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.NavigateBar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.NavigateBar.OnPreRender(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.NavigateBar.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateBar.ActiveId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateBar.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateBar.Runat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.NavigateBar.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:AgileEAP.WebControls.NavigateBar.CommandExecute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.NavigateBar.CommandExecuteEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewNodeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewNodeType.LeafNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewNodeType.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewPostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewPostType.NoPost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewPostType.AjaxPost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewPostType.Post">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewPostType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewSkin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSkin.Defalut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSkin.Foler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewNodeState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewNodeState.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewNodeState.Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewSelectionMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSelectionMode.Single">
+            <summary>
+            单选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSelectionMode.Multiple">
+            <summary>
+            多选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSelectionMode.RelatedMultiple">
+            <summary>
+            级联多选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSelectionMode.LeafSingle">
+            <summary>
+            叶子结点单选
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewSelectionMode.LeafMultiple">
+            <summary>
+            叶子结点多选，不向上级联
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeView.OnLoad(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeView.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_bottom_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_middle_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_root_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_top_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_vertical_line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ParentNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ParentNode_Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_minus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.LeafNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_plus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Checkbox_checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Checkbox_half_checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Checkbox_unchecked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Context_menu_gradient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Drag_drop_ind1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Drag_drop_ind2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_dots">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_folder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_lastsub">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Folder_sub">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_onload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_drag_enable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeView_drag_disable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Nodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ContainerCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.TreeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ParentNodeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.DragContainerCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.LeafNodeCssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ShowCheckBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.ShowNodeIco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Nodedblclick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.EnableOndblclick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.EnableDrag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.IsAjaxLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.PostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.CurrentNodeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.SelectionMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.Runat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeView.OnNodeClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNode.GetIcoSrc">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNode.RenderControl(System.Web.UI.HtmlTextWriter,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+            <param name="brotherCount"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Extend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.CssClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.CssStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Owner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Depth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Runat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ChildNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ShowNodeIco">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.NodeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.LinkUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Target">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ShowCheckBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.EnableDrag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.NodeState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.Checked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.IcoSrc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.NodeIcoSrc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.ParentNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.LeafNodeIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.IsLast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.VirtualNodeCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.HasChildren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.IsAjaxLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNode.PostType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileEAP.WebControls.TreeViewNodeCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileEAP.WebControls.TreeViewNodeCollection.innerNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.IndexOf(AgileEAP.WebControls.TreeViewNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Insert(System.Int32,AgileEAP.WebControls.TreeViewNode)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Add(AgileEAP.WebControls.TreeViewNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Contains(AgileEAP.WebControls.TreeViewNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.CopyTo(AgileEAP.WebControls.TreeViewNode[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Remove(AgileEAP.WebControls.TreeViewNode)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.GetCssClass(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.GetStyle(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.Render(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="depth"></param>
+        </member>
+        <member name="M:AgileEAP.WebControls.TreeViewNodeCollection.AjaxRender(System.Web.UI.HtmlTextWriter,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="depth"></param>
+            <param name="parentIsLast"></param>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.InnerNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.ParentNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.Owner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileEAP.WebControls.TreeViewNodeCollection.NodesState">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43584305-4991-4A9D-A555-8D048A2C5822}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.TreeView</RootNamespace>
+    <AssemblyName>AgileEAP.TreeView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeView\TreeView.cs" />
+    <Compile Include="TreeView\TreeViewNode.cs" />
+    <Compile Include="TreeView\TreeViewNodeCollection.cs" />
+    <Compile Include="TreeView\Enum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TreeView\Resources\agentDown.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-bottom-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable3.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable5.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-enable.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-middle-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-onLoad.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-root-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-top-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-vertical-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\TreeView.css" />
+    <EmbeddedResource Include="TreeView\Resources\TreeView.js" />
+    <EmbeddedResource Include="TreeView\Resources\TreeViewDrag.js" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_folder.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_folder_open.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_minus.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_node.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_plus.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-checked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-half-checked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-unchecked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\collectionError.gif" />
+    <EmbeddedResource Include="TreeView\Resources\context-menu-gradient.gif" />
+    <EmbeddedResource Include="TreeView\Resources\currentStep.gif" />
+    <EmbeddedResource Include="TreeView\Resources\Drag.js" />
+    <EmbeddedResource Include="TreeView\Resources\dragDrop_ind1.gif" />
+    <EmbeddedResource Include="TreeView\Resources\dragDrop_ind2.gif" />
+    <EmbeddedResource Include="TreeView\Resources\error_small.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_close.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_dots.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_folder.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_lastsub.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_open.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_sub.gif" />
+    <EmbeddedResource Include="TreeView\Resources\icon_newwindow_12x.bmp" />
+    <EmbeddedResource Include="TreeView\Resources\jquery-1.3.2-vsdoc.js" />
+    <EmbeddedResource Include="TreeView\Resources\locked_small.gif" />
+    <EmbeddedResource Include="TreeView\Resources\true.gif" />
+    <EmbeddedResource Include="TreeView\Resources\zoom-in.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TreeView\Resources\DragMax.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TreeView\Resources\TreeViewMax.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TreeView\Resources\TreeViewMax.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TreeView\Resources\TreeViewDragMax.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,212 @@
+2013-03-24 10:47:12-----Creating shadow copy folder and querying for dlls
+2013-03-24 10:48:04-----未将对象引用设置到对象的实例。
+
+2013-03-24 10:55:18-----Creating shadow copy folder and querying for dlls
+2013-03-24 10:57:16-----未将对象引用设置到对象的实例。
+
+2013-03-24 11:07:31-----Creating shadow copy folder and querying for dlls
+2013-03-24 11:11:12-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.Plugin.Administration.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:12-----Adding to BuildManager: 'AgileEAP.Plugin.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:12-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.WebControls.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:12-----Adding to BuildManager: 'AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:12-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\Microsoft.Web.Infrastructure.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:12-----Adding to BuildManager: 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:11:12-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\zh-Hans\System.Net.Http.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'System.Net.Http.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=b03f5f7f11d50a3a'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Plugin.iReport.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'AgileEAP.Plugin.iReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\Jint.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\zh-Hans\System.Web.Razor.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'System.Web.Razor.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\AgileEAP.Plugin.Scheduler.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'AgileEAP.Plugin.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Common.Logging.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Quartz.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'Quartz, Version=2.1.2.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Authorize\bin\AgileEAP.Plugin.Authorize.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'AgileEAP.Plugin.Authorize, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\AgileEAP.Plugin.FormDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'AgileEAP.Plugin.FormDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:13-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\bg-BG\Kendo.Mvc.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:13-----Adding to BuildManager: 'Kendo.Mvc.resources, Version=2012.3.1114.340, Culture=bg-BG, PublicKeyToken=121fae78165ba3d4'
+2013-03-24 11:11:14-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Resources\bin\AgileEAP.Plugin.Resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:14-----Adding to BuildManager: 'AgileEAP.Plugin.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:14-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\AgileEAP.Plugin.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:14-----Adding to BuildManager: 'AgileEAP.Plugin.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:14-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\JavaScriptBuildTask.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:14-----Adding to BuildManager: 'JavaScriptBuildTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:11:14-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Json.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:14-----Adding to BuildManager: 'System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:11:14-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Web.Http.Tracing.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:14-----Adding to BuildManager: 'System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:11:15-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\WorkflowDesigner\bin\AgileEAP.Plugin.WorkflowDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:11:16-----Adding to BuildManager: 'AgileEAP.Plugin.WorkflowDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:12:49-----初始化CacheManager出错Unable to get default database without an entity type when there are no database.
+2013-03-24 11:24:52-----Creating shadow copy folder and querying for dlls
+2013-03-24 11:24:52-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.Plugin.Administration.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:52-----Adding to BuildManager: 'AgileEAP.Plugin.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:52-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.WebControls.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:52-----Adding to BuildManager: 'AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:52-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\Microsoft.Web.Infrastructure.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\zh-Hans\System.Net.Http.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'System.Net.Http.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=b03f5f7f11d50a3a'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Plugin.iReport.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'AgileEAP.Plugin.iReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\Jint.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\zh-Hans\System.Web.Razor.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'System.Web.Razor.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\AgileEAP.Plugin.Scheduler.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'AgileEAP.Plugin.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Common.Logging.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e'
+2013-03-24 11:24:53-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Quartz.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:53-----Adding to BuildManager: 'Quartz, Version=2.1.2.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4'
+2013-03-24 11:24:54-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Authorize\bin\AgileEAP.Plugin.Authorize.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:54-----Adding to BuildManager: 'AgileEAP.Plugin.Authorize, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:54-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\AgileEAP.Plugin.FormDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:54-----Adding to BuildManager: 'AgileEAP.Plugin.FormDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:54-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\bg-BG\Kendo.Mvc.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:54-----Adding to BuildManager: 'Kendo.Mvc.resources, Version=2012.3.1114.340, Culture=bg-BG, PublicKeyToken=121fae78165ba3d4'
+2013-03-24 11:24:55-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Resources\bin\AgileEAP.Plugin.Resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:55-----Adding to BuildManager: 'AgileEAP.Plugin.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:55-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\AgileEAP.Plugin.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:55-----Adding to BuildManager: 'AgileEAP.Plugin.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:55-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\JavaScriptBuildTask.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:55-----Adding to BuildManager: 'JavaScriptBuildTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:24:55-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Json.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:55-----Adding to BuildManager: 'System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:24:55-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Web.Http.Tracing.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:55-----Adding to BuildManager: 'System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:24:56-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\WorkflowDesigner\bin\AgileEAP.Plugin.WorkflowDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:24:56-----Adding to BuildManager: 'AgileEAP.Plugin.WorkflowDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----Creating shadow copy folder and querying for dlls
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.Plugin.Administration.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Plugin.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.WebControls.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\Microsoft.Web.Infrastructure.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\zh-Hans\System.Net.Http.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'System.Net.Http.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=b03f5f7f11d50a3a'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Plugin.iReport.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Plugin.iReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\Jint.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\zh-Hans\System.Web.Razor.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'System.Web.Razor.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\AgileEAP.Plugin.Scheduler.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Plugin.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Common.Logging.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Quartz.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'Quartz, Version=2.1.2.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Authorize\bin\AgileEAP.Plugin.Authorize.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Plugin.Authorize, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\AgileEAP.Plugin.FormDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'AgileEAP.Plugin.FormDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:40-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\bg-BG\Kendo.Mvc.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:40-----Adding to BuildManager: 'Kendo.Mvc.resources, Version=2012.3.1114.340, Culture=bg-BG, PublicKeyToken=121fae78165ba3d4'
+2013/3/24 11:27:41-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Resources\bin\AgileEAP.Plugin.Resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:41-----Adding to BuildManager: 'AgileEAP.Plugin.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:41-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\AgileEAP.Plugin.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:41-----Adding to BuildManager: 'AgileEAP.Plugin.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:41-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\JavaScriptBuildTask.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:41-----Adding to BuildManager: 'JavaScriptBuildTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:27:41-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Json.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:41-----Adding to BuildManager: 'System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:27:41-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Web.Http.Tracing.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:41-----Adding to BuildManager: 'System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:27:42-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\WorkflowDesigner\bin\AgileEAP.Plugin.WorkflowDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:27:42-----Adding to BuildManager: 'AgileEAP.Plugin.WorkflowDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:21-----Creating shadow copy folder and querying for dlls
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.Plugin.Administration.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'AgileEAP.Plugin.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.WebControls.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\Microsoft.Web.Infrastructure.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\zh-Hans\System.Net.Http.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'System.Net.Http.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=b03f5f7f11d50a3a'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Plugin.iReport.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'AgileEAP.Plugin.iReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:27-----Adding to BuildManager: 'AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:27-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\Jint.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\zh-Hans\System.Web.Razor.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'System.Web.Razor.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\AgileEAP.Plugin.Scheduler.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'AgileEAP.Plugin.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Common.Logging.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Quartz.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'Quartz, Version=2.1.2.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Authorize\bin\AgileEAP.Plugin.Authorize.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'AgileEAP.Plugin.Authorize, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\AgileEAP.Plugin.FormDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'AgileEAP.Plugin.FormDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\bg-BG\Kendo.Mvc.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:28-----Adding to BuildManager: 'Kendo.Mvc.resources, Version=2012.3.1114.340, Culture=bg-BG, PublicKeyToken=121fae78165ba3d4'
+2013/3/24 11:45:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Resources\bin\AgileEAP.Plugin.Resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:29-----Adding to BuildManager: 'AgileEAP.Plugin.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\AgileEAP.Plugin.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:29-----Adding to BuildManager: 'AgileEAP.Plugin.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\JavaScriptBuildTask.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:30-----Adding to BuildManager: 'JavaScriptBuildTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013/3/24 11:45:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Json.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:30-----Adding to BuildManager: 'System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:45:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Web.Http.Tracing.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:30-----Adding to BuildManager: 'System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013/3/24 11:45:31-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\WorkflowDesigner\bin\AgileEAP.Plugin.WorkflowDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\b75be8e7\144908f3
+2013/3/24 11:45:31-----Adding to BuildManager: 'AgileEAP.Plugin.WorkflowDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:28-----Creating shadow copy folder and querying for dlls
+2013-03-24 11:47:28-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.Plugin.Administration.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'AgileEAP.Plugin.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\AgileEAP.WebControls.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\Microsoft.Web.Infrastructure.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Administration\bin\zh-Hans\System.Net.Http.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'System.Net.Http.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=b03f5f7f11d50a3a'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Plugin.iReport.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'AgileEAP.Plugin.iReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\AgileEAP.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:29-----Adding to BuildManager: 'AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:29-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\Jint.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.iReport\bin\zh-Hans\System.Web.Razor.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'System.Web.Razor.resources, Version=2.0.0.0, Culture=zh-Hans, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\AgileEAP.Plugin.Scheduler.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'AgileEAP.Plugin.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Common.Logging.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\AgileEAP.Plugin.Scheduler\bin\Quartz.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'Quartz, Version=2.1.2.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Authorize\bin\AgileEAP.Plugin.Authorize.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'AgileEAP.Plugin.Authorize, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\AgileEAP.Plugin.FormDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'AgileEAP.Plugin.FormDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\FormDesigner\bin\bg-BG\Kendo.Mvc.resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:30-----Adding to BuildManager: 'Kendo.Mvc.resources, Version=2012.3.1114.340, Culture=bg-BG, PublicKeyToken=121fae78165ba3d4'
+2013-03-24 11:47:30-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Resources\bin\AgileEAP.Plugin.Resources.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:31-----Adding to BuildManager: 'AgileEAP.Plugin.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:31-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\AgileEAP.Plugin.Workflow.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:31-----Adding to BuildManager: 'AgileEAP.Plugin.Workflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:31-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\JavaScriptBuildTask.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:31-----Adding to BuildManager: 'JavaScriptBuildTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+2013-03-24 11:47:31-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Json.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:31-----Adding to BuildManager: 'System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:47:31-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\bin\System.Web.Http.Tracing.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:31-----Adding to BuildManager: 'System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+2013-03-24 11:47:33-----E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\WorkflowDesigner\bin\AgileEAP.Plugin.WorkflowDesigner.dll to C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\2a1087d3\cb2ea93
+2013-03-24 11:47:33-----Adding to BuildManager: 'AgileEAP.Plugin.WorkflowDesigner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'

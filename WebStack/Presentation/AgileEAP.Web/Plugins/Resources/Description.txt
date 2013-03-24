@@ -1,0 +1,8 @@
+﻿Group: 基础框架
+FriendlyName: 公共脚本，样式库
+SystemName: Resources
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP 
+DisplayOrder: 1
+FileName:AgileEAP.Plugin.Resources.dll

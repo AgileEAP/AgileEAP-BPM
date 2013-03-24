@@ -1,0 +1,93 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Style.Require("jQueryUI_" + Theme);
+    Style.Require("site_" + Theme);
+    Style.Require("eclient_layout_" + Theme);
+    Script.Require("site").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("processbar").AtHead();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Version.eClientName</title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @RenderSection("styles", false)
+
+    @Html.HeadScripts()
+
+    <script type="text/javascript">
+    function autoHeight() {
+        $("#mainbody").height($("#page").height() - $("#header").height() - $("#footer").height());
+    }
+    $(document).ready(function () {
+        $("#modifyPwd").click(function () {
+            openOperateDialog('修改密码', "/Account/ModifyPassword", 350, 200, false, false, 100);
+        });
+        autoHeight();
+    });
+
+    $(window).resize(function () {
+        autoHeight();
+    });
+    </script>
+    <style type="text/css">
+    .logo
+    {
+        width: 409px;
+        height: 72px;
+    }
+</style>
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div class="logo">
+            </div>
+            <div class="info">
+                欢迎您,<strong>@WorkContext.User.Name</strong>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/eClient/index">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/miantop_m01_menu_04.gif" width="75" alt="首页"
+                                        height="72" border="0" /></a></li>
+                    <li><a href="/eClient/Order/Index">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/miantop_m01_menu_02.gif" width="75"  alt="订单管理"
+                                        height="72" border="0" /></a></li>
+                    <li><a href="/eClient/VirtualMachine/Index">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/exam_ico.gif" width="75" alt="管理云主机"
+                                        height="72" border="0" /></a></li>
+                    <li><a href="/eClient/Account/Index">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/miantop_m01_menu_09.gif" width="75" height="72" style="overflow: hidden" alt="账号信息"
+                        border="0" /></a></li>
+                    <li><a href="/eClient/Help" target="_blank">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/help.gif" width="75" height="72" alt="帮助"
+                                        border="0" /></a></li>
+                    <li><a href="/eClient/Logout">
+                        <img src="@BasePath/Content/Themes/@Theme/Images/logout.gif" width="75" alt="退出"
+                                        height="72" border="0" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            @Html.Partial("Footer")
+        </div>
+    </div>
+    <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="processbar" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    @Html.FootScripts()
+</body>
+</html>

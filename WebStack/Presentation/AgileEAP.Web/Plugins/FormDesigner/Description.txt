@@ -1,0 +1,9 @@
+﻿Group:基础应用
+FriendlyName: 表单设计器
+SystemName: FormDesigner
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP team
+DisplayOrder: 1
+ConfigurationUrl:Workflow/eForm/index?eFormID=2be01666-0f29-4878-a5c3-b4d236238566
+FileName:AgileEAP.Plugin.FormDesigner.dll

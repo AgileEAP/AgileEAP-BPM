@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.CustMenu, AgileEAP.Infrastructure" table="AC_CustMenu" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="OperatorID" column="OperatorID" />
+		<property name="ResourceID" column="ResourceID" />
+		<property name="Name" column="Name" />
+		<property name="Text" column="Text" />
+		<property name="RootID" column="RootID" />
+		<property name="ParentID" column="ParentID" />
+		<property name="SortOrder" column="SortOrder" />
+		<property name="Icon" column="Icon" />
+		<property name="ExpandIcon" column="ExpandIcon" />
+	</class>
+</hibernate-mapping>

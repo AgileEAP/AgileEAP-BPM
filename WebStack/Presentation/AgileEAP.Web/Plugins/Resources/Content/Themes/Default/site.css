@@ -1,0 +1,212 @@
+﻿/*==
+/* 站点基本样式
+/*==*/
+#page {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+
+.textreadonly {
+    background-color: #F0F0F0;
+    border: #F0F0F0 1px solid;
+    padding: 0.1em 0.3ex;
+    width: 150px;
+    float: left;
+}
+/*== 日期控件 ==*/
+.odate_img {
+    width: 16px;
+    height: 22px;
+    background-image: url(/Plugins/Resources/Content/Themes/Default/jqueryUI/images/datePicker.gif);
+    float: left;
+}
+/*== 验证控件错误提示 ==*/
+#errorMsg {
+    text-align: left;
+    color: Red;
+}
+
+/*===四列的table div处理==*/
+/*<tr>*/
+.div_row {
+    width: 100%;
+    height: 25px;
+}
+/*<td> 标题  用作说明*/
+.div_row_label {
+    padding: 3px;
+    width: 13%;
+    text-align: right;
+    float: left;
+    vertical-align: text-bottom;
+}
+/*<td>  内容 用作用户输入*/
+.div_row_input {
+    padding: 3px;
+    width: 85%;
+    text-align: left;
+    float: left;
+}
+
+.div_row_label2 {
+    padding: 3px;
+    width: 13%;
+    text-align: right;
+    float: left;
+    vertical-align: text-bottom;
+}
+/*<td>  内容 用作用户输入*/
+.div_row_input2 {
+    padding: 3px;
+    width: 35%;
+    text-align: left;
+    float: left;
+}
+
+/*==page中间主体gridview==*/
+.page_container_gridview {
+    /*	max-height:460px; 	height:auto !important; 	height:460px;*/
+    overflow: auto;
+}
+
+    .page_container_gridview ul {
+        list-style: none;
+        margin: 0px;
+    }
+
+        .page_container_gridview ul li {
+            float: left;
+            display: block;
+            margin: 0 5px 3px 0;
+            vertical-align: middle;
+        }
+
+/*==GridView ===*/
+/*== girdview 底部 ==*/
+.gridview_footer {
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    margin-top: 5px;
+}
+    /*== 底部输入框 ==*/
+    .gridview_footer input {
+        background-color: #fff;
+        font-weight: bold;
+        height: 14px;
+        text-align: center;
+        width: 20px;
+        border: solid 1px White;
+        padding: 0 2px 0 2px;
+        margin: 0;
+        border-bottom-color: Silver;
+    }
+
+/*== gridview内容列表 table形式显示==*/
+.gridview {
+    width: 98%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px #CCC solid;
+    margin: 10px auto;
+}
+
+    .gridview .hidden {
+        display: none;
+    }
+    /*==内容列表(table)头部==*/
+    .gridview th {
+        font-weight: normal;
+        font-size: 12px;
+        font-weight: bold; /*color: #2C59AA;*/
+        text-indent: 4px;
+        text-align: center;
+        background-color: #eeeeee;
+        height: 22px;
+        padding: 0; /* border-color: #B5D6E6;*/
+        border: 1px #CCC solid;
+    }
+    /*==内容列表(table)头部内容==*/
+    .gridview td {
+        font-size: 12px;
+        text-align: center;
+        border: 1px #CCC solid;
+    }
+    /*==内容列表(table) 行==*/
+    .gridview .gridview_row {
+        font-size: 13px;
+    }
+    /*==内容列表(table) 行 鼠标焦点在行上==*/
+    .gridview .rowover {
+        background-color: #c1ebff;
+        font-size: 13px;
+    }
+    /*==内容列表(table) 行 当前行失去焦点==*/
+    .gridview .rowout {
+        background-color: White;
+        font-size: 13px;
+    }
+    /*==内容列表(table) 行 当前行==*/
+    .gridview .rowcurrent {
+        background-color: #DAEFF6;
+        font-size: 13px;
+    }
+
+/*==功能按钮控件 ==*/
+.commandbar {
+    padding: 0;
+    margin: 0; /*padding-left: 4px;*/
+    /*  height: 26px;===QLJ 2011.7.13*/
+    height: auto;
+    width: 100%;
+    background-color: #ECECEC;
+    border-bottom: 1px solid #D4D4D4;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+/*==按钮常态下样式==*/
+.commanditem {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    padding: 0.5em 0.6em;
+    margin: 0;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 white;
+    font: 11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    background-color: #ECECEC;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F4F4F4), to(#ECECEC));
+    background-image: -moz-linear-gradient(#F4F4F4, #ECECEC);
+    background-image: -o-linear-gradient(#F4F4F4, #ECECEC);
+    background-image: linear-gradient(#F4F4F4, #ECECEC);
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    -o-background-clip: padding-box;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    zoom: 1;
+    float: left;
+}
+    .commanditem:hover, .commanditem:focus, .commanditem:active {
+        border-color: #3072b3;
+        border-bottom-color: #2a65a0;
+        text-decoration: none;
+        text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+        color: #fff;
+        background-color: #06a5f5;
+        background-image: -moz-linear-gradient(rgba(255, 255, 255, .15) 49%, rgba(0, 0, 0, .1) 51%, rgba(0, 0, 0, .15));
+        background-image: -ms-linear-gradient(rgba(255, 255, 255, .15) 49%, rgba(0, 0, 0, .1) 51%, rgba(0, 0, 0, .15));
+        background-image: -o-linear-gradient(rgba(255, 255, 255, .15) 49%, rgba(0, 0, 0, .1) 51%, rgba(0, 0, 0, .15));
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .15)), color-stop(49%, rgba(255, 255, 255, .15)), color-stop(51%, rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, .15)));
+        background-image: -webkit-linear-gradient(rgba(255, 255, 255, .15) 49%, rgba(0, 0, 0, .1) 51%, rgba(0, 0, 0, .15));
+        background-image: linear-gradient(rgba(255, 255, 255, .15) 49%, rgba(0, 0, 0, .1) 51%, rgba(0, 0, 0, .15));
+    }

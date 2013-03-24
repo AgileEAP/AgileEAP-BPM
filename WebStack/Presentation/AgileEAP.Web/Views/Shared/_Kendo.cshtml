@@ -1,0 +1,47 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Style.Require("jQueryUI_" + Theme);
+    Style.Require("site_" + Theme);
+    Script.Require("site").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("processbar").AtHead();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @RenderSection("styles", false)
+    @Html.HeadScripts()
+    @RenderSection("scripts", false)
+    <link href="/Plugins/Resources/Content/kendo/2012.3.1114/kendo.common.min.css" rel="stylesheet" />
+    <link href="/Plugins/Resources/Content/kendo/2012.3.1114/kendo.default.min.css" rel="stylesheet" />
+    <script src="/Plugins/Resources/Scripts/kendo/2012.3.1114/kendo.web.min.js"></script>
+    <script src="/Plugins/Resources/Scripts/kendo/2012.3.1114/kendo.aspnetmvc.min.js"></script>
+    <script src="/Plugins/Resources/Scripts/kendo/2012.3.1114/console.min.js"></script>
+    @{
+        var culture = System.Threading.Thread.CurrentThread.CurrentCulture.ToString();
+    }
+    <script src="/Plugins/Resources/Scripts/kendo/2012.3.1114/cultures/kendo.culture.@(culture).min.js"></script>
+    <script>
+    kendo.culture("@culture");
+    </script>
+</head>
+<body>
+    <div id="mainbody">
+        @RenderBody()
+    </div>
+    <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="processbar" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    @Html.FootScripts()
+</body>
+</html>

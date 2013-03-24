@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Workflow.Domain" assembly="AgileEAP.Workflow">
+  <class name="AgileEAP.Workflow.Domain.WorkItem, AgileEAP.Workflow" table="WF_WorkItem" lazy="true">
+    <id name="ID" column="ID">
+      <generator class="assigned" />
+    </id>
+    <property name="Name" column="Name" />
+    <property name="Type" column="Type" />
+    <property name="CreateTime" column="CreateTime" />
+    <property name="Creator" column="Creator" />
+    <property name="CreatorName" column="CreatorName" />
+    <property name="StartTime" column="StartTime" />
+    <property name="EndTime" column="EndTime" />
+    <property name="Description" column="Description" />
+    <property name="CurrentState" column="CurrentState" />
+    <property name="Participant" column="Participant" />
+    <property name="IsTimeOut" column="IsTimeOut" />
+    <property name="TimeOutTime" column="TimeOutTime" />
+    <property name="RemindTime" column="RemindTime" />
+    <property name="ActionURL" column="ActionURL" />
+    <property name="ActionMask" column="ActionMask" />
+    <property name="ProcessInstID" column="ProcessInstID" />
+    <property name="ProcessInstName" column="ProcessInstName" />
+    <property name="ActivityInstID" column="ActivityInstID" />
+    <property name="ActivityInstName" column="ActivityInstName" />
+    <property name="ProcessID" column="ProcessID" />
+    <property name="ProcessName" column="ProcessName" />
+    <property name="AllowAgent" column="AllowAgent" />
+    <property name="BizState" column="BizState" />
+    <property name="Executor" column="Executor" />
+    <property name="ExecutorName" column="ExecutorName" />
+    <property name="ExecuteTime" column="ExecuteTime" />
+    <property name="RootProcessInstID" column="RootProcessInstID" />
+  </class>
+</hibernate-mapping>

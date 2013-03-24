@@ -1,0 +1,44 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Style.Require("jQueryUI_" + Theme);
+    Style.Require("site_" + Theme);
+    Script.Require("site").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("processbar").AtHead();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @RenderSection("styles", false)
+    @Html.HeadScripts()
+
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div class="logo">
+            </div>
+        </div>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            @Html.Partial("Footer")
+        </div>
+    </div>
+    <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="processbar" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    @Html.FootScripts()
+</body>
+</html>

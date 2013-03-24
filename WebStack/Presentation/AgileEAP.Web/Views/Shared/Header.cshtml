@@ -1,0 +1,39 @@
+﻿@using AgileEAP.Core
+@using AgileEAP.MVC
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@using AgileEAP.Web
+@{
+    var workContext = EngineContext.Current.Resolve<AgileEAP.Core.IWorkContext>();
+    var currentUser = workContext.User;
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#modifyPwd").click(function () {
+            openOperateDialog('修改密码', "/Account/ModifyPassword", 450, 220, false, false, 100);
+        });
+    });
+</script>
+
+<div id="header">
+    <div id="logo">
+      <img src="@Url.Content("~/Content/Themes/" + Theme + "/Images/logo.gif")" width="413" height="52" alt="" />
+    </div>
+    <ul id="info">
+        <li>
+            <label>
+                <img src="@Url.Content("~/Content/Themes/" + Theme + "/Images/female.png")" width="16" height="16" alt="" />
+                @currentUser.LoginName
+            </label>
+        </li>
+        <li>
+            <img src="@Url.Content("~/Content/Themes/" + Theme + "/Images/password.png")" width="16" height="16" alt=""  />
+            <a id="modifyPwd">修改密码</a></li>
+        <li>
+            <img src="@Url.Content("~/Content/Themes/" + Theme + "/Images/logout.png")" width="16" height="16"alt=""  />
+            <a href="@BasePath/authorize/logout">退出</a></li>
+        <li>
+            <img src="@Url.Content("~/Content/Themes/" + Theme + "/Images/help.png")" width="16" height="16" alt="" />
+            <a target="ifrContentPage" href="/help">帮助</a></li>
+    </ul>
+</div>

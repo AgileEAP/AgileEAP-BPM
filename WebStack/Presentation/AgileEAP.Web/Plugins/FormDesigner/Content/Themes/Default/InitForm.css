@@ -1,0 +1,54 @@
+﻿html, body
+{
+    height: 100%;
+}
+
+h3
+{
+    margin: 0;
+}
+
+.ng-cloak
+{
+    display: none;
+}
+
+.footer
+{
+    width: 100%;
+    text-align: center;
+    height: 25px;
+}
+
+.button
+{
+    background: url(/Plugins/eClient/Content/Themes/Default/Images/Sbtn01.gif) #F5F5F3 50% 50% repeat-x;
+    border: 1px solid #C1C1C1;
+    color: #333;
+    cursor: pointer;
+    height: 25px;
+    text-align: center;
+    font-size: 12px;
+    margin: 2px;
+    width: 60px;
+}
+
+    .button:hover
+    {
+        background: url(/Plugins/eClient/Content/Themes/Default/Images/Sbtn02.gif) #F5F5F3 50% 50% repeat-x;
+        border: 1px solid #C1C1C1;
+        color: #333;
+        cursor: pointer;
+        height: 25px;
+        text-align: center;
+        font-size: 12px;
+        margin: 2px;
+        width: 60px;
+    }
+
+.uploadclass
+{
+    width: 100px;
+    position: relative;
+    left: 50px;
+}

@@ -1,0 +1,77 @@
+﻿@using AgileEAP.MVC
+@using AgileEAP.Core
+@using AgileEAP.Core.Extensions
+@using AgileEAP.Core.Plugins
+@using AgileEAP.Web.Models.Plugin
+@using Kendo.Mvc.UI
+@{    
+    ViewBag.Title = "插件管理";
+    Layout = "../Shared/_Kendo.cshtml";
+}
+
+@Html.BuilderToolbar()
+@(Html.Kendo().Grid<PluginModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(o => o.SystemName).Title("系统名称");
+        columns.Bound(o => o.FriendlyName).Title("显示名");
+        columns.Bound(o => o.Group).Title("分组");
+        columns.Bound(o => o.Installed).Title("是否安装");
+        columns.Bound(o => o.Author).Title("作者");
+        columns.Bound(o => o.Version).Title("版本");
+    })
+    .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+    .DataSource(dataSource =>
+        dataSource
+        .Ajax()
+        .Read(read => read.Action("Plugin_Filter", "Plugin")).PageSize(Configure.Get<int>("PageSize", 15)))
+        )
+<script type="text/javascript">
+    function importPlugin() {
+        window.parent.showDialog("actionDialog", "导入插件", "/Plugin/Import", 600, 300);
+    }
+
+    function installPlugin() {
+        var row = $("#grid").find(".k-state-selected");
+        var plugin = row.find("td").eq(0).text()
+        if (plugin == null || plugin == undefined || plugin == "") {
+            alert("请选择插件");
+            return;
+        }
+        var processbar = window.parent.$("#processbar");
+        processbar.processbar({ message: '正在处理...' });
+        $.post("/Plugin/Install", { plugin: plugin }, function (message) {
+            processbar.complete();
+            if (message.indexOf("成功") > 0)
+                row.find("td").eq(3).text("true");
+            alert(message);
+            // refresh();
+        });
+    }
+
+    function uninstallPlugin() {
+        var row = $("#grid").find(".k-state-selected");
+        var plugin = row.find("td").eq(0).text()
+        if (plugin == null || plugin == undefined || plugin == "") {
+            alert("请选择插件");
+            return;
+        }
+        var processbar = window.parent.$("#processbar");
+        processbar.processbar({ message: '正在处理...' });
+        $.post("/Plugin/Uninstall", { plugin: plugin }, function (message) {
+            processbar.complete();
+            if (message.indexOf("成功") > 0)
+                row.find("td").eq(3).text("false");
+            alert(message);
+            //refresh();
+        });
+    }
+
+    function refresh() {
+        var processbar = window.parent.$("#processbar");
+        processbar.processbar({ message: '正在重启插件...' });
+        document.location.href = "/Plugin/Refresh";
+        processbar.complete();
+    }
+</script>

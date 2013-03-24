@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.Duty, AgileEAP.Infrastructure" table="OM_Duty" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="Code" column="Code" />
+		<property name="Name" column="Name" />
+		<property name="ParentID" column="ParentID" />
+		<property name="Type" column="Type" />
+		<property name="Description" column="Description" />
+		<property name="Creator" column="Creator" />
+		<property name="CreateTime" column="CreateTime" />
+	</class>
+</hibernate-mapping>

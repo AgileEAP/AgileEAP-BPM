@@ -1,0 +1,411 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using System.Collections.Generic
+@using System.Text
+@using AgileEAP.MVC
+@using AgileEAP.Core
+@using AgileEAP.Core.Data
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@{
+    Script.Require("jQueryUI").AtHead();
+    Script.Require("jq_jsPlumb").AtHead();
+    Layout = "../Shared/_Layout.cshtml";
+
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var currentUser = workContext.User;
+    var currentSkin = workContext.Theme;
+}
+@section styles {
+    <style type="text/css">
+    #leftcontent {
+        width: 100px;
+        height: 100%;
+        position: relative;
+        top: 50px;
+        left: 40px;
+        float: left;
+    }
+
+    .interpret {
+        padding-bottom: 5px;
+    }
+
+    .interpret_color {
+        width: 40px;
+        height: 15px;
+        float: left;
+    }
+
+    .interpret_content {
+        margin-bottom: -3px;
+        font-size: 12px;
+    }
+
+    #containter {
+        position: relative;
+    }
+    /*path
+    {
+    stroke:red;
+    }*/
+</style>
+}
+<script type="text/javascript">
+    function drawActivityInst(activity, currentState) {
+        var imgPath = "/Plugins/Workflow/Content/Themes/Default/Images/";
+        switch (activity.ActivityType) {
+            case 1:
+            case "StartActivity": activity.ActivityType = "StartActivity";
+                break;
+            case 2:
+            case "ManualActivity": activity.ActivityType = "ManualActivity";
+                break;
+            case 3:
+            case "RouterActivity": activity.ActivityType = "RouterActivity";
+                break;
+            case 4:
+            case "SubflowActivity": activity.ActivityType = "SubflowActivity";
+                break;
+            case 5:
+            case "AutoActivity": activity.ActivityType = "AutoActivity";
+                break;
+            case 6:
+            case "EndActivity": activity.ActivityType = "EndActivity";
+                break;
+            case 7:
+            case "ProcessActivity": activity.ActivityType = "ProcessActivity";
+                break;
+        }
+        var resource = "/Plugins/Workflow/Content/Themes/Default/Images/" + activity.ActivityType + ".png";
+        switch (currentState) {
+            case -1: resource = imgPath + activity.ActivityType + "4.png";
+                break;
+            case 0: resource = imgPath + activity.ActivityType + ".png";
+                break;
+            case 1: resource = imgPath + activity.ActivityType + "2.png";
+                break;
+            case 2: break;
+            case 3: resource = imgPath + activity.ActivityType + "2.png";
+                break;
+            case 4: resource = imgPath + activity.ActivityType + "3.png";
+                break;
+            case 5: resource = imgPath + activity.ActivityType + "5.png";
+                break;
+            case 8: resource = imgPath + activity.ActivityType + "6.png";
+                break;
+        }
+        if ($("#containter").find($("#" + activity.ID))[0] != undefined) {
+            $("#containter").find($("#" + activity.ID)).remove();
+        }
+
+        var activityResource = "<div id=\"" + activity.ID + "\" class=\"activity\"  style=\"left:" + activity.Style.Left + "px;top:" + activity.Style.Top + "px;width:40px;height:40px;z-index:" + activity.Style.ZIndex + ";position:absolute\"><img style=\"width:40px;height:40px;\" src=\"" + resource + "\" /><label style=\"width:100px;position:absolute;Top:40px;left:0px\">" + activity.Name + "</label></div>"
+        $("#containter").append(activityResource);
+
+        //  var activityResource = "<div id=\"" + activity.ID + "\" class=\"activity\"  style=\"left:" + activity.Style.Left + "px;top:" + activity.Style.Top + "px;width:" + activity.Style.Width + "px;height:" + activity.Style.Height + "px;z-index:" + activity.Style.ZIndex + ";position:absolute\"><img style=\"width:32px;height:32px;position:absolute;top:9px;;left:9px;\" src=\"" + resource + "\" /><label style=\"width:100px;position:absolute;Top:40px;left:0px\">" + activity.Name + "</label></div>"
+
+
+    }
+    function drawConnection(transition, activityInstList, transitionControlList) {
+        var currentStatus = 0;
+        var status = 0;
+        if (activityInstList != null && activityInstList.length > 0) {
+            for (var i = 0; i < activityInstList.length; i++) {
+                if (transition.DestActivity == activityInstList[i].ActivityDefID)//查找目标
+                {
+                    switch (activityInstList[i].CurrentState) {
+                        case -1: currentStatus = -1; break;//未运行到
+                        case 0: currentStatus = 0; break;//初始状态
+                        case 1: currentStatus = 1; break;//将运行
+                        case 2: currentStatus = 2; break;//运行出错
+                        case 3: currentStatus = 3; break;// 挂起
+                        case 4: currentStatus = 4; break;//已运行
+                        case 5: currentStatus = 5; break;//回退
+                    }
+                    for (var j = 0; j < activityInstList.length; j++) {
+                        if (transition.SrcActivity == activityInstList[j].ActivityDefID && activityInstList[i].CurrentState == 4) {
+                            for (var n = 0; n < transitionControlList.length; n++) {
+                                if (transitionControlList[n].DestActID == activityInstList[i].ActivityDefID && transitionControlList[n].SrcActID == transition.SrcActivity) {
+                                    switch (activityInstList[j].CurrentState) {
+                                        case -1: currentStatus = -1; break;
+                                        case 0: currentStatus = -1; break;
+                                        case 3: currentStatus = -1; break;
+                                        case 4: currentStatus = 4; break;
+                                        case 5: currentStatus = 0; break;
+                                    }
+                                    break;
+                                }
+                                else {
+                                    currentStatus = -1;
+                                }
+                            }
+                            status = 1;
+                        }
+
+                        if (transition.SrcActivity == activityInstList[j].ActivityDefID && currentStatus != 4) {
+                            for (var m = 0; m < transitionControlList.length; m++) {
+                                if (transitionControlList[m].DestActID == activityInstList[i].ActivityDefID && transitionControlList[m].SrcActID == transition.SrcActivity) {
+
+                                    if (currentStatus == 5) {
+                                        for (var k = 0; k < transitionControlList.length; k++) {
+                                            if (transitionControlList[k].DestActID == transition.SrcActivity && transitionControlList[k].SrcActID == activityInstList[i].ActivityDefID) {
+                                                currentStatus = 5;
+                                                break;
+                                            }
+                                            else {
+                                                currentStatus = 0;
+                                            }
+                                        }
+
+                                    }
+                                    else {
+                                        if (currentStatus == -1)
+                                            currentStatus = 1;
+                                        if (currentStatus == 3)
+                                            currentStatus = 1;
+
+
+                                    }
+                                    break;
+
+                                }
+                                else {
+                                    if (currentStatus != 5 && currentStatus != 0 && currentStatus != 4) {
+                                        currentStatus = -1;
+                                    }
+
+                                }
+                            }
+
+                            status = 1;
+                        }
+                    }
+                    if (status != 1 && currentStatus != 5) {
+                        currentStatus = -1;
+                        var img = $("#" + transition.SrcActivity).find("img").attr("src");
+                        
+                        var activityImg = img.substring(img.lastIndexOf("/") + 1, img.lastIndexOf(".png"));
+                        var resource = "/Plugins/Workflow/Content/Themes/Default/Images/" + activityImg + "4.png";
+                        $("#" + transition.SrcActivity).find("img").attr("src", resource);
+                     //   drawActivityInst(transition.SrcActivity, -1);
+                    }
+                    else if (status != 1 && currentStatus == 5) {
+                        currentStatus = 0;
+                    }
+
+                }
+                if (transition.SrcActivity == activityInstList[i].ActivityDefID) {
+                    for (var p = 0; p < activityInstList.length; p++) {
+
+                        if (currentStatus != 1 && currentStatus != 4 && activityInstList[i].CurrentState == 4 || activityInstList[p].CurrentState == -1) {
+                            currentStatus = -1;
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            currentStatus = 0;
+        }
+
+        var connectionStyle = "Green";
+        switch (currentStatus) {
+            case -1: connectionStyle = "Yellow"; break;
+            case 0: connectionStyle = "Green"; break;
+            case 1: connectionStyle = "Red"; break;
+            case 2:; break;
+            case 4: connectionStyle = "Gray"; break;
+            case 3:; break;
+            case 5: connectionStyle = "Blue"; break;
+        }
+        var connectorPaintStyle = {
+            lineWidth: 2,
+            strokeStyle: connectionStyle,
+            joinstyle: "round",
+            outlineColor: "white",
+            outlineWidth: 2
+        };
+        // .. and this is the hover style.
+        connectorHoverStyle = {
+            lineWidth: 7,
+            strokeStyle: "#2e2aF8"
+        };
+        var exampleGreyEndpointOptions = {
+            isSource: true,
+            //
+            isTarget: true,
+            DragOptions: { cursor: 'pointer', zIndex: 2000 },
+            Endpoints: [["Dot", { radius: 1 }], ["Dot", { radius: 1 }]],
+            EndpointStyles: [{ fillStyle: connectionStyle }, { fillStyle: connectionStyle }],
+            // endpoint: "Dot",
+            connector: ["Flowchart", { stub: [40, 60], gap: 1 }],
+            paintStyle: { fillStyle: connectionStyle, radius: 1 },
+            connectorStyle: connectorPaintStyle,
+            hoverPaintStyle: connectorHoverStyle,
+            connectorHoverStyle: connectorHoverStyle
+            //overlays: [
+            //    	["Label", {
+            //    	    location: [0.5, 1.5],
+            //    	    label: "Drag",
+            //    	    cssClass: "endpointSourceLabel"
+            //    	}]
+            //]
+        };
+        var common = {
+            cssClass: "myCssClass"
+        };
+        var sourceAnchor = transition.SourceOrientation;
+        var sinkAnchor = transition.SinkOrientation;
+        switch (transition.SourceOrientation) {
+            case "Left": sourceAnchor = "LeftMiddle"; break;
+            case "Top": sourceAnchor = "TopCenter"; break;
+            case "Right": sourceAnchor = "RightMiddle"; break;
+            case "Bottom": sourceAnchor = "BottomCenter"; break;
+        }
+        switch (transition.SinkOrientation) {
+            case "Left": sinkAnchor = "LeftMiddle"; break;
+            case "Top": sinkAnchor = "TopCenter"; break;
+            case "Right": sinkAnchor = "RightMiddle"; break;
+            case "Bottom": sinkAnchor = "BottomCenter"; break;
+        }
+        jsPlumb.addEndpoint(transition.SrcActivity, exampleGreyEndpointOptions, { anchor: sourceAnchor });
+        jsPlumb.addEndpoint(transition.DestActivity, exampleGreyEndpointOptions, { anchor: sinkAnchor });
+        jsPlumb.draggable(jsPlumb.getSelector(".activity"));
+        jsPlumb.connect({
+            paintStyle: { fillStyle: connectionStyle, strokeStyle: connectionStyle, lineWidth: 2, radius: 10 },
+            source: transition.SrcActivity,
+            target: transition.DestActivity,
+            anchors: [sourceAnchor, sinkAnchor],
+            endpoints: [["Dot", { radius: 1 }], ["Dot", { radius: 1 }]],
+            endpointStyles: [{ fillStyle: connectionStyle }, { fillStyle: connectionStyle }]
+        });
+        //jsPlumb.connect({
+        //    source: transition.SrcActivity,
+        //    target: transition.DestActivity,
+        //});
+        //  paintStyle: { fillStyle: connectionStyle, radius: 5 },
+        //connector:[ "bezier", { curviness:100 }, common ],
+
+        //$("path").attr("stroke", "red");
+        //$("path").attr("stroke-width", "2px");
+    }
+    jsPlumb.ready(function () {
+        processDefID = $.query.get("processDefID");
+        processInstID = $.query.get("ProcessInstID");
+
+        jsPlumb.importDefaults({
+            //  EndpointStyles: [{ fillStyle: '#225588' }, { fillStyle: '#558822' }],
+            // blue endpoints 7 px; green endpoints 11.
+            // Endpoints: [["Dot", { radius: 7 }], ["Dot", { radius: 11 }]],
+            // Connector: ["Flowchart", { stub: [40, 60], gap: 10 }],
+            Connector: ["Straight"],
+            // ConnectorStyle: { stroke: "red" },
+            // paintStyle: { fillStyle: "red", radius: 5 },
+            ConnectionOverlays: [
+					["Arrow", { location: 1, foldback: 0.1, width: 10, direction: -1, length: 5 }],
+					["Label", {
+					    location: 0.1,
+					    id: "label",
+					    cssClass: "aLabel"
+					}]
+            ],
+            ConnectorZIndex: 50
+        });
+        $.post("/Workflow/Design/GetProcessInfo", { ProcessDefID: processDefID, ProcessInstID: processInstID }, function (value) {
+            var ajaxResult = value;
+            var message = "操作失败";
+            if (ajaxResult && ajaxResult.Result == "Success") {
+                if (ajaxResult.RetValue.processInstID != null && ajaxResult.RetValue.processInstID != "") {
+                    $("#leftcontent").show();
+                    try {
+                        for (var j = 0; ajaxResult.RetValue.processDefine.Activities.length > j; j++) {
+                            var i = 0;
+                            for (var k = 0; k < ajaxResult.RetValue.activityInsts.length; k++) {
+                                var activityDefID = ajaxResult.RetValue.activityInsts[k].ActivityDefID;
+                                if (activityDefID == ajaxResult.RetValue.processDefine.Activities[j].ID) {
+                                    i = 1;
+                                    var currentState = ajaxResult.RetValue.activityInsts[k].CurrentState;
+                                    drawActivityInst(ajaxResult.RetValue.processDefine.Activities[j], currentState);
+                                }
+                            }
+                            if (i == 0) {
+                                drawActivityInst(ajaxResult.RetValue.processDefine.Activities[j], 0);
+                            }
+                        }
+                    }
+                    catch (ex) {
+                        //  alert(ex.Message);
+                    }
+                }
+                else {
+                    for (var q = 0; q < ajaxResult.RetValue.processDefine.Activities.length; q++) {
+                        $("#leftcontent").hide();
+                        drawActivityInst(ajaxResult.RetValue.processDefine.Activities[q], 0);
+                    }
+                }
+                for (var j = 0; j < ajaxResult.RetValue.processDefine.Transitions.length; j++) {
+                    try {
+                        drawConnection(ajaxResult.RetValue.processDefine.Transitions[j], ajaxResult.RetValue.activityInsts, ajaxResult.RetValue.transList);
+                    }
+                    catch (ex) {
+                       // alert(ex.Message);
+                    }
+                }
+
+
+                jsPlumb.repaintEverything();
+            }
+        });
+    });
+
+
+    //jsPlumb.bind("click", function (conn, originalEvent) {
+    //    //if (confirm("Delete connection from " + conn.sourceId + " to " + conn.targetId + "?"))
+    //    //    jsPlumb.detach(conn);
+    //});
+    ////jsPlumb.bind("click",function(
+    //jsPlumb.bind("connectionDrag", function (connection) {
+    //    console.log("connection " + connection.id + " is being dragged");
+    //});
+
+    //jsPlumb.bind("connectionDragStop", function (connection) {
+    //    console.log("connection " + connection.id + " was dragged");
+    //});
+
+
+</script>
+<div id="leftcontent" style="display: none">
+    <div class="interpret">
+        <div id="greeninterpret" class="interpret_color" style="background-color: green">
+        </div>
+        <label class="interpret_content">待激活</label>
+    </div>
+    <div class="interpret">
+        <div id="redinterpret" class="interpret_color" style="background-color: red; top: 70px;">
+        </div>
+        <label class="interpret_content">待处理</label>
+    </div>
+    <div class="interpret">
+        <div id="yellowinterpret" class="interpret_color" style="background-color: yellow;
+            top: 90px;">
+        </div>
+        <label class="interpret_content">未执行</label>
+    </div>
+    <div class="interpret">
+        <div id="grayinterpret" class="interpret_color" style="background-color: gray; top: 110px;">
+        </div>
+        <label class="interpret_content">已处理</label>
+    </div>
+    <div class="interpret">
+        <div id="blueinterpret" class="interpret_color" style="background-color: blue; top: 130px;">
+        </div>
+        <label class="interpret_content">已回退</label>
+    </div>
+    <div class="interpret">
+        <div id="blackinterpret" class="interpret_color" style="background-color: black;
+            top: 150px;">
+        </div>
+        <label class="interpret_content">出错了</label>
+    </div>
+</div>
+<div id="containter" style="position: relative">
+</div>

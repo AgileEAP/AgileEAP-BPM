@@ -1,0 +1,130 @@
+﻿
+form .ui-resizable-n
+{
+    width: 7px;
+    height: 7px;
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: n-resize;
+    top: -5px;
+    left: 45%;
+    line-height: 7px;
+}
+
+form .ui-resizable-e
+{
+    cursor: e-resize;
+    width: 7px;
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    right: -5px;
+    top: 45%;
+    line-height: 7px;
+    height: 7px;
+}
+
+form .ui-resizable-s
+{
+    cursor: s-resize;
+    height: 7px;
+    width: 7px;
+    bottom: -5px;
+    left: 45%;
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    line-height: 7px;
+}
+
+form .ui-resizable-w
+{
+    width: 7px;
+    height: 7px;
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: w-resize;
+    left: -5px;
+    top: 45%;
+    line-height: 7px;
+}
+
+form .ui-widget-content .ui-icon
+{
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+}
+
+form .ui-resizable-se
+{
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: se-resize;
+    width: 7px;
+    height: 7px;
+    right: -5px;
+    bottom: -5px;
+    line-height: 7px;
+}
+
+
+
+form .ui-resizable-sw
+{
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: sw-resize;
+    width: 7px;
+    height: 7px;
+    left: -5px;
+    bottom: -5px;
+    line-height: 7px;
+}
+
+form .ui-resizable-ne
+{
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: ne-resize;
+    width: 7px;
+    height: 7px;
+    right: -5px;
+    top: -5px;
+    line-height: 7px;
+}
+
+form .ui-resizable-nw
+{
+    background: transparent url(/Plugins/FormDesigner/Content/Themes/Default/Images/square.gif) no-repeat;
+    margin: 0px;
+    cursor: nw-resize;
+    width: 7px;
+    height: 7px;
+    left: -5px;
+    top: -5px;
+    line-height: 7px;
+}
+
+#tabs .tabs-spacer
+{
+    float: left;
+    height: 200px;
+}
+
+.tabs-bottom .ui-tabs-nav
+{
+    clear: left;
+    padding: 0 .2em .2em .2em;
+}
+
+    .tabs-bottom .ui-tabs-nav li
+    {
+        top: auto;
+        bottom: 0;
+        margin: 0 .2em 1px 0;
+        border-bottom: auto;
+        border-top: 0px;
+    }
+
+        .tabs-bottom .ui-tabs-nav li.ui-tabs-active
+        {
+            margin-top: -1px;
+            padding-top: 1px;
+        }

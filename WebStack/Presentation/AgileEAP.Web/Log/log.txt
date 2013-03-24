@@ -1,0 +1,562 @@
+2013-03-24 11:11:50,073 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerFactory出錯
+2013-03-24 11:11:50,898 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerActivator出錯
+2013-03-24 11:11:51,111 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ITempDataProvider出錯
+2013-03-24 11:11:51,157 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IAsyncActionInvoker出錯
+2013-03-24 11:11:51,185 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IActionInvoker出錯
+2013-03-24 11:12:49,279 [5] ERROR AgileEAP.Core.Data.Database - 初始化数据库AgileEAP出错
+System.IO.FileNotFoundException: 未能加载文件或程序集“Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4”或它的某一个依赖项。系统找不到指定的文件。
+文件名:“Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4”
+   在 NHibernate.Cfg.Configuration.Reset()
+   在 NHibernate.Cfg.Configuration..ctor(SettingsFactory settingsFactory)
+   在 NHibernate.Cfg.Configuration..ctor()
+   在 AgileEAP.Core.Data.Database.CreateNHConfiguration() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\Database.cs:行号 135
+   在 AgileEAP.Core.Data.Database..ctor(IDatabaseCfg cfg, IConfigurator configurator) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\Database.cs:行号 35
+
+=== 预绑定状态信息 ===
+日志: 用户 = trenhui-PC\trenhui
+日志: DisplayName = Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+ (Fully-specified)
+日志: Appbase = file:///E:/GitRepository/AgileEAP/WebStack/Presentation/AgileEAP.Web/
+日志: 初始 PrivatePath = E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\bin
+调用程序集: NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\web.config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 策略后引用: Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+日志: 相同的绑定已出现过，因 hr = 0x80070002 而失败。
+
+2013-03-24 11:12:49,319 [5] ERROR AgileEAP.Core.Data.DatabaseManager - System.IO.FileNotFoundException: 未能加载文件或程序集“Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4”或它的某一个依赖项。系统找不到指定的文件。
+文件名:“Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4”
+   在 AgileEAP.Core.Data.Database..ctor(IDatabaseCfg cfg, IConfigurator configurator) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\Database.cs:行号 44
+   在 AgileEAP.Core.Data.DatabaseManager.Initialize(IMultiDatabaseCfg configuration) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 61
+
+=== 预绑定状态信息 ===
+日志: 用户 = trenhui-PC\trenhui
+日志: DisplayName = Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+ (Fully-specified)
+日志: Appbase = file:///E:/GitRepository/AgileEAP/WebStack/Presentation/AgileEAP.Web/
+日志: 初始 PrivatePath = E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\bin
+调用程序集: NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: E:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\web.config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 策略后引用: Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+日志: 相同的绑定已出现过，因 hr = 0x80070002 而失败。
+
+2013-03-24 11:12:49,323 [5] ERROR AgileEAP.Core.Configure - 获取系统参数CacheName出错
+AgileEAP.Core.ExceptionHandler.EAPException: Unable to get default database without an entity type when there are no database.
+   在 AgileEAP.Core.Data.DatabaseManager.GetDatabase() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 117
+   在 AgileEAP.Core.UnitOfWork.GetEAConnection() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\UnitOfWork.cs:行号 115
+   在 AgileEAP.Core.Configure.DirectGet[T](String paramName, T defaultValue) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 81
+2013-03-24 11:12:49,406 [5] ERROR AgileEAP.Core.Configure - 获取系统参数EnableHttpCompression出错
+AgileEAP.Core.ExceptionHandler.EAPException: Unable to get default database without an entity type when there are no database.
+   在 AgileEAP.Core.Data.DatabaseManager.GetDatabase() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 117
+   在 AgileEAP.Core.UnitOfWork.GetEAConnection() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\UnitOfWork.cs:行号 115
+   在 AgileEAP.Core.Configure.<>c__DisplayClass1.<Get>b__0() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 27
+2013-03-24 11:12:49,410 [5] ERROR AgileEAP.Core.Configure - 获取系统参数EnableHttpCompression出错
+AgileEAP.Core.ExceptionHandler.EAPException: Unable to get default database without an entity type when there are no database.
+   在 AgileEAP.Core.Data.DatabaseManager.GetDatabase() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 117
+   在 AgileEAP.Core.UnitOfWork.GetEAConnection() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\UnitOfWork.cs:行号 115
+   在 AgileEAP.Core.Configure.<>c__DisplayClass1.<Get>b__0() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 33
+   在 AgileEAP.Core.Caching.CacheManager.Get[T](String key, Int32 cacheTime, Func`1 acquire) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Caching\CacheManager.cs:行号 45
+   在 AgileEAP.Core.Caching.CacheManager.Get[T](String key, Func`1 acquire) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Caching\CacheManager.cs:行号 34
+   在 AgileEAP.Core.Configure.Get(String paramName) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 23
+   在 AgileEAP.Core.Configure.Get[T](String paramName, T defaultValue) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 60
+2013-03-24 11:12:53,220 [5] ERROR AgileEAP.Core.Configure - 获取系统参数CurrentVersion出错
+AgileEAP.Core.ExceptionHandler.EAPException: Unable to get default database without an entity type when there are no database.
+   在 AgileEAP.Core.Data.DatabaseManager.GetDatabase() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 117
+   在 AgileEAP.Core.UnitOfWork.GetEAConnection() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\UnitOfWork.cs:行号 115
+   在 AgileEAP.Core.Configure.<>c__DisplayClass1.<Get>b__0() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 27
+2013-03-24 11:12:53,222 [5] ERROR AgileEAP.Core.Configure - 获取系统参数CurrentVersion出错
+AgileEAP.Core.ExceptionHandler.EAPException: Unable to get default database without an entity type when there are no database.
+   在 AgileEAP.Core.Data.DatabaseManager.GetDatabase() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DatabaseManager.cs:行号 117
+   在 AgileEAP.Core.UnitOfWork.GetEAConnection() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\UnitOfWork.cs:行号 115
+   在 AgileEAP.Core.Configure.<>c__DisplayClass1.<Get>b__0() 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 33
+   在 AgileEAP.Core.Caching.CacheManager.Get[T](String key, Int32 cacheTime, Func`1 acquire) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Caching\CacheManager.cs:行号 45
+   在 AgileEAP.Core.Caching.CacheManager.Get[T](String key, Func`1 acquire) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Caching\CacheManager.cs:行号 34
+   在 AgileEAP.Core.Configure.Get(String paramName) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 23
+   在 AgileEAP.Core.Configure.Get[T](String paramName, T defaultValue) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Configuration\Configure.cs:行号 60
+2013-03-24 11:12:53,583 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ModelMetadataProvider出錯
+2013-03-24 11:25:28,791 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerFactory出錯
+2013-03-24 11:25:29,135 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerActivator出錯
+2013-03-24 11:25:29,289 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ITempDataProvider出錯
+2013-03-24 11:25:29,331 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IAsyncActionInvoker出錯
+2013-03-24 11:25:29,358 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IActionInvoker出錯
+2013-03-24 11:25:49,404 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ModelMetadataProvider出錯
+2013-03-24 11:26:27,027 [6] ERROR AgilEAP - e:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Views\Shared\_Layout.cshtml(2): error CS0246: 未能找到类型或命名空间名称“Telerik”(是否缺少 using 指令或程序集引用?)
+System.Web.HttpCompileException (0x80004005): e:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Views\Shared\_Layout.cshtml(2): error CS0246: 未能找到类型或命名空间名称“Telerik”(是否缺少 using 指令或程序集引用?)
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   在 System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   在 System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(String virtualPath, HttpContextBase httpContext, Func`2 virtualPathExists, DisplayModeProvider displayModeProvider, IDisplayMode displayMode)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:02,835 [15] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:10,704 [18] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:32,598 [12] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:32,598 [13] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:37,510 [13] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:33:37,517 [6] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:34:01,783 [20] ERROR AgilEAP - e:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\Views\eForm\Index.cshtml(5): error CS0246: 未能找到类型或命名空间名称“Telerik”(是否缺少 using 指令或程序集引用?)
+System.Web.HttpCompileException (0x80004005): e:\GitRepository\AgileEAP\WebStack\Presentation\AgileEAP.Web\Plugins\Workflow\Views\eForm\Index.cshtml(5): error CS0246: 未能找到类型或命名空间名称“Telerik”(是否缺少 using 指令或程序集引用?)
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetObjectFactory(String virtualPath, Boolean throwIfNotFound)
+   在 AgileEAP.MVC.Themes.ThemeableBuildManagerViewEngine.FileExists(ControllerContext controllerContext, String virtualPath) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.MVC\Themes\ThemeableBuildManagerViewEngine .cs:行号 10
+   在 AgileEAP.MVC.Themes.ThemeableVirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String theme, String cacheKey, String[]& searchedLocations) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.MVC\Themes\ThemeableVirtualPathProviderViewEngine.cs:行号 147
+   在 AgileEAP.MVC.Themes.ThemeableVirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String theme, String cacheKeyPrefix, Boolean useCache, Boolean mobile, String[]& searchedLocations) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.MVC\Themes\ThemeableVirtualPathProviderViewEngine.cs:行号 113
+   在 AgileEAP.MVC.Themes.ThemeableVirtualPathProviderViewEngine.FindThemeableView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache, Boolean mobile) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.MVC\Themes\ThemeableVirtualPathProviderViewEngine.cs:行号 238
+   在 AgileEAP.MVC.Themes.ThemeableVirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.MVC\Themes\ThemeableVirtualPathProviderViewEngine.cs:行号 291
+   在 System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__a(IViewEngine e)
+   在 System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   在 System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:35:35,784 [12] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/eForm/index工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:35:38,479 [13] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:35:40,285 [11] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/eForm/index工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:35:43,667 [14] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/eForm/index工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:35:45,301 [11] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:35:47,077 [17] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/eForm/index工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:35:53,992 [11] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Engine/Process工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:35:59,499 [6] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Engine/Process工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:36:08,092 [16] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:36:08,097 [22] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:36:11,539 [18] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Monitor/ProcessInst工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:36:14,610 [18] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Monitor/Transition工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:36:17,558 [21] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Monitor/TraceLog工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:36:20,264 [18] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Engine/Process工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:39:54,698 [18] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Engine/Process工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:42:49,206 [18] ERROR AgileEAP.Core.Authentication.FormsAuthenticationService - 获取用户36b6eb02-24fa-4424-b04c-a06e0137772f页面Workflow/Engine/Process工具栏按钮权限出错
+MySql.Data.MySqlClient.MySqlException (0x80004005): Procedure or function '`OperateName as Name,o`' cannot be found in database '`select o`'.
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcData(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.AddNew(MySqlConnection connection, String spName)
+   在 MySql.Data.MySqlClient.ProcedureCache.GetProcedure(MySqlConnection conn, String spName, String cacheKey)
+   在 MySql.Data.MySqlClient.StoredProcedure.GetParameters(String procName, DataTable& proceduresTable, DataTable& parametersTable)
+   在 MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   在 MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 AgileEAP.Core.Data.DataContext.ADODataAdapter.FillDataSet(IDbCommand cmd) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 466
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataSet(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 146
+   在 AgileEAP.Core.Data.DataContext.ExecuteProcDataTable(IEAConnection eaconn, String procName, IDictionary`2 parameters) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Data\DataContext.cs:行号 153
+   在 AgileEAP.Core.Authentication.FormsAuthenticationService.GetToolBarItems(IUser user, String requestURL, String entry) 位置 e:\GitRepository\AgileEAP\Framework\AgileEAP.Core\Authentication\FormsAuthenticationService.cs:行号 186
+2013-03-24 11:48:18,386 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerFactory出錯
+2013-03-24 11:48:19,210 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IControllerActivator出錯
+2013-03-24 11:48:19,404 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ITempDataProvider出錯
+2013-03-24 11:48:19,445 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IAsyncActionInvoker出錯
+2013-03-24 11:48:19,473 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=IActionInvoker出錯
+2013-03-24 11:48:26,078 [5] ERROR AgileEAP.MVC.AgileEAPDependencyResolver - 注冊Type=ModelMetadataProvider出錯
+2013-03-24 11:50:45,524 [14] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:50:45,538 [12] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:51:27,024 [21] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:51:27,069 [21] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:52:58,814 [25] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:53:21,171 [25] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:53:21,171 [22] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:53:51,303 [16] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:53:55,847 [15] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:53:56,142 [16] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:55:54,706 [7] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:55:54,760 [7] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:55:59,596 [7] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-03-24 11:56:00,638 [7] ERROR AgilEAP - 文件不存在。
+System.Web.HttpException (0x80004005): 文件不存在。
+   在 System.Web.StaticFileHandler.ProcessRequestForNonMapPathBasedVirtualFile(HttpRequest request, HttpResponse response, String overrideVirtualPath)
+   在 System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   在 System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

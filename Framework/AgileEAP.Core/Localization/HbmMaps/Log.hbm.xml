@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Core.Localization" assembly="AgileEAP.Core">
+	<class name="AgileEAP.Core.Localization.Log, AgileEAP.Core" table="AB_Log" lazy="true">
+		<id name="Id" column="Id">
+			<generator class="native" />
+		</id>
+		<property name="LogLevelId" column="LogLevelId" />
+		<property name="ShortMessage" column="ShortMessage" />
+		<property name="FullMessage" column="FullMessage" />
+		<property name="IpAddress" column="IpAddress" />
+		<property name="CustomerId" column="CustomerId" />
+		<property name="PageUrl" column="PageUrl" />
+		<property name="ReferrerUrl" column="ReferrerUrl" />
+		<property name="CreatedOnUtc" column="CreatedOnUtc" />
+	</class>
+</hibernate-mapping>

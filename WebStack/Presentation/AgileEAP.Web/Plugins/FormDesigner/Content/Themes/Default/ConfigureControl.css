@@ -1,0 +1,150 @@
+﻿html, body
+{
+    height: 100%;
+    overflow: hidden;
+    background-color:white;
+}
+
+form
+{
+    height: 100%;
+    overflow: auto;
+}
+
+#configure_tabs
+{
+    height: 100%;
+    /*overflow: auto;*/
+}
+
+.data_left
+{
+    float: left;
+    text-align: right;
+    width: 100px;
+    height: 23px;
+    line-height: 23px;
+    margin-top: 7px;
+   
+}
+
+.data_left_two
+{
+    float: left;
+    text-align: right;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.data_right_two
+{
+    float: left;
+    width: 175px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.data_right
+{
+    margin-top: 7px;
+    padding-top: 3px;
+    float: left;
+    width: 450px;
+}
+
+.container
+{
+    clear: both;
+}
+
+#configure_show, #configure_data
+{
+    margin: 0 auto;
+}
+
+#btnchoose
+{
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.choiceconfigure
+{
+    float: right;
+    overflow: hidden;
+    width: 18px;
+    height: 20px;
+    cursor: pointer;
+    background: url("/Plugins/Workflow/Content/Themes/Default/Images/formControlConfig.gif") center no-repeat;
+}
+
+.btn_add
+{
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/add.png) center no-repeat;
+}
+
+.btn_delete
+{
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/delete.png) center no-repeat;
+}
+
+.btn_up
+{
+    float: left;
+    overflow: hidden;
+    width: 8px;
+    height: 20px;
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/moveup.png) center no-repeat;
+}
+
+.btn_down
+{
+    float: left;
+    overflow: hidden;
+    width: 8px;
+    height: 20px;
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/movedown.png) center no-repeat;
+}
+
+/*.ui-menu
+{
+    width: 200px;
+}*/
+.ui-menu-item
+{
+    width:220px;
+}
+.ui-autocomplete
+{
+    height:200px;
+    overflow:auto;
+}
+.TableInfo
+{
+    overflow: auto;
+    height: 200px;
+    width: 450px;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+     z-index: 2;
+}
+#tree
+{
+    height:200px;
+    overflow:auto;
+}
+

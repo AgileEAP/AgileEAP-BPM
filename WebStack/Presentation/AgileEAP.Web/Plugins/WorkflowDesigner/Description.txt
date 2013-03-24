@@ -1,0 +1,8 @@
+﻿Group: 基础应用
+FriendlyName: 流程设计器
+SystemName: WorkflowDesigner
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP 
+DisplayOrder: 12
+FileName:AgileEAP.Plugin.WorkflowDesigner.dll

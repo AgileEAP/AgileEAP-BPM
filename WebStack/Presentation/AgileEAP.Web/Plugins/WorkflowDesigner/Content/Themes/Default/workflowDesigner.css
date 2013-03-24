@@ -1,0 +1,245 @@
+﻿html, body
+{
+    height: 100%;
+    width: 100%;
+}
+
+#menus
+{
+    height: 30px;
+    width: 100%;
+    background-color: silver;
+}
+
+#toolbars
+{
+    clear: both;
+    height: 25px;
+    width: 100%;
+    background-color: #DAE7F5;
+}
+
+#header_menu
+{
+    float: left;
+}
+
+#header_toolbar
+{
+    float: left;
+}
+
+ul
+{
+    margin: 0 auto;
+}
+
+    ul li
+    {
+        list-style-type: none;
+    }
+
+.menu
+{
+    float: left;
+    margin-left: 10px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.toolbar
+{
+    float: left;
+    margin-left: 5px;
+    padding-top: 2px;
+    cursor: pointer;
+    border: 1px;
+}
+
+#mainbody
+{
+    background-color: #E3E1DD;
+    height: 100%;
+}
+
+#main_leftcontent
+{
+    clear: both;
+    float: left;
+    border: 1px solid;
+    background: white;
+}
+
+#toolbox_title
+{
+    width: 80px;
+    height: 23px;
+    line-height: 23px;
+}
+
+#toolbox_ativities
+{
+    width: 80px;
+    height: 30px;
+}
+
+#toolbox_ativities
+{
+    background: url(/Plugins/WorkflowDesigner/Content/Themes/Default/images/Background2.png) top left repeat;
+}
+
+#toolbox_content
+{
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    width: 80px;
+}
+
+.ativityImg
+{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#main_designercontent
+{
+    float: left;
+    border: 1px solid;
+}
+
+#tabcontainer
+{
+    margin: 0px;
+    padding-left: 7px;
+    background-color: #E4E7EC;
+    height: 23px;
+    float: left;
+}
+
+#designer_title
+{
+    background: url(/Plugins/WorkflowDesigner/Content/Themes/Default/images/Background2.png) top left repeat;
+    height: 30px;
+    line-height: 25px;
+    clear: both;
+}
+
+#designer_content
+{
+    background: white;
+}
+
+#main_attributecontent
+{
+    border: 1px solid;
+    float: left;
+}
+
+#attribute_title
+{
+    height: 23px;
+    line-height: 23px;
+}
+
+#attribute_ativity
+{
+    background: url(/Plugins/WorkflowDesigner/Content/Themes/Default/images/Background2.png) top left repeat;
+    height: 30px;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 4px;
+}
+    #attribute_ativity img
+    {
+        margin-bottom:-3px;
+    }
+
+#attribute_content
+{
+    background: white;
+}
+
+td
+{
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+input
+{
+    border: 0px;
+}
+
+select
+{
+    border: 0px;
+    width: 100%;
+}
+
+#contexmenu, #linestyle
+{
+    border: 1px solid;
+    width: 60px;
+    /*height: 80px;*/
+    height: auto;
+    background: #eee;
+    position: absolute;
+    text-align: center;
+    z-index: 999999;
+}
+
+.menuedit
+{
+    border: 1px solid;
+    width: 60px;
+    height: auto;
+    background: #eee;
+    position: absolute;
+    text-align: center;
+    z-index: 999999;
+}
+
+.attribute
+{
+    width: 100%;
+    height: 100%;
+}
+
+.aLabel
+{
+    z-index: 500;
+}
+
+.ui-tabs
+{
+    position: static;
+}
+
+#tabs .tabs-spacer
+{
+    float: left;
+    height: 200px;
+}
+
+.tabs-bottom .ui-tabs-nav
+{
+    clear: left;
+    padding: 0 .2em .2em .2em;
+}
+
+    .tabs-bottom .ui-tabs-nav li
+    {
+        top: auto;
+        bottom: 0;
+        margin: 0 .2em 1px 0;
+        border-bottom: auto;
+        border-top: 0px;
+    }
+
+        .tabs-bottom .ui-tabs-nav li.ui-tabs-active
+        {
+            margin-top: -1px;
+            padding-top: 1px;
+        }

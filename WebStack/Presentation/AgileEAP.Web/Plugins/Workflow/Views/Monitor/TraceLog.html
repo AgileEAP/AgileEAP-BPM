@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/Plugins/Resources/Scripts/jquery-1.8.2.js"></script>
+    <script src="/Plugins/Resources/Scripts/kendo/2012.3.1114/kendo.web.min.js"></script>
+    <link href="/Plugins/Resources/Content/kendo/2012.3.1114/kendo.common.min.css" rel="stylesheet" />
+    <link href="/Plugins/Resources/Content/kendo/2012.3.1114/kendo.default.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="example" class="k-content">
+        <div id="grid"></div>
+        <script>
+            $(document).ready(function () {
+                $("#grid").kendoGrid({
+                    dataSource: {
+                        type: "json",
+                        transport: {
+                            read: "/workflow/Monitor/JsonTraceLog"
+                        },
+                        schema: {
+                            model: {
+                                fields: {
+                                    Operator: { type: "string" },
+                                    ClientIP: { type: "string" },
+                                    Message: { type: "string" },
+                                }
+                            }
+                        },
+                        pageSize: 10,
+                        serverPaging: true,
+                        serverFiltering: true,
+                        serverSorting: true
+                    },
+                    height: 250,
+                    filterable: true,
+                    sortable: true,
+                    pageable: true,
+                    columns: [{
+                        field: "Operator",
+                        title: "操作员",
+                        width: 100
+                    }, {
+                        field: "ClientIP",
+                        title: "操作IP",
+                        width: 200
+                    }, {
+                        field: "Message",
+                        title: "消息"
+                    }
+                    ]
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

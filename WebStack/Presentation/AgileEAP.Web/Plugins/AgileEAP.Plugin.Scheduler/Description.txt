@@ -1,0 +1,9 @@
+﻿Group: 基础应用
+FriendlyName: 工作任务调度
+SystemName: Scheduler
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP 
+DisplayOrder: 1
+AutoInstall:false
+FileName:AgileEAP.Plugin.Scheduler.dll

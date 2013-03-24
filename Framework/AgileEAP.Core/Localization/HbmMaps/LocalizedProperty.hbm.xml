@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Core.Localization" assembly="AgileEAP.Core">
+	<class name="AgileEAP.Core.Localization.LocalizedProperty, AgileEAP.Core" table="AB_LocalizedProperty" lazy="true">
+		<id name="ID" column="Id">
+			<generator class="native" />
+		</id>
+		<property name="EntityId" column="EntityId" />
+		<property name="LanguageId" column="LanguageId" />
+		<property name="LocaleKeyGroup" column="LocaleKeyGroup" />
+		<property name="LocaleKey" column="LocaleKey" />
+		<property name="LocaleValue" column="LocaleValue" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  This file contains basic settings needed for most web apps.
+  For full Combres settings (with explanation), refer to the sample definition file: 
+    Samples\Sample Data Files\combres_full_with_annotation.xml
+-->
+<combres xmlns='urn:combres'>
+  <filters>
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
+    <filter type="Combres.Filters.DotLessCssFilter, Combres" acceptedResourceSets="dotLessCss" />
+  </filters>
+  <resourceSets url="~/combres.axd"
+                defaultDuration="30"
+                defaultVersion="1.0"
+                defaultDebugEnabled="true"
+                defaultIgnorePipelineWhenDebug="false"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="60">
+
+    <resourceSet name="baseCss" type="css">
+      <resource path="~/Content/Styles/base.css" />
+    </resourceSet>
+
+    <resourceSet name="DefaultSiteCss" type="css">
+      <resource path="~/Themes/Default/Content/site.css" />
+      <resource path="~/Content/Styles/base.css" />
+    </resourceSet>
+
+    <resourceSet name="BlueSiteCss" type="css">
+      <resource path="~/Themes/Default/Content/site.css" />
+      <resource path="~/Content/Styles/base.css" />
+    </resourceSet>
+    
+    <resourceSet name="DefaultIndexCss" type="css">
+      <resource path="~/Themes/Default/Content/index.css" />
+    </resourceSet>
+
+    <resourceSet name="BlueIndexCss" type="css">
+      <resource path="~/Themes/Default/Content/index.css" />
+    </resourceSet>
+    
+    <resourceSet name="JqueryJs" type="js">
+      <resource path="~/Scripts/jquery.min.js" />
+    </resourceSet>
+
+    <resourceSet name="SiteJs" type="js">
+      <resource path="~/Scripts/jquery.min.js" />
+      <resource path="~/Scripts/Json2.js" />
+      <resource path="~/Scripts/jquery.query.js" />
+      <resource path="~/Scripts/Site.js" />
+      <resource path="~/Scripts/correctpng.js" />
+      <resource path="~/Scripts/JQuery.LoaddingBar/LoaddingBar.js" />
+    </resourceSet>
+
+    <resourceSet name="DefaultDetailCss" type="css">
+      <resource path="~/Skins/default/Jquery/jquery-ui-1.8.6.custom.dialog.css" />
+      <resource path="~/Skins/default/PluginStyles/DatePicker/datepicker.css" />
+    </resourceSet>
+
+    <resourceSet name="BlueDetailCss" type="css">
+      <resource path="~/Skins/Blue/Jquery/jquery-ui-1.8.6.custom.dialog.css" />
+      <resource path="~/Skins/Blue/PluginStyles/DatePicker/datepicker.css" />
+    </resourceSet>
+
+    <resourceSet name="DetailJs" type="js">
+      <resource path="~/Scripts/jquery.ui/jquery.ui.core.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.widget.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.button.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.mouse.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.draggable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.position.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.resizable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.dialog.js" />
+      <resource path="~/Scripts/formValidator.js" />
+      <resource path="~/Scripts/formValidatorRegex.js" />
+      <resource path="~/Scripts/Dialog.js" />
+    </resourceSet>
+
+    <resourceSet name="BlueManagerCss" type="css">
+      <resource path="~/Skins/Blue/Jquery/jquery-ui-1.8.6.custom.dialog.css" />
+      <resource path="~/Skins/Blue/PluginStyles/DatePicker/datepicker.css" />
+    </resourceSet>
+
+    <resourceSet name="DefaultManagerCss" type="css">
+      <resource path="~/Skins/default/Jquery/jquery-ui-1.8.6.custom.dialog.css" />
+      <resource path="~/Skins/default/PluginStyles/DatePicker/datepicker.css" />
+    </resourceSet>
+
+    <resourceSet name="ManagerJs" type="js">
+      <resource path="~/Scripts/jquery.ui/jquery.ui.core.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.widget.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.button.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.mouse.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.draggable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.position.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.resizable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.dialog.js" />
+      <resource path="~/Scripts/Dialog.js" />
+    </resourceSet>
+
+    <resourceSet name="CookieJs" type="js">
+      <resource path="~/Scripts/Cookie.js" />
+    </resourceSet>
+
+    <resourceSet name="GridViewJs" type="js">
+      <resource path="~/Scripts/GridView.js" />
+    </resourceSet>
+
+    <resourceSet name="DefaultContextMenuCss" type="css">
+      <resource path="~/Skins/default/Jquery/jquery.contextMenu.css" />
+    </resourceSet>
+
+    <resourceSet name="BlueContextMenuCss" type="css">
+      <resource path="~/Skins/blue/Jquery/jquery.contextMenu.css" />
+    </resourceSet>
+
+    <resourceSet name="ContextMenuJs" type="js">
+      <resource path="~/Scripts/jquery.contextMenu/jquery.contextMenu.js" />
+    </resourceSet>
+
+    <resourceSet name="FormwizardJs" type="js">
+      <resource path="~/Scripts/jquery.formwizard/jquery.form.js" />
+      <resource path="~/Scripts/jquery.formwizard/bbq.js" />
+      <resource path="~/Scripts/jquery.formwizard/jquery.form.wizard-3.0.5.js" />
+    </resourceSet>
+
+    <resourceSet name="ProgressbarJs" type="js">
+      <resource path="~/Scripts/Jquery/jquery.progressbar.js" />
+    </resourceSet>
+
+    <resourceSet name="TabJs" type="js">
+      <resource path="~/Scripts/Tab.js" />
+    </resourceSet>
+
+    <resourceSet name="BlueTabCss" type="css">
+      <resource path="~/Skins/Blue/Styles/toggle.css" />
+      <resource path="~/Skins/Blue/Styles/tabs.css" />
+    </resourceSet>
+
+    <resourceSet name="DefaultTabCss" type="css">
+      <resource path="~/Skins/Default/Styles/toggle.css" />
+      <resource path="~/Skins/Default/Styles/tabs.css" />
+    </resourceSet>
+    
+    <resourceSet name="EFormJs" type="js">
+      <resource path="~/Scripts/jquery.ui/jquery.ui.core.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.widget.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.button.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.mouse.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.draggable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.position.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.resizable.js"/>
+      <resource path="~/Scripts/jquery.ui/jquery.ui.dialog.js" />
+      <resource path="~/Scripts/Dialog.js" />
+    </resourceSet>
+
+    <resourceSet name="DefaultEFormCss" type="css">
+      <resource path="~/Skins/Default/Styles/toggle.css" />
+      <resource path="~/Skins/Default/Styles/tabs.css" />
+    </resourceSet>
+
+    <resourceSet name="BlueEFormCss" type="css">
+      <resource path="~/Skins/Default/Styles/toggle.css" />
+      <resource path="~/Skins/Default/Styles/tabs.css" />
+    </resourceSet>
+    
+    <resourceSet name="CheckPlug_inJs" type="js">
+      <resource path="~/Plugins/eCloud/Scripts/CheckPlug_in.js" />
+    </resourceSet>
+
+    <resourceSet name="LoaddingBarJs" type="js">
+      <resource path="~/Scripts/JQuery.LoaddingBar/LoaddingBar.js" />
+    </resourceSet>
+
+    <resourceSet name="CorrectPngJs" type="js">
+      <resource path="~/Scripts/correctpng.js" />
+    </resourceSet>
+  </resourceSets>
+</combres>

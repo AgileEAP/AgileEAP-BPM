@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Core.Localization" assembly="AgileEAP.Core">
+	<class name="AgileEAP.Core.Localization.LocaleStringResource, AgileEAP.Core" table="AB_LocaleStringResource" lazy="true">
+		<id name="ID" column="Id">
+			<generator class="native" />
+		</id>
+		<property name="LanguageId" column="LanguageId" />
+		<property name="ResourceName" column="ResourceName" />
+		<property name="ResourceValue" column="ResourceValue" />
+	</class>
+</hibernate-mapping>

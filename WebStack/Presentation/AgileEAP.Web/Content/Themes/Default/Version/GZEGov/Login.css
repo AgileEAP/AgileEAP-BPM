@@ -1,0 +1,123 @@
+﻿* {
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px;
+}
+
+BODY {
+    POSITION: relative;
+    BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/bg.jpg) center top;
+}
+
+TD {
+    font-size: 16px;
+}
+
+#mainbg {
+    Z-INDEX: 1;
+    POSITION: absolute;
+    WIDTH: 700px;
+    HEIGHT: 405px;
+    MARGIN-LEFT: -350px;
+    TOP: 130px;
+    LEFT: 50%;
+}
+
+#pad {
+    POSITION: absolute;
+    COLOR: #fff;
+    TOP: 109px;
+    LEFT: 100px;
+}
+
+    #pad P {
+        MARGIN-BOTTOM: 32px;
+        _margin-bottom: 30px;
+    }
+
+    #pad A {
+        COLOR: #fff;
+        FONT-SIZE: 12px;
+    }
+
+.logintext {
+    line-height: 24px;
+    BORDER-BOTTOM: #999 1px solid;
+    BORDER-LEFT: #999 1px solid;
+    BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/inputbg.gif) #fff;
+    MARGIN: 5px 0px;
+    WIDTH: 210px;
+    HEIGHT: 24px;
+    COLOR: #000;
+    FONT-SIZE: 12px;
+    BORDER-TOP: #999 1px solid;
+    BORDER-RIGHT: #999 1px solid;
+    margin-left: 8px;
+}
+
+.verif {
+    line-height: 24px;
+    BORDER-BOTTOM: #999 1px solid;
+    BORDER-LEFT: #999 1px solid;
+    BACKGROUND-COLOR: #fff;
+    MARGIN: 5px 0px;
+    WIDTH: 62px;
+    HEIGHT: 24px;
+    COLOR: #000;
+    FONT-SIZE: 12px;
+    BORDER-TOP: #999 1px solid;
+    BORDER-RIGHT: #999 1px solid;
+}
+
+.verifimg {
+    MARGIN: 0px 5px;
+    VERTICAL-ALIGN: middle;
+}
+
+#copy {
+    MARGIN-BOTTOM: 0px;
+    COLOR: #bddefd;
+    FONT-SIZE: 12px;
+    PADDING-TOP: 35px;
+}
+
+.loginbtn {
+    BORDER-RIGHT-WIDTH: 0px;
+    MARGIN-TOP: 5px;
+    WIDTH: 78px;
+    BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/btn01.png) left top no-repeat;
+    *BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/btn01.gif) left top no-repeat;
+    BORDER-TOP-WIDTH: 0px;
+    BORDER-BOTTOM-WIDTH: 0px;
+    HEIGHT: 34px;
+    BORDER-LEFT-WIDTH: 0px;
+    MARGIN-RIGHT: 10px;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .loginbtn:hover {
+        BORDER-RIGHT-WIDTH: 0px;
+        MARGIN-TOP: 5px;
+        WIDTH: 78px;
+        BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/btn02.png) left top no-repeat;
+        *BACKGROUND: url(/Content/Themes/Default/Version/PCI/Images/btn02.gif) left top no-repeat;
+        BORDER-TOP-WIDTH: 0px;
+        BORDER-BOTTOM-WIDTH: 0px;
+        HEIGHT: 34px;
+        BORDER-LEFT-WIDTH: 0px;
+        MARGIN-RIGHT: 10px;
+        color: #FFF;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+input {
+    width: 200px;
+    height: 20px;
+    vertical-align: middle;
+    line-height: 20px;
+}

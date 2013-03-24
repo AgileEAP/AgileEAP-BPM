@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F58FC8C-E441-409D-A97F-A5596B4A10DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.Workflow</RootNamespace>
+    <AssemblyName>AgileEAP.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Lib\AgileEAP\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AgileEAP.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\AgileEAP\AgileEAP.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\AgileEAP\AgileEAP.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\Lib\Packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>..\..\Lib\packages\javascript-build-task.1.0.0\lib\net35\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Lib\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Definition\ActionURL.cs" />
+    <Compile Include="Definition\ActivateRule.cs" />
+    <Compile Include="Definition\Activity.cs" />
+    <Compile Include="Definition\Argument.cs" />
+    <Compile Include="Definition\AutoActivity.cs" />
+    <Compile Include="Definition\BendPoint.cs" />
+    <Compile Include="Definition\BizVariable.cs" />
+    <Compile Include="Definition\CalendarSet.cs" />
+    <Compile Include="Definition\ConfigureElement.cs" />
+    <Compile Include="Definition\CustomAction.cs" />
+    <Compile Include="Definition\EndActivity.cs" />
+    <Compile Include="Definition\Enums.cs" />
+    <Compile Include="Definition\FreeFlowRule.cs" />
+    <Compile Include="Definition\IConfigureElement.cs" />
+    <Compile Include="Definition\ListItem.cs" />
+    <Compile Include="Definition\ManualActivity.cs" />
+    <Compile Include="Definition\MultiWorkItem.cs" />
+    <Compile Include="Definition\Note.cs" />
+    <Compile Include="Definition\ObejectFactory.cs" />
+    <Compile Include="Definition\Parameter.cs" />
+    <Compile Include="Definition\Participant.cs" />
+    <Compile Include="Definition\Participantor.cs" />
+    <Compile Include="Definition\ProcessActivity.cs" />
+    <Compile Include="Definition\ProcessDefine.cs" />
+    <Compile Include="Definition\RemindInfo.cs" />
+    <Compile Include="Definition\RouterActivity.cs" />
+    <Compile Include="Definition\StartActivity.cs" />
+    <Compile Include="Definition\Style.cs" />
+    <Compile Include="Definition\SubflowActivity.cs" />
+    <Compile Include="Definition\TimeLimit.cs" />
+    <Compile Include="Definition\TimeLimitInfo.cs" />
+    <Compile Include="Definition\Transition.cs" />
+    <Compile Include="Definition\TriggerEvent.cs" />
+    <Compile Include="Domain\ActivityInst.cs" />
+    <Compile Include="Domain\Agent.cs" />
+    <Compile Include="Domain\AgentCandidate.cs" />
+    <Compile Include="Domain\AgentItem.cs" />
+    <Compile Include="Domain\ExtendAttr.cs" />
+    <Compile Include="Domain\Participant.cs" />
+    <Compile Include="Domain\ProcessDef.cs" />
+    <Compile Include="Domain\ProcessForm.cs" />
+    <Compile Include="Domain\ProcessInst.cs" />
+    <Compile Include="Domain\TraceLog.cs" />
+    <Compile Include="Domain\TransControl.cs" />
+    <Compile Include="Domain\Transition.cs" />
+    <Compile Include="Domain\WorkItem.cs" />
+    <Compile Include="Engine\ActivityContext.cs" />
+    <Compile Include="Engine\ActivityRuntime.cs" />
+    <Compile Include="Engine\DefaultExecutor.cs" />
+    <Compile Include="Engine\Utility\WFUtil.cs" />
+    <Compile Include="Engine\EngineService.cs" />
+    <Compile Include="Engine\Enums\Enums.cs" />
+    <Compile Include="Engine\Exception\MessageException.cs" />
+    <Compile Include="Engine\Exception\WFException.cs" />
+    <Compile Include="Engine\ActivityEvent.cs" />
+    <Compile Include="Engine\IAutoActivityHandler.cs" />
+    <Compile Include="Engine\IEngineService.cs" />
+    <Compile Include="Engine\IWorkflowEngine.cs" />
+    <Compile Include="Engine\IWorkflowPersistence.cs" />
+    <Compile Include="Engine\IWorkflowService.cs" />
+    <Compile Include="Engine\Notification.cs" />
+    <Compile Include="Engine\ProcessContext.cs" />
+    <Compile Include="Engine\ProcessRuntime.cs" />
+    <Compile Include="Engine\Scheduler.cs" />
+    <Compile Include="Engine\Trace\Trace.cs" />
+    <Compile Include="Engine\UUIDAttribute.cs" />
+    <Compile Include="Engine\WorkflowEngine.cs" />
+    <Compile Include="Engine\WorkflowPersistence.cs" />
+    <Compile Include="Engine\WorkItemContext.cs" />
+    <Compile Include="Engine\WorkItemRuntime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\HbmMaps\ActivityInst.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Agent.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\AgentCandidate.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\AgentItem.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\ExtendAttr.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Participant.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\ProcessDef.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\HbmMaps\ProcessForm.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\ProcessInst.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\TraceLog.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\TransControl.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Transition.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\WorkItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

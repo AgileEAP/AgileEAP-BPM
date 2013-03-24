@@ -1,0 +1,8 @@
+﻿Group: 基础应用
+FriendlyName: 工作流
+SystemName: Workflow
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP team
+DisplayOrder: 1
+FileName: AgileEAP.Plugin.Workflow.dll

@@ -1,0 +1,8 @@
+﻿Group:基础框架
+FriendlyName: 权限管理
+SystemName: Authorize
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP 
+DisplayOrder: 1
+FileName:AgileEAP.Plugin.Authorize.dll

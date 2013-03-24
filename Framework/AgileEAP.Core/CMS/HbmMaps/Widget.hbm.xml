@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Core.Cms" assembly="AgileEAP.Core">
+	<class name="AgileEAP.Core.Cms.Widget, AgileEAP.Core" table="AB_Widget" lazy="true">
+		<id name="ID" column="Id">
+			<generator class="native" />
+		</id>
+		<property name="WidgetZoneId" column="WidgetZoneId" />
+		<property name="PluginSystemName" column="PluginSystemName" />
+		<property name="DisplayOrder" column="DisplayOrder" />
+	</class>
+</hibernate-mapping>

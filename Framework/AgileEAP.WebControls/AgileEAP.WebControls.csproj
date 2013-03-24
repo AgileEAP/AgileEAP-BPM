@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43ADB08F-8069-4038-B950-E1AFE942B23A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.WebControls</RootNamespace>
+    <AssemblyName>AgileEAP.WebControls</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>framework.pfx</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Hiway.BasicFramework.WebControls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Lib\AgileEAP\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\AgileEAP.WebControls.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxTree\AjaxTree.cs" />
+    <Compile Include="AjaxTree\AjaxTreeNode.cs" />
+    <Compile Include="AjaxTree\AjaxTreeNodeCollection.cs" />
+    <Compile Include="AjaxTree\Enum.cs" />
+    <Compile Include="ChooseBox\ChooseBox.cs" />
+    <Compile Include="ComboBox\ComboBox.cs" />
+    <Compile Include="Combox\Combox.cs" />
+    <Compile Include="Combox\ComboxItem.cs" />
+    <Compile Include="CommandBar\CommandBar.cs" />
+    <Compile Include="CommandBar\CommandItem.cs" />
+    <Compile Include="DatePicker\DatePicker.cs" />
+    <Compile Include="DatePicker\DateQuantum.cs" />
+    <Compile Include="GridView\AjaxGrid.cs" />
+    <Compile Include="GridView\PagedGridView.cs" />
+    <Compile Include="HidTextBox.cs" />
+    <Compile Include="NavigateBar\NavigateItem.cs" />
+    <Compile Include="NavigateBar\NavigateBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeView\Enum.cs" />
+    <Compile Include="TreeView\TreeView.cs" />
+    <Compile Include="TreeView\TreeViewNode.cs" />
+    <Compile Include="TreeView\TreeViewNodeCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ComboBox\Resources\ComboBox.js" />
+    <Content Include="ComboBox\Resources\Combox.css" />
+    <EmbeddedResource Include="TreeView\Resources\zoom-in.gif" />
+    <EmbeddedResource Include="TreeView\Resources\true.gif" />
+    <EmbeddedResource Include="TreeView\Resources\TreeViewMax.js" />
+    <EmbeddedResource Include="TreeView\Resources\TreeViewMax.css" />
+    <EmbeddedResource Include="TreeView\Resources\TreeViewDragMax.js" />
+    <EmbeddedResource Include="TreeView\Resources\TreeViewDrag.js" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_plus.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_node.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_minus.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_folder_open.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView_folder.gif" />
+    <EmbeddedResource Include="TreeView\Resources\TreeView.js" />
+    <EmbeddedResource Include="TreeView\Resources\TreeView.css" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-vertical-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-top-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-root-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-onLoad.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-middle-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-enable.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable5.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable3.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-drag-disable.gif" />
+    <EmbeddedResource Include="TreeView\Resources\treeView-bottom-line.gif" />
+    <EmbeddedResource Include="TreeView\Resources\locked_small.gif" />
+    <EmbeddedResource Include="TreeView\Resources\jquery-1.3.2-vsdoc.js" />
+    <EmbeddedResource Include="TreeView\Resources\icon_newwindow_12x.bmp" />
+    <EmbeddedResource Include="TreeView\Resources\folder_sub.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_open.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_lastsub.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_folder.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_dots.gif" />
+    <EmbeddedResource Include="TreeView\Resources\folder_close.gif" />
+    <EmbeddedResource Include="TreeView\Resources\error_small.gif" />
+    <EmbeddedResource Include="TreeView\Resources\DragMax.js" />
+    <EmbeddedResource Include="TreeView\Resources\dragDrop_ind2.gif" />
+    <EmbeddedResource Include="TreeView\Resources\dragDrop_ind1.gif" />
+    <EmbeddedResource Include="TreeView\Resources\Drag.js" />
+    <EmbeddedResource Include="TreeView\Resources\currentStep.gif" />
+    <EmbeddedResource Include="TreeView\Resources\context-menu-gradient.gif" />
+    <EmbeddedResource Include="TreeView\Resources\collectionError.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-unchecked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-half-checked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\checkbox-checked.gif" />
+    <EmbeddedResource Include="TreeView\Resources\agentDown.gif" />
+    <EmbeddedResource Include="GridView\Resources\add.gif" />
+    <EmbeddedResource Include="GridView\Resources\condition.gif" />
+    <EmbeddedResource Include="GridView\Resources\csv.gif" />
+    <EmbeddedResource Include="GridView\Resources\display.gif" />
+    <EmbeddedResource Include="GridView\Resources\edit.gif" />
+    <EmbeddedResource Include="GridView\Resources\first.gif" />
+    <EmbeddedResource Include="GridView\Resources\first.png" />
+    <EmbeddedResource Include="GridView\Resources\go.png" />
+    <EmbeddedResource Include="GridView\Resources\gridview.js" />
+    <EmbeddedResource Include="GridView\Resources\ajaxgrid.js" />
+    <EmbeddedResource Include="GridView\Resources\ajaxgridMax.js" />
+    <EmbeddedResource Include="GridView\Resources\gridviewMax.js" />
+    <EmbeddedResource Include="GridView\Resources\ajaxgridMax.css" />
+    <EmbeddedResource Include="Combox\Resources\ComboxMax.js" />
+    <Content Include="GridView\Resources\jquery-1.4.2.js" />
+    <Content Include="GridView\Resources\jquery-1.4.2.min-vsdoc.js" />
+    <Content Include="GridView\Resources\jquery-1.4.2.min.js" />
+    <EmbeddedResource Include="GridView\Resources\last.gif" />
+    <EmbeddedResource Include="GridView\Resources\last.png" />
+    <EmbeddedResource Include="GridView\Resources\next.gif" />
+    <EmbeddedResource Include="GridView\Resources\next.png" />
+    <EmbeddedResource Include="GridView\Resources\onLoad.gif" />
+    <EmbeddedResource Include="GridView\Resources\previous.gif" />
+    <EmbeddedResource Include="GridView\Resources\previous.png" />
+    <EmbeddedResource Include="GridView\Resources\refresh.png" />
+    <EmbeddedResource Include="GridView\Resources\ajaxgrid.css" />
+    <EmbeddedResource Include="GridView\Resources\txt.gif" />
+    <EmbeddedResource Include="GridView\Resources\xls.gif" />
+    <EmbeddedResource Include="GridView\Resources\xls.png" />
+    <EmbeddedResource Include="AjaxTree\Resources\AjaxTree.css" />
+    <EmbeddedResource Include="AjaxTree\Resources\AjaxTree.js" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-bottom-line.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-middle-line.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-root-line.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-top-line.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-vertical-line.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree_folder.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree_folder_open.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree_minus.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree_node.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree_plus.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\checkbox-checked.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\checkbox-half-checked.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\checkbox-unchecked.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\context-menu-gradient.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\dragDrop_ind1.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\dragDrop_ind2.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_close.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_dots.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_folder.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_lastsub.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_open.gif" />
+    <EmbeddedResource Include="AjaxTree\Resources\folder_sub.gif" />
+    <None Include="AjaxTree\Resources\jquery-1.3.2-vsdoc.js" />
+    <EmbeddedResource Include="AjaxTree\Resources\ajaxTree-onLoad.gif" />
+    <EmbeddedResource Include="CommandBar\Resources\CommandBar.js" />
+    <EmbeddedResource Include="ChooseBox\Resources\ChooseBox.js" />
+    <EmbeddedResource Include="AjaxTree\Resources\Drag.js" />
+    <EmbeddedResource Include="AjaxTree\Resources\agentDown.gif" />
+    <Content Include="AjaxTree\Resources\ajaxTree-drag-disable.gif" />
+    <Content Include="AjaxTree\Resources\ajaxTree-drag-disable3.gif" />
+    <Content Include="AjaxTree\Resources\ajaxTree-drag-disable5.gif" />
+    <Content Include="AjaxTree\Resources\ajaxTree-drag-enable.gif" />
+    <Content Include="AjaxTree\Resources\AjaxTreeDrag.js" />
+    <EmbeddedResource Include="DatePicker\Resources\DateQuantum.js" />
+    <Content Include="AjaxTree\Resources\collectionError.gif" />
+    <Content Include="AjaxTree\Resources\currentStep.gif" />
+    <Content Include="AjaxTree\Resources\error_small.gif" />
+    <Content Include="AjaxTree\Resources\icon_newwindow_12x.bmp" />
+    <Content Include="AjaxTree\Resources\locked_small.gif" />
+    <Content Include="AjaxTree\Resources\true.gif" />
+    <Content Include="AjaxTree\Resources\zoom-in.gif" />
+    <EmbeddedResource Include="Combox\Resources\Combox.css" />
+    <EmbeddedResource Include="Combox\Resources\Combox.js" />
+    <EmbeddedResource Include="Combox\Resources\ComboxIcon.gif" />
+    <EmbeddedResource Include="ChooseBox\Resources\chooseBox.png" />
+    <EmbeddedResource Include="NavigateBar\Resources\NavigateBar.css" />
+    <EmbeddedResource Include="NavigateBar\Resources\NavigateBar.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="framework.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

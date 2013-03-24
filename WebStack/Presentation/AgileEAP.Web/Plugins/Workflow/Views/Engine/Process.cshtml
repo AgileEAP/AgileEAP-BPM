@@ -1,0 +1,90 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@{
+    Layout = "../Shared/_Kendo.cshtml";
+}
+@using AgileEAP.MVC
+@using AgileEAP.Core
+@using AgileEAP.Core.Extensions
+@using AgileEAP.Workflow.Enums
+@using AgileEAP.Plugin.Workflow.Models
+@using AgileEAP.Workflow.Domain
+@using Kendo.Mvc.UI
+@Html.BuilderToolbar()
+@(Html.Kendo().Grid<ProcessDefModel>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(o => o.ID).Title("ID").Hidden();
+        columns.Bound(o => o.Text).Title("显示名");
+        columns.Bound(o => o.Name).Title("名称");
+        columns.Bound(o => o.CurrentState).Title("状态");
+        columns.Bound(o => o.CategoryID).Title("分类");
+        columns.Bound(o => o.CurrentFlag).Title("是否当前版本");
+        columns.Bound(o => o.IsActive).Title("是否有活动实例");
+        columns.Bound(o => o.Version).Title("版本");
+    })
+    .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+    .Pageable(o =>
+    {
+        o.PageSizes(new int[] { 10, 15, 20 }); o.Messages(m =>
+        {
+            m.ItemsPerPage("项每页");
+        });
+    }).Sortable().Filterable().DataSource(dataSource => dataSource
+        .Ajax()
+        .Read(read => read.Action("Process_Filter", "Engine")).PageSize(Configure.Get<int>("PageSize", 15)))
+        )
+<script type="text/javascript">
+
+    function execEngineCommand(cmd) {
+        var row = $("#Grid").find(".k-state-selected");
+        var processDefID = row.find("td").eq(0).text()
+        if (processDefID == null || processDefID == undefined || processDefID == "") {
+            alert("请先选择流程实例");
+            return;
+        }
+        var processbar = window.parent.$("#processbar");
+        processbar.processbar({ message: '正在处理...' });
+        if (cmd == "DeleteProcess") {
+            if (!confirm("你确定要删除该流程定义吗?")) {
+                return false;
+            }
+        }
+        $.post("/Workflow/Engine/" + cmd, { processDefID: processDefID }, function (ajaxResult) {
+            processbar.complete();
+            if (ajaxResult && ajaxResult.Result == 1) {
+                if (cmd == "DeleteProcess") {
+                        row.remove();
+                }
+                else {
+                    row.find("td").eq(3).text(ajaxResult.RetValue);
+                }
+            }
+            alert(ajaxResult.PromptMsg);
+        });
+    }
+
+    function newProcess() {
+        window.parent.showDialog("actionDialog", "流程图设计器", "/WorkflowDesigner", 1050, 700);
+    }
+
+    function designProcess() {
+        var row = $("#Grid").find(".k-state-selected");
+        var processDefID = row.find("td").eq(0).text()
+        if (processDefID == null || processDefID == undefined || processDefID == "") {
+            alert("请选择流程");
+            return;
+        }
+        window.parent.showDialog("actionDialog", "流程图设计器", "/WorkflowDesigner?processDefID=" + processDefID, 1050, 700);
+    }
+
+    function cloneProcess() {
+        var row = $("#Grid").find(".k-state-selected");
+        var processDefID = row.find("td").eq(0).text()
+        if (processDefID == null || processDefID == undefined || processDefID == "") {
+            alert("请选择流程");
+            return;
+        }
+        window.parent.showDialog("actionDialog", "流程图设计器", "/WorkflowDesigner?action=cloneProcess&processDefID=" + processDefID, 1050, 700);
+    }
+</script>

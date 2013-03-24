@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.Organization, AgileEAP.Infrastructure" table="OM_Organization" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="Code" column="Code" />
+		<property name="ParentID" column="ParentID" />
+		<property name="Name" column="Name" />
+		<property name="Grade" column="Grade" />
+		<property name="Type" column="Type" />
+		<property name="Address" column="Address" />
+		<property name="ZipCode" column="ZipCode" />
+		<property name="GovernPosition" column="GovernPosition" />
+		<property name="Governor" column="Governor" />
+		<property name="Manager" column="Manager" />
+		<property name="ContactMan" column="ContactMan" />
+		<property name="ContactPhone" column="ContactPhone" />
+		<property name="Email" column="Email" />
+		<property name="WebURL" column="WebURL" />
+		<property name="Status" column="Status" />
+		<property name="Area" column="Area" />
+		<property name="SortOrder" column="SortOrder" />
+		<property name="Description" column="Description" />
+		<property name="Creator" column="Creator" />
+		<property name="CreateTime" column="CreateTime" />
+		<property name="Modifier" column="Modifier" />
+		<property name="ModifyTime" column="ModifyTime" />
+		<property name="SapID" column="SapID" />
+		<property name="CorpID" column="CorpID" />
+    <property name="OwnerOrg" column="OwnerOrg" />
+	</class>
+</hibernate-mapping>

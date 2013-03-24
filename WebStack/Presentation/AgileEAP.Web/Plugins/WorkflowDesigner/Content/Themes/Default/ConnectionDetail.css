@@ -1,0 +1,78 @@
+﻿html, body, #main_bg, #main_bg2
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+#mainbody
+{
+    width: 99%;
+    height: 94%;
+}
+
+#tabbasic
+{
+    margin: 0 auto;
+    width: 600px;
+}
+
+#tabbasic
+{
+    padding-top: 20px;
+}
+
+fieldset
+{
+    padding: 10px;
+    border: 1px solid #cecece;
+}
+
+legend
+{
+    font-size: 15px;
+    color: black;
+}
+
+.left
+{
+    width: 100px;
+    float: left;
+    text-align: right;
+    line-height: 25px;
+    height: 25px;
+}
+
+.content
+{
+    line-height: 25px;
+    /*height: 25px;*/
+    vertical-align: middle;
+}
+
+#lineContent
+{
+    padding-left: 100px;
+    line-height: 25px;
+    height: 25px;
+}
+
+.rightcontent
+{
+    width: 400px;
+}
+
+.expressioncontent
+{
+    width: 400px;
+    height: 100px;
+}
+
+.split
+{
+    padding: 10px;
+}
+
+#defaultline, #complexexpression, #simpleexpression
+{
+    vertical-align: text-bottom;
+}

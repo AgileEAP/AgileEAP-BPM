@@ -1,0 +1,30 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@{ 
+    Script.Require("site").AtHead();
+    Script.Require("processbar").AtHead();
+    Style.Require("site_" + Theme);
+}
+@using AgileEAP.MVC;
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @Html.HeadScripts()
+    @RenderSection("styles", false)
+    @RenderSection("scripts", false)
+</head>
+<body>
+    @RenderBody()
+    <div id="actionDialog">
+    </div>
+    <div id="actionDialog2">
+    </div>
+    <div id="actionDialog3">
+    </div>
+    <div id="processbar" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    @Html.FootScripts()
+</body>
+</html>

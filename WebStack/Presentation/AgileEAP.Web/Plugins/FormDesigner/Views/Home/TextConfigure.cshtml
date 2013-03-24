@@ -1,0 +1,266 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Script.Require("jQuery").AtHead();
+    Script.Require("jQueryUI").AtHead();
+    Script.Require("site").AtHead();
+    Script.Require("colorpickerjs").AtHead();
+    Script.Require("ConfigureControljs").AtHead();
+
+   
+    Style.Require("colorpicker_" + Theme);
+    Style.Require("site_" + Theme);
+    Style.Require("smoothnessjQueryUI_" + Theme);
+    Style.Require("ConfigureControl_" + Theme);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Version.eClientName</title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @Html.HeadScripts()
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#controlcolor').ColorPicker({
+                color: '#0000ff',
+                onShow: function (colpkr) {
+                    $(colpkr).fadeIn(500);
+                    return false;
+                },
+                onHide: function (colpkr) {
+                    $(colpkr).fadeOut(500);
+                    return false;
+                },
+                onChange: function (hsb, hex, rgb) {
+                    $('#controlcolor').css('backgroundColor', '#' + hex);
+                    $('#controlcolor').val('#' + hex);
+                }
+            });
+            $('#controlbackground').ColorPicker({
+                color: '#0000ff',
+                onShow: function (colpkr) {
+                    $(colpkr).fadeIn(500);
+                    return false;
+                },
+                onHide: function (colpkr) {
+                    $(colpkr).fadeOut(500);
+                    return false;
+                },
+                onChange: function (hsb, hex, rgb) {
+                    $('#controlbackground').css('backgroundColor', '#' + hex);
+                    $('#controlbackground').val('#' + hex);
+                }
+            });
+
+            $("#save").button().click(function (event) {
+                event.preventDefault();
+                var controlOldID = $.query.get("ControlID");
+                var controlType = $.query.get("ControlType");
+                var fontFormat = "";
+                switch ($("#controlformat").val()) {
+                    case "normal": fontFormat = "font-weight: normal;"; break;
+                    case "weight": fontFormat = "font-weight: bold;"; break;
+                    case "oblique": fontFormat = "font-style: italic;"; break;
+                    case "underline": fontFormat = "text-decoration: underline;"; break;
+                    case "line-through": fontFormat = "text-decoration: line-through;"; break;
+                    case "sup": fontFormat = "vertical-align: sup;"; break;
+                    case "sub": fontFormat = "vertical-align: sub;"; break;
+                }
+                var backgroundContent = $('#controlbackground').val();
+                if ($("#control_background").val().indexOf("url") >= 0) {
+                    
+                    backgroundContent = encodeURIComponent($("#control_background").val());
+                }
+                customStyle = customStyle + ";" + fontFormat + "background:" + backgroundContent + ";font-size:" + $("#controlsize").val() + ";font-family:" + $("#controlfamily").val() + ";color:" + $("#controlcolor").val() + ";border:" + $("#controlborder").val();
+                if (typeof (parent.setContorlValue) == "function") {
+                    parent.setContorlValue({ CustomStyle: customStyle, ControlType: controlType, OldID: controlID, ID: $("#controlID").val(), Name: $("#controlID").val(), Text: $("#controlName").val(), Width: $("#controlWidth").val(), Height: $("#controlHeight").val() }, 1);
+                }
+                else {
+                    parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.setContorlValue({ CustomStyle: customStyle, ControlType: controlType, OldID: controlID, ID: $("#controlID").val(), Name: $("#controlID").val(), Text: $("#controlName").val(), Width: $("#controlWidth").val(), Height: $("#controlHeight").val() });
+                }
+
+                window.parent.$("#actionDialog2").dialog("close");
+            });
+            $("#cancel").button().click(function (event) {
+                event.preventDefault();
+                window.parent.$("#actionDialog2").dialog("close");
+            });
+            $("#controlId").click(function () {
+                configure.getDataSource({ ID: this.id, form: form });
+            });
+            var controlID = $.query.get("ControlID");
+            var form = null;
+            var me = null;
+            var customStyle;
+            if (parent.form) {
+                form = parent.form;
+                me = parent.document.getElementById(controlID);
+            }
+            else {
+                form = parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.form;
+                me = parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.document.getElementById(controlID);
+            }
+            var fields = form.Fields;
+            for (var i = 0; i < fields.length; i++) {
+                if (fields[i].Name == controlID) {
+                    customStyle = fields[i].CustomStyle;
+                    if ($.query.get("ControlType") == "Div") {
+                        $("#controlID").val(fields[i].Name);
+                    }
+                    else {
+                        $("#controlID").val(fields[i].Name);
+                        $("#configure_data_ID").css("display", "none");
+                    }
+                    $("#controlName").val(fields[i].Text);
+                    $("#controlWidth").val($(me).width());
+                    $("#controlHeight").val($(me).height());
+                    $("#controlsize").val($(me).css("font-size"));
+                    $("#controlcolor").val($(me).css("color"));
+                    $("#controlfamily").val($(me).css("font-family"));
+                    $("#controlborder").val($(me).css("border"));
+                    var meBackground = "";
+                   // alert($(me).css("backgroundPosition"));
+                   // alert($(me).css("backgroundRepeat"));
+                   // alert($(me).css("backgroundImage"));
+                   // alert($(me).css("backgroundColor"));
+                   // alert($(me).css("backgroundAttachment"));
+                    if($(me).css("backgroundColor"))
+                    {
+                        meBackground = meBackground + $(me).css("backgroundColor");
+                        $("#controlbackground").val($(me).css("backgroundColor"));
+                    }
+                    if ($(me).css("backgroundImage")) {
+                        decodeURIComponent
+                        var backgroundImg =$(me).css("backgroundImage");
+                       //backgroundImg = backgroundImg.slice(backgroundImg.lastIndexOf(":"));
+                        //backgroundImg = backgroundImg.slice(backgroundImg.indexOf("/"));
+                        
+                        meBackground = meBackground + " " + backgroundImg;
+                      
+                    }
+                    if ($(me).css("backgroundRepeat")) {
+                        meBackground = meBackground + " " + $(me).css("backgroundRepeat");
+                    }
+                    if ($(me).css("backgroundAttachment")) {
+                        meBackground = meBackground + " " + $(me).css("backgroundAttachment");
+                    }
+                    if ($(me).css("backgroundPosition")) {
+                        meBackground = meBackground + " " + $(me).css("backgroundPosition");
+                    }
+                    $("#control_background").val(meBackground);
+                    //else {
+                    //    if (!$.browser.msie) {
+                    //        var rgb = $(me).css("background");
+                    //        rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                    //        if (rgb && rgb.constructor == Array) {
+                    //            rgb = "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+                    //            $("#controlbackground").val(rgb);
+                    //        }
+                    //    }
+                    //}
+                    if ($(me).css("font-weight") == "normal") {
+                        $("#controlformat").val("normal");
+                    }
+                    if ($(me).css("font-weight") == "bold") {
+                        $("#controlformat").val("bold");
+                    }
+                    if ($(me).css("font-style") == "italic") {
+                        $("#controlformat").val("italic");
+                    }
+                    if ($(me).css("text-decoration") == "underline") {
+                        $("#controlformat").val("underline");
+                    }
+                    if ($(me).css("text-decoration") == "line-through") {
+                        $("#controlformat").val("line-through");
+                    }
+                    if ($(me).css("vertical-align") == "sup") {
+                        $("#controlformat").val("sup");
+                    }
+                    if ($(me).css("vertical-align") == "sub") {
+                        $("#controlformat").val("sub");
+                    }
+                }
+            }
+
+        });
+        function hex(x) { return ("0" + parseInt(x).toString(16)).slice(-2); }
+    </script>
+    <style type="text/css">
+</style>
+</head>
+<body>
+    <form>
+        <div id="container_data" style="padding-top: 20px">
+            <div id="configure_data">
+                <div id="configure_data_ID" class="container">
+                    <div class="data_left">容器ID</div>
+                    <input id="controlID" type="text" class="data_right" />
+                </div>
+                <div id="configure_data_name" class="container">
+                    <div class="data_left">文本</div>
+                    <input id="controlName" type="text" class="data_right" />
+                </div>
+                <div id="configure_data_background" class="container">
+                    <div class="data_left">背景图片</div>
+                    <input id="control_background" type="text" class="data_right" />
+                </div>
+                <div id="configure_data_size" class="container">
+                    <div class="data_left_two">大小</div>
+                    <select id="controlsize" class="data_right_two">
+                        <option value="8px">8</option>
+                        <option value="10px">10</option>
+                        <option value="12px" selected="selected">12</option>
+                        <option value="14px">14</option>
+                        <option value="18px">18</option>
+                        <option value="24px">24</option>
+                        <option value="36px">36</option>
+                    </select>
+                </div>
+                <div id="configure_data_format">
+                    <div class="data_left_two">字体格式</div>
+                    <select id="controlformat" class="data_right_two">
+                        <option value="normal" selected="selected">正常</option>
+                        <option value="bold">加粗</option>
+                        <option value="italic">倾斜</option>
+                        <option value="underline">下划线</option>
+                        <option value="line-through">删除线</option>
+                        <option value="sup">上标</option>
+                        <option value="sub">下标</option>
+                    </select>
+                </div>
+                <div id="configure_data_color" class="container">
+                    <div class="data_left_two">字体颜色</div>
+                    <input id="controlcolor" type="text" class="data_right_two" />
+                </div>
+                <div id="configure_data_family">
+                    <div class="data_left_two">字体</div>
+                    <input id="controlfamily" type="text" class="data_right_two" />
+                </div>
+
+                <div id="configure_data_backgroundcolor" class="container">
+                    <div class="data_left_two">背景颜色</div>
+                    <input id="controlbackground" type="text" class="data_right_two" />
+                </div>
+                <div id="configure_data_border">
+                    <div class="data_left_two">边框</div>
+                    <input id="controlborder" type="text" class="data_right_two" />
+                </div>
+                <div id="configure_data_width" class="container">
+                    <div class="data_left_two">宽度</div>
+                    <input id="controlWidth" type="text" class="data_right_two" />
+                </div>
+                <div id="configure_data_height">
+                    <div class="data_left_two">高度</div>
+                    <input id="controlHeight" type="text" class="data_right_two" />
+                </div>
+                <div id="btnchoose">
+                    <input type="button" id="save" value="确定" />
+                    <input type="button" id="cancel" value="取消" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

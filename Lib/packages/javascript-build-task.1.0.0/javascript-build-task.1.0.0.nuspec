@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>javascript-build-task</id>
+    <version>1.0.0</version>
+    <title>JavaScript Build Task</title>
+    <authors>Rob Chartier</authors>
+    <owners>Rob Chartier</owners>
+    <projectUrl>https://github.com/nothingmn/javascript-build-task</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A custom msbuild task which allows execution of JavaScript during the build process (does NOT allow you to compile/compress/minify javascript itself)</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <language />
+    <tags>msbuild jint javascript build msbuild.exe</tags>
+    <references>
+      <reference file="JavaScriptBuildTask.dll" />
+      <reference file="Jint.dll" />
+    </references>
+  </metadata>
+</package>

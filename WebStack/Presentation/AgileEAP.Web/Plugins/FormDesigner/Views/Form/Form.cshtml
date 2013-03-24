@@ -1,0 +1,1389 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using System.Collections.Generic
+@using System.Text
+@using AgileEAP.MVC
+@using Telerik.Web.Mvc.UI
+@using AgileEAP.Core
+@using AgileEAP.Core.Data
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@{
+    var form = JsonConvert.SerializeObject(ViewData["Form"], new Newtonsoft.Json.Converters.StringEnumConverter());
+    var bindvalue = JsonConvert.SerializeObject(ViewData["Values"], new Newtonsoft.Json.Converters.StringEnumConverter());
+}
+@{ 
+    
+    Script.Require("jQuery").AtHead();
+    Style.Require("smoothnessjQueryUI_" + Theme);
+    Script.Require("jQueryUI").AtHead();
+    Script.Require("angularjs").AtHead();
+    Script.Require("tab").AtHead();
+    Script.Require("site").AtHead();
+    Script.Require("Wizardjs").AtHead();
+    Script.Require("jQueryContextMenu").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("highcharts").AtHead();
+    Script.Require("jstree").AtHead();
+    Script.Require("jskendo").AtHead();
+    Style.Require("kendoCommon_" + Theme);
+    Style.Require("kendoDefault_" + Theme);
+    Script.Require("uploadify").AtHead();
+    Script.Require("ValidationEnginezh_CNjs").AtHead();
+    Script.Require("ValidationEnginejs").AtHead();
+    Style.Require("jQueryContextMenu_" + Theme);
+    Style.Require("eForm_" + Theme);
+    Style.Require("uploadify_" + Theme);
+    Style.Require("Wizard_" + Theme);
+    Style.Require("ValidationEngine_" + Theme);
+    Style.Require("site_" + Theme);
+    Style.Require("tab_" + Theme);
+  
+}
+<!DOCTYPE html>
+<html class="ng-cloak" id="ng-app" ng-app="EForm">
+<head>
+    <title>@Version.eClientName</title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @Html.HeadScripts()
+    <script type="text/javascript">
+        var ControlType =
+        {
+            Text: "Text",
+            TextBox: "TextBox",
+            DatePicker: "DatePicker",
+            MonthPicker: "MonthPicker",
+            YearPicker: "MonthPicker",
+            SingleCombox: "SingleCombox",
+            MultiCombox: "MultiCombox",
+            CheckBox: "CheckBox",
+            DropDown: "DropDown",
+            ChooseBox: "ChooseBox",
+            ChooseTree: "ChooseTree",
+            Button: "Button",
+            TextArea: "TextArea",
+            Radio: "Radio",
+            Email: "Email",
+            Combox: "Combox",
+            Upload: "Upload",
+            HiddenInput: "HiddenInput",
+            SysVariable: "SysVariable",
+            Div: "Div",
+            Grid: "Grid",
+            DataTable: "DataTable",
+            Wizard: "Wizard",
+            Image: "Image",
+            Tabs: "Tabs",
+            Tree: "Tree",
+            Chart: "Chart"
+        };
+        var AccessPattern =
+        {
+            ReadOnly: "ReadOnly",
+            Write: "Write"
+        };
+        var DataType =
+        {
+            Integer: "Integer",
+            Float: "Float",
+            DateTime: "DateTime",
+            String: "String",
+            Boolean: "Boolean"
+        };
+        var processDefID = $.query.get("processDefID");
+        var entry = $.query.get("Entry");
+        var processInstID = $.query.get("processInstID");
+        var workItemID = $.query.get("workItemID");
+        var formcontent = '@Html.Raw(form)';
+        var form = JSON2.parse(formcontent);
+        var formvalue = JSON2.parse('@Html.Raw(bindvalue)');
+        function load_script(src) {
+            var endScript = document.createElement("script");
+            endScript.type = "text/javascript";
+            endScript.src = src;
+            document.getElementsByTagName('head')[0].appendChild(endScript);
+        }
+        function getValue(me) {
+            var url = $(me).attr("URL");
+            var id = $(me).attr("extendData");
+            var result = openOperateDialog("选择", url, 550, 300, true, 1);
+            $(me).val(result.text);
+            $("#" + id).val(result.value);
+        }
+        function disFreeAtr(retValue) {
+            for (var i = 0; i < retValue.length; i++) {
+                if (retValue[i].children.length > 0) {
+                    disFreeAtr(retValue[i].children);
+                }
+                else {
+                    retValue[i].children = undefined;
+                    retValue[i].state = undefined;
+                }
+            }
+            return
+        }
+        function startupload(id) {
+            $("#" + id).uploadify('upload', '*');
+        }
+        function downloadfile(path, fileName) {
+            var elemIframe = document.createElement("iframe");
+            elemIframe.setAttribute("src", encodeURI("/Workflow/eForm/download?Path=" + path + "&fileName=" + fileName));
+            elemIframe.style.display = "none";
+            document.body.appendChild(elemIframe);
+        }
+        function validateForm(field, rules, i, options) {
+            if (field.val() == 0 || $.trim(field.val()) == "") {
+                return "*请填写";
+            }
+        }
+        //function CustormAjaxValidate(submiteForm) {
+        //    $.post("/iClient/Apply/CheckQuota", function (json) {
+        //        var retValue = json.RetValue;
+        //        var messageError = "";
+        //        if (retValue) {
+        //            var freeCPUNum = retValue.CPUNum - retValue.CPUNumUsed;
+        //            var freeMemory = retValue.Memory - retValue.MemoryUsed;
+        //            var freeNetWorkBW = retValue.NetWorkBW - retValue.NetWorkBWUsed;
+        //            var freePrivateIPNum = retValue.PrivateIPNum - retValue.PrivateIPNumUsed;
+        //            var freePublicIPNum = retValue.PublicIPNum - retValue.PublicIPNumUsed;
+        //            var freeStorage = retValue.Storage - retValue.StorageUsed;
+        //            var freeVMNum = retValue.VMNum - retValue.VMNumUsed;
+        //            for (var eFormAttribute in retValue) {
+        //                switch (eFormAttribute) {
+        //                    case "CPUNum":
+        //                        if (freeCPUNum + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余CPU数不足,请重新填写适当的CPU数!当前总CPU限额为" + retValue.CPUNum + "VCPU;已用CPU数为" + retValue.CPUNumUsed + "VCPU" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "Memory":
+        //                        if (freeMemory + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余内存数不足,请重新填写适当的内存数!当前总内存限额为" + retValue.Memory + "G;已用内存数为" + retValue.MemoryUsed + "G" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "NetWorkBW":
+        //                        if (freeNetWorkBW + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余网络带宽不足,请重新填写适当的网络带宽!当前网络带宽限额为" + retValue.NetWorkBW + "M;已用网络带宽为" + retValue.NetWorkBWUsed + "M" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "PrivateIPNum":
+        //                        if (freePrivateIPNum + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余私网IP数量不足,请重新填写适当的私网IP数量!当前私网IP限额为" + retValue.PrivateIPNum + "个;已用私网IP数量为" + retValue.PrivateIPNumUsed + "个" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "PublicIPNum":
+        //                        if (freePublicIPNum + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余公网IP数量不足,请重新填写适当的公网IP数量!当前公网IP限额为" + retValue.PublicIPNum + "个;已用公网IP数量为" + retValue.PublicIPNumUsed + "个" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "Storage":
+        //                        if (freeStorage + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余存储不足,请重新填写适当的存储!当前总存储限额为" + retValue.Storage + "G;已用存储为" + retValue.StorageUsed + "G" + "<br/>";
+        //                        }
+        //                        break;
+        //                    case "VMNum":
+        //                        if (freeVMNum + parseInt($("#" + eFormAttribute).val()) < 0) {
+        //                            if (!messageError) {
+        //                                $("#" + eFormAttribute).focus();
+        //                            }
+        //                            messageError = messageError + "警告：剩余虚拟机数量不足,请重新填写适当的虚拟机数!当前总虚拟机限额为" + retValue.VMNum + "台;已使用虚拟机数为" + retValue.VMNumUsed + "台" + "<br/>";
+        //                        }
+        //                        break;
+        //                }
+        //            }
+        //        }
+        //        if (messageError) {
+        //            openDialog2({
+        //                content: messageError,
+        //                showModal: true,
+        //                width: 770,
+        //                resizable: false,
+        //                customdialogSylte: { footer: "border:0px;text-align:center;" },
+        //                buttons: {
+        //                    '确 定': function () {
+        //                        $(this).dialog('close');
+        //                    }
+        //                }
+        //            });
+        //        }
+        //        else {
+        //            if (submiteForm && typeof (submiteForm) === "function") {
+        //                submiteForm.call(this);
+        //            }
+        //        }
+        //    });
+        //}
+        //  $.post("/Workflow/eForm/download", { Path: path, fileName: fileName });
+        function getCheckNodes(ID) {
+            var data = $("#" + ID).jstree("get_checked");
+            removeTreeNode(ID);
+            alert(data);
+            return data;
+        }
+        function loadCheckNodes(ID) {
+            var data = getCheckNodes(ID);
+            for (var i = 0; i < data.length; i++) {
+                $("#" + ID).jstree("check_node", $(data[i]));
+            }
+        }
+        function createjsTreeNode(e, data) {
+            var id = new Date().getTime();
+            $(data.rslt.obj).attr("id", "node_" + id);
+            if (data.args[2] && data.args[2].attr) {
+                var DataSource = data.args[2].attr.rel;
+                manageSource(DataSource);
+            }
+        }
+        function removejsTreeNode(e, data) {
+            if (data.args[0]) {
+                var DataSource = data.args[0];
+                manageSource(DataSource);
+            }
+        }
+        function renamejsTreeNode(e, data) {
+            if (data.args[0]) {
+                var DataSource = data.args[0];
+                manageSource(DataSource);
+            }
+        }
+        function manageSource(DataSource) {
+            $.post("/FormDesigner/Home/ManageSource", { DataSource: DataSource }, function (ajaxResult) {
+                alert(ajaxResult.PromptMsg);
+                if (ajaxResult && ajaxResult.Result != 1) {
+                    $.jstree.rollback(data.rlbk);
+                }
+            });
+        }
+        function addTreeNode(TreeID) {
+            $("#" + TreeID).jstree("create");
+        }
+        function removeTreeNode(TreeID) {
+            $("#" + TreeID).jstree("remove");
+        }
+        function renameTreeNode(TreeID) {
+            $("#" + TreeID).jstree("rename");
+        }
+        function selectNode(e, data) {
+            var id = data.rslt.obj.attr("id");
+            var tableName = "grid";
+            var listItems = [{ "Text": "名称", "Value": "Name" }];
+            var dataSource = "select * from OM_Employee where MajorOrgID=" + id;
+            var pageSize = 5;
+            //refreshGrid(tableName, pageSize, listItems, dataSource, id);
+            alert("选中节点" + data.rslt.obj.attr("id"));
+        }
+        function getTreeNodeID(e, data) {
+            var id = data.rslt.obj.attr("id");
+            if (id) {
+                return id;
+            }
+            return;
+        }
+        function getTreeInfo(field) {
+            $.post("/FormDesigner/Home/GetTreeInfo", { DataSource: field.DataSource, NodeImg: field.DefaultValue }, function (retValue) {
+                disFreeAtr(retValue);
+                $.ajaxSetup({ cache: false });
+                var plugins = ["themes", "json_data", "checkbox", "sort", "ui", "crrm", "dnd"];
+                if (!field.Required) {
+                    plugins = ["themes", "json_data", "sort", "ui", "crrm", "dnd"];
+                }
+                $("#" + field.Name).jstree({
+                    "plugins": plugins,
+                    "themes": {
+                        "theme": "default",
+                        "url": "/Plugins/Resources/Content/Themes/Default/jstree/themes/default/style.css",
+                        "dots": true,
+                        "icons": false
+                    },
+                    "lang": {
+                        "loading": "目录加载中……"
+                    },
+                    "json_data": {
+                        "data": retValue,
+                        "progressive_render": true
+                    },
+                    "checkbox": {
+                    }
+                }).bind("select_node.jstree", function (e, data) {
+                    if (selectNode) {
+                        selectNode.call(this, e, data);
+                    }
+                }).bind("open_node.jstree loaded.jstree", function (e, data) {
+                    if (field.ListItems.length > 0) {
+                        document.oncontextmenu = function (e) { return false };
+                        initContextMenu(field.ListItems, field.Name);
+                    }
+                }).bind("create.jstree", function (e, data) {
+                    if (createjsTreeNode) {
+                        createjsTreeNode.call(this, e, data);
+                    }
+
+                    //else {
+                    // $.jstree.rollback(data.rlbk);
+                    //}
+                }).bind("remove.jstree", function (e, data) {
+
+                }).bind("rename.jstree", function (e, data) {
+
+                    // $.jstree.rollback(data.rlbk);
+                    //data.inst.refresh();
+                });
+                $("#" + field.Name).css("overflow", "auto");
+            });
+        }
+
+        function pase() {
+            alert("1");
+        }
+        function initContextMenu(ListItems, ID) {
+            var bindObject = {
+                text: "显示名称",
+                ico: null,
+                cls: "attrcontrol",
+                callback: "function"
+            };
+            var contextMenuBind = [];// [{type:"root",bindObject:[bindObject]}];
+            for (var i = 0; i < ListItems.length; i++) {
+                if (i == 0) {
+                    contextMenuBind.push({ type: ListItems[i].Value, bindObject: [ListItems[i].Text] });
+                }
+                else {
+                    var sametype = true;
+                    for (var j = 0; j < contextMenuBind.length; j++) {
+                        if (contextMenuBind[j].type == ListItems[i].Value) {
+                            contextMenuBind[j].bindObject.push(ListItems[i].Text);
+                            sametype = false;
+                            break;
+                        }
+                    }
+                    if (sametype) {
+                        contextMenuBind.push({ type: ListItems[i].Value, bindObject: [ListItems[i].Text] });
+                    }
+                }
+
+            }
+            for (var m = 0; m < contextMenuBind.length; m++) {
+                var ulmenu = ' <ul id="ulmenu' + ID + '" class="contextMenu" style="font-size: 12px;">';
+                for (var n = 0; n < contextMenuBind[m].bindObject.length; n++) {
+                    var bind = eval("(" + contextMenuBind[m].bindObject[n] + ")");
+                    bind = $.extend({}, bindObject, bind);
+                    var liClass = bind.cls;
+                    var liCallback = bind.callback;
+                    var liText = bind.text;
+                    var limenu = '<li class="' + liClass + '"><a href="#' + liCallback + '">' + liText + '</a></li>';
+                    ulmenu = ulmenu + limenu;
+                }
+                ulmenu = ulmenu + '</ul>';
+                if ($("#ulmenu" + ID).length < 1) {
+                    $(document).find("body").append(ulmenu);
+                }
+                var licontextMenu = $("li[type='" + contextMenuBind[m].type + "']").find("a");
+                if ($("li[type='" + contextMenuBind[m].type + "']").find("a").length < 1) {
+                    licontextMenu = $("li[type='root']").find("a");
+                }
+                if (licontextMenu.length > 0) {
+                    licontextMenu.contextMenu({
+                        menu: "ulmenu" + ID
+                    }, function (action, el, pos) {
+                        var menuaction = eval(action);
+                        //licontextMenu.each(function () { $(this).attr("class", "") });
+                        //el.attr("class", "jstree-clicked")
+                        el.click();
+                        if (typeof (menuaction) == "function") {
+                            menuaction.call(this, el, pos);
+                        }
+                    })
+                }
+            }
+        };
+
+        function refreshTable(tableName, ListItems, DataSource, id) {
+            if ($("#" + tableName).length < 1) {
+                alert("数据表的ID不存在,请检查要更新的数据表的ID");
+            }
+            else {
+                var width = $("#" + tableName).width();
+                var height = $("#" + tableName).height();
+                var listItems = [];
+                var TextList = [], ValueList = [];
+                $("#" + tableName).find("table th").each(function () {
+                    TextList.push($(this).text());
+                });
+                $("#" + tableName).find("table tbody tr:first td").each(function () {
+                    ValueList.push($(this).attr("name"));
+                });
+                if (TextList.length > 0) {
+                    for (var i = 0; i < TextList.length; i++) {
+                        listItems.push({ "Text": TextList[i], "Value": ValueList[i] });
+                    }
+                }
+                if ($.isArray(ListItems) && ListItems.length > 0) {
+                    listItems = ListItems;
+                }
+                var field = { DataSource: DataSource, ListItems: ListItems, Name: tableName, Width: width, Height: height, Required: true };
+                getTableInfo(field);
+            }
+        }
+        function getTableInfo(field) {
+            $.post("/FormDesigner/Home/GetTableSource", { DataSource: field.DataSource }, function (retValue) {
+                var ListItems = field.ListItems;
+                if (field.Required) {
+                    var tableItem = "<table id='" + field.Name + "table' style='width:" + field.Width + "px'><thead><tr>";
+                    for (var j = 0; j < ListItems.length; j++) {
+                        var headItem = "<th>" + ListItems[j].Text + "</th>";
+                        tableItem = tableItem + headItem;
+                    }
+                    tableItem = tableItem + "</tr></thead><tbody>";
+                    for (var m = 0; m < retValue.length; m++) {
+                        var trItem = "<tr>";
+                        for (var n = 0; n < ListItems.length; n++) {
+                            var tdItem = "<td name='" + ListItems[n].Value + "'>" + retValue[m][ListItems[n].Value] + "</td>";
+                            var trItem = trItem + tdItem;
+                        }
+                        trItem = trItem + "</tr>";
+                        tableItem = tableItem + trItem;
+                    }
+                    tableItem = tableItem + "</tbody></table>";
+                    $("#" + field.Name).empty();
+                    $("#" + field.Name).append(tableItem);
+                }
+                else {
+                    var tableItem = "<table id='" + field.Name + "table'><tbody>";
+                    for (var j = 0; j < ListItems.length; j++) {
+                        var trItem = "<tr><td>" + ListItems[j].Text + "</td>";
+                        for (var i = 0; i < retValue.length; i++) {
+                            tdValueItem = "<td>" + retValue[i][ListItems[j].Value] + "</td>";
+                            trItem = trItem + tdValueItem;
+                        }
+                        trItem = trItem + "</tr>";
+                        tableItem = tableItem + trItem;
+                    }
+                    tableItem = tableItem + "</tbody></table>";
+                    $("#" + field.Name).empty();
+                    $("#" + field.Name).append(tableItem);
+                }
+
+            });
+        }
+
+        function GridTemplate(GridID, GridValue) {
+            if ($("#" + GridID).length < 1) {
+                alert("当前页面没有" + GridID + "这个Grid");
+                return;
+            }
+            var Template = "";
+            var valueList = '';
+            var textList = '';
+            $("#" + GridID).find("table th:visible").each(function (i) {
+                valueList = $(this).attr("data-field");
+                textList = $(this).attr("data-title");
+                if (GridValue) {
+                    var item = "<div style='clear:both;margin-bottom:5px'><span style='text-align:right;float:left;width:120px'>" + textList + ":</span><div><input type='text' class='gridfield' bind_data='" + valueList + "' value='" + GridValue[i] + "'></input></div></div>";
+                    Template = Template + item;
+                }
+                else {
+                    var item = "<div style='clear:both;margin-bottom:5px'><span style='text-align:right;float:left;width:120px'>" + textList + ":</span><div><input type='text' class='gridfield' bind_data='" + valueList + "'></input></div></div>";
+                    Template = Template + item;
+                }
+            });
+            return Template;
+        }
+        function addGridRow(GridID, DataSource) {
+            var template = GridTemplate(GridID);
+            if (template) {
+                openDialog2({
+                    content: template,
+                    showModal: true,
+                    width: 770,
+                    resizable: false,
+                    customdialogSylte: { footer: "border:0px;text-align:center;" },
+                    buttons: {
+                        '确 定': function () {
+                            if ($.type(DataSource) == "string") {
+                                var fieldString = DataSource.substring(DataSource.indexOf("(") + 1, DataSource.indexOf(")"));
+                                var field = fieldString.split(",");
+                                var fieldValue;
+                                DataSource = DataSource + " values(";
+                                for (var i = 0; i < field.length; i++) {
+                                    var itemValue = $("input[bind_data='" + field[i] + "']");
+                                    if (itemValue.length < 1) {
+                                        fieldValue = new Date().getTime();
+                                    }
+                                    else {
+                                        fieldValue = itemValue.val();
+                                    }
+                                    if (i == field.length - 1) {
+                                        DataSource = DataSource + "'" + fieldValue + "'";
+                                    }
+                                    else {
+                                        DataSource = DataSource + "'" + fieldValue + "',";
+                                    }
+                                }
+                                DataSource = DataSource + ")";
+                            }
+                            if ($.isArray(DataSource) && DataSource.length > 0) {
+
+                            }
+                            $.post("/FormDesigner/Home/ManageSource", { DataSource: DataSource }, function (ajaxResult) {
+                                alert(ajaxResult.PromptMsg);
+                                if (ajaxResult && ajaxResult.Result == 1) {
+                                    $(this).dialog('close');
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }
+        function delGridRow(GridID, dataSource) {
+            var row = getGridRow(GridID);
+            if (row) {
+                if (confirm("确定删除行")) {
+                    $.post("/FormDesigner/Home/ManageSource", { DataSource: dataSource }, function (ajaxResult) {
+                        if (ajaxResult && ajaxResult.Result == 1) {
+                            row.remove();
+                        }
+                        alert(ajaxResult.PromptMsg);
+                    });
+                }
+            }
+        }
+        function editeRow(GridID, DataSource) {
+            var gridRow = getGridRow(GridID);
+            var gridValue = [];
+            gridRow.find("td:visible").each(function () {
+                gridValue.push($(this).text());
+            });
+            var template = GridTemplate(GridID, gridValue);
+            if (template) {
+                openDialog2({
+                    content: template,
+                    showModal: true,
+                    width: 770,
+                    resizable: false,
+                    customdialogSylte: { footer: "border:0px;text-align:center;" },
+                    buttons: {
+                        '确 定': function () {
+                            if ($.type(DataSource) == "string") {
+                                var field = $(".gridfield");
+                                var itemValue;
+                                field.each(function (i) {
+                                    var item = $(this).attr("bind_data");
+                                    if (i == 0) {
+                                        itemValue = item + "='" + $(this).val() + "'";
+                                    }
+                                    else {
+                                        itemValue = itemValue + "," + item + "='" + $(this).val() + "'";
+                                    }
+                                });
+                                if (DataSource.indexOf("where") > -1) {
+                                    headDataSource = DataSource.substring(0, DataSource.indexOf("where"));
+                                    footDataSource = DataSource.substring(DataSource.indexOf("where"), DataSource.length);
+                                    DataSource = headDataSource + " set " + itemValue + footDataSource;
+                                }
+                                else {
+                                    DataSource = DataSource + " set " + itemValue;
+                                }
+
+                            }
+                            $.post("/FormDesigner/Home/ManageSource", { DataSource: DataSource }, function (ajaxResult) {
+                                alert(ajaxResult.PromptMsg);
+                                if (ajaxResult && ajaxResult.Result == 1) {
+                                    $(this).dialog('close');
+                                }
+                            });
+
+                        }
+                    }
+                });
+            }
+        }
+        function getGridRow(GridID) {
+            var row = $("#" + GridID).find("tbody .k-state-selected")
+            if (row.length > 0) {
+                return row;
+            }
+            else {
+                alert("请先选择行");
+            }
+        }
+        function refreshGrid(GridName, pageSize, ListItems, DataSource, id) {
+            if ($("#" + GridName).length < 1) {
+                alert("数据表的ID不存在,请检查要更新的数据表的ID");
+            }
+            else {
+                var listItems = [];
+                var TextList = [], ValueList = [];
+                $("#" + GridName).find("table th").each(function () {
+                    ValueList.push($(this).attr("data-field"));
+                    TextList.push($(this).attr("data-title"));
+                    listItems.push({ "Text": $(this).attr("data-title"), "Value": $(this).attr("data-field") });
+                });
+                if ($.isArray(ListItems) && ListItems.length > 0) {
+                    listItems = ListItems;
+                    $("#" + GridName).empty();
+                }
+                //if(ListItems==listItems)
+                var field = { DataSource: DataSource, DefaultValue: pageSize, ListItems: ListItems, Name: GridName };
+                getGridInfo(field);
+            }
+        }
+        function getGridInfo(field) {
+            $.post("/FormDesigner/Home/GetTableSource", { DataSource: field.DataSource }, function (retValue) {
+                var ListItems = field.ListItems;
+                var columns = [];
+                if (retValue && retValue.length > 0) {
+                    var retColumns = retValue[0];
+                    for (var columnsAttr in retColumns) {
+                        var text = columnsAttr;
+                        var value = columnsAttr;
+                        var columnsSame = false;
+                        for (var j = 0; j < ListItems.length; j++) {
+                            if (ListItems[j].Value == columnsAttr) {
+                                text = ListItems[j].Text;
+                                value = ListItems[j].Value;
+                                columnsSame = true;
+                                if (value.indexOf("Time") > -1) {
+                                    columns.push({
+                                        field: value, title: text,
+                                        // template: '#= kendo.toString(CreateTime,"dd MMMM yyyy") #'
+                                        format: "{0:yyyy-MMMM-dd}"
+                                    });
+                                }
+                                else {
+                                    columns.push({
+                                        field: value, title: text
+                                    });
+                                }
+                            }
+                        }
+                        if (!columnsSame) {
+                            columns.push({
+                                field: value, title: text, hidden: true
+                            });
+                        }
+                    }
+                }
+
+                var pageSize = parseInt(field.DefaultValue);
+                $("#" + field.Name).kendoGrid({
+                    dataSource: {
+                        data: retValue,
+                        pageSize: pageSize ? pageSize : 5
+                    },
+                    // groupable: true,
+                    sortable: true,
+                    filterable: {
+                        messages: {
+                            info: "显示符合以下条件的行", // sets the text on top of the filter menu
+                            filter: "过滤", // sets the text for the "Filter" button
+                            clear: "清除过滤", // sets the text for the "Clear" button
+
+                            // when filtering boolean numbers
+                            isTrue: "custom is true", // sets the text for "isTrue" radio button
+                            isFalse: "custom is false", // sets the text for "isFalse" radio button
+
+                            //changes the text of the "And" and "Or" of the filter menu
+                            and: "and",
+                            or: "or"
+
+                        },
+                        operators: {
+                            string: { eq: "等于", neq: "不等于", startswith: "开始于", contains: "包含", doesnotcontain: "不包含", endswith: "结束于" }
+                        }
+                    },
+                    selectable: "row",
+                    pageable: {
+                        refresh: true,
+                        pageSizes: false
+                    },
+                    columns: columns
+                });
+            });
+        }
+
+
+        var initUI = function () {
+            var fields = form.Fields;
+            var formitem = "";
+            for (var i = 0; i < fields.length; i++) {
+                var field = fields[i];
+                var dataType = "";
+                switch (field.DataType) {
+                    case DataType.Integer: dataType = "custom[integer]"; break;
+                    case DataType.Float: dataType = "custom[float]"; break;
+                    case DataType.DateTime: dataType = "custom[date]"; break;
+                }
+                switch (field.ControlType) {
+                    case ControlType.Tabs:
+                    case ControlType.Wizard:
+                        var ListItems = field.ListItems;
+                        if (ListItems && ListItems.length > 0) {
+                            var divItem = '';
+                            var item = "<div id=\"" + new Date().getTime() + "\" parentControl=\"" + field.Container + "\" class=\"control\" style=\"position:absolute; width:" + (field.Width + 10) + "px;height:" + (field.Height + 10) + "px;left:" + field.X + "px;top:" + field.Y + "px;\"> <div id=\"" + field.Name + "\" controlType=\"" + field.ControlType + "\" class=\"swMain\" style=\"width:" + field.Width + "px;height:" + field.Height + "px;\"><ul>";
+                            for (var j = 0; j < ListItems.length; j++) {
+                                item = item + "<li><p><a href=\"#" + ListItems[j].Text + "\"><label class=\"stepNumber\">" + j + "</label><span class=\"stepText\">" + ListItems[j].Value + "<br /></span></a></p></li>"
+                                divItem = divItem + "<div id=\"" + ListItems[j].Text + "\"></div>";
+                            }
+                            item = item + "</ul>" + divItem + "</div></div>";
+                            formitem = formitem + item;
+                        }
+                        break;
+                    case ControlType.Grid:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px' id='" + field.Name + "'></div>";
+                        if (field.DataSource) {
+                            getGridInfo(field);
+                        }
+                        if (field.CustomStyle) {
+                            var load_css = (function () {
+                                var sStyle = document.createElement("style");
+                                sStyle.setAttribute("type", "text/css");
+                                if (sStyle.styleSheet) { //ie
+                                    sStyle.styleSheet.cssText = field.CustomStyle;
+                                } else {
+                                    var csstext = document.createTextNode(field.CustomStyle);
+                                    sStyle.appendChild(csstext);
+                                }
+                                document.getElementsByTagName('head')[0].appendChild(sStyle);
+                            })();
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.DataTable:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;' id='" + field.Name + "'></div>";
+                        if (field.DataSource) {
+                            getTableInfo(field);
+                        }
+                        if (field.CustomStyle) {
+                            var load_css = (function () {
+                                var sStyle = document.createElement("style");
+                                sStyle.setAttribute("type", "text/css");
+                                if (sStyle.styleSheet) { //ie
+                                    sStyle.styleSheet.cssText = field.CustomStyle;
+                                } else {
+                                    var csstext = document.createTextNode(field.CustomStyle);
+                                    sStyle.appendChild(csstext);
+                                }
+                                document.getElementsByTagName('head')[0].appendChild(sStyle);
+                            })();
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Tree:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><div id='" + field.Name + "' class='tree' style='width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "' > </div></div>";
+                        if (field.DataSource) {
+                            getTreeInfo(field);
+
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Chart:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><div id='" + field.Name + "' class='chart' style='width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "' > </div></div>";
+                        if (field.DataSource) {
+                            //configure.loadScript("
+                            $.post("/FormDesigner/Home/InitChart", { DataSource: field.DataSource, ExtendData: field.ExtendData, TableSource: form.DataSource }, function (retValue) {
+                                if (field.DataType === "pie") {
+                                    var data = retValue.data;
+                                    retValue.data = [];
+                                    for (var i = 0; i < retValue.categories.length; i++) {
+                                        retValue.data.push({ name: retValue.categories[i], y: data[i] });
+                                    }
+                                }
+                                chart = new Highcharts.Chart({
+                                    chart: {
+                                        renderTo: field.Name,
+                                        type: field.DataType,
+                                        margin: [50, 50, 100, 80]
+                                    },
+                                    title: {
+                                        text: field.Text
+                                    },
+                                    xAxis: {
+                                        categories:
+                                            retValue.categories
+                                        ,
+                                        labels: {
+                                            rotation: -45,
+                                            align: 'right',
+                                            style: {
+                                                fontSize: '13px',
+                                                fontFamily: 'Verdana, sans-serif'
+                                            }
+                                        }
+                                    },
+                                    yAxis: {
+                                        min: 0,
+                                        title: {
+                                            text: 'y值'
+                                        }
+                                    },
+                                    legend: {
+                                        enabled: false
+                                    },
+                                    plotOptions: {
+                                        pie: {
+                                            allowPointSelect: true,
+                                            cursor: 'pointer',
+                                            dataLabels: {
+                                                enabled: true,
+                                                color: '#000000',
+                                                connectorColor: '#000000',
+                                                formatter: function () {
+                                                    var formatterData = Math.round(this.percentage * Math.pow(10, 2)) / Math.pow(10, 2);
+                                                    return '<b>' + this.point.name + '</b>: ' + formatterData + ' %';
+                                                }
+                                            }
+                                        }
+                                    },
+                                    tooltip: {
+                                        pointFormat: '<b>{point.percentage}%</b>',
+                                        percentageDecimals: 1,
+                                        formatter: function () {
+                                            if (this.x) {
+                                                return '<b>' + this.x + '</b><br/>' + this.y;
+                                            }
+                                            else {
+                                                return '<b>' + this.point.name + '</b><br/>' + this.y;
+                                            }
+                                        }
+
+                                    },
+                                    series: [{
+                                        //name: 'Population',
+                                        data: retValue.data,
+                                        dataLabels: {
+                                            enabled: true,
+                                            formatter: function () {
+                                                if (this.x) {
+                                                    return this.y;
+                                                }
+                                                else {
+                                                    var formatterData = Math.round(this.percentage * Math.pow(10, 2)) / Math.pow(10, 2);
+                                                    return '<b>' + this.point.name + '</b>: ' + formatterData + ' %';
+                                                }
+                                            },
+                                            style: {
+                                                fontSize: '13px',
+                                                fontFamily: 'Verdana, sans-serif'
+                                            }
+                                        }
+                                    }]
+                                });
+                            });
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Text:
+                        if (!field.CustomStyle) {
+                            field.CustomStyle = "";
+                        }
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='" + field.CustomStyle + "position:absolute;margin:0 auto; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;'><label>" + field.Text + "</label></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Image:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><img src=\"" + field.DefaultValue + "\" style=\"width:" + field.Width + "px;height:" + field.Height + "px;\" ></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.TextBox:
+                        if (field.AccessPattern == "ReadOnly") {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input id='" + field.Name + "' style='height:" + field.Height + "px;' readonly='readonly' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        }
+                        else {
+
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input  class=\"validate[[required]," + dataType + ",funcCall[validateForm]]\" id='" + field.Name + "' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        }
+
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Email:
+                        if (field.AccessPattern == "ReadOnly") {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input id='" + field.Name + "' style='height:" + field.Height + "px;' readonly='readonly' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        }
+                        else {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input  class=\"validate[[required]," + dataType + ",custom[email],funcCall[validateForm]]\" id='" + field.Name + "' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.SysVariable:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input id='" + field.Name + "' readonly='readonly' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.HiddenInput:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10;display:none;left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input id='" + field.Name + "' type='text' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Button:
+                        if (field.URL && field.URL != 'undefined') {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><input id='" + field.Name + "' type='button' value='" + field.Text + "' onclick='javascript:openDialog2(" + decodeURIComponent(field.URL) + ")'></input></div>";
+                        }
+                        else {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><input id='" + field.Name + "' type='button' value='" + field.Text + "'></input></div>";
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.CheckBox:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input class=\"checkbox\" id='" + field.Name + "' type='checkbox' ng-model=\"formvalue['" + field.Name + "']\"></input></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.DropDown:
+                        var dataSource = field.DataSource;
+                        var item;
+                        if (dataSource) {
+                            $.post("/Workflow/eForm/GetDict", { DataSource: dataSource, Name: field.Name }, function (value) {
+                                var ajaxResult = value;
+                                var message = "操作失败";
+                                if (ajaxResult && ajaxResult.Result == 1) {
+                                    var result = ajaxResult.RetValue;
+                                    var items = "";
+                                    for (var method in result.dictItems) {
+                                        var items = items + "<option value=\"" + method + "\">" + result.dictItems[method] + "</option>";
+                                    }
+                                    $("#" + result.Name).append(items);
+                                }
+                            });
+                            item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><select id='" + field.Name + "' ng-model=\"formvalue['" + field.Name + "']\"></select></div>";
+                        }
+                        else {
+                            var ListItems = field.ListItems;
+                            var items = "";
+                            if (ListItems != null && ListItems.length > 0) {
+                                for (var j = 0; j < ListItems.length; j++) {
+                                    var items = items + "<option value=\"" + ListItems[j].Value + "\">" + ListItems[j].Text + "</option>";
+                                }
+                            }
+                            item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><select id='" + field.Name + "' ng-model=\"formvalue['" + field.Name + "']\">" + items + "</select></div>";
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.DatePicker:
+                        if (field.AccessPattern == "ReadOnly") {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input readonly='readonly' class=\"Wdate\" onfocus='WdatePicker({onpicked:function(){$(this).keydown()},dateFmt:\"yyyy-MM-dd\",readOnly:true})' ng-model=\"formvalue['" + field.Name + "']\" id='" + field.Name + "' type='text' ></input></div>";
+                        }
+                        else {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><input class=\"Wdate\" onfocus='WdatePicker({onpicked:function(){$(this).keydown()},dateFmt:\"yyyy-MM-dd\"})' ng-model=\"formvalue['" + field.Name + "']\" id='" + field.Name + "' type='text' ></input></div>";
+                        }
+
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Radio:
+                        var ListItems = field.ListItems;
+                        var items = "";
+                        if (ListItems != null && ListItems.length > 0) {
+                            for (var j = 0; j < ListItems.length; j++) {
+                                var items = items + "<input type='radio' name=\"" + field.Name + "\"  ng_model=\"formvalue['" + field.Name + "']\"  value=\"" + ListItems[j].Value + "\">" + ListItems[j].Text + "</>";
+                            }
+                        }
+                        item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10;left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><div id='" + field.Name + "'>" + items + "</div></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.TextArea:
+                        if (field.AccessPattern == "ReadOnly") {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><textarea id='" + field.Name + "' readonly='readonly' ng-model=\"formvalue['" + field.Name + "']\"></textarea></div>";
+                        }
+                        else {
+                            var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style='position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "'><label class='control_description'>" + field.Text + "</label><textarea id='" + field.Name + "' ng-model=\"formvalue['" + field.Name + "']\"></textarea></div>";
+                        }
+
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.ChooseBox:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style=\"position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "\"><label class='control_description'>" + field.Text + "</label><input class=\"choosebox\" type='text' url=\"" + field.URL + "\" extendData=\"" + field.ExtendData + "\" id=\"" + field.Name + "\" onclick=\"getValue(this)\"  readonly='readonly' ng-model=\"formvalue['" + field.Name + "']\" style=\"cursor:pointer;background:url(/Plugins/FormDesigner/Content/Themes/Default/Images/Combox.png) no-repeat right\"></input><input type='hidden' id=\"" + field.ExtendData + "\" ng-model=\"formvalue['" + field.ExtendData + "']\" /></div>";
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Upload:
+                        var item;
+                        if (field.AccessPattern == AccessPattern.Write) {
+                            item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style=\"position:absolute;z-index:10; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;" + field.CustomStyle + "\"><label class='control_description'>" + field.Text + "</label><input class='uploadfile' type='file' id=\"" + field.Name + "\" ></input><input class='uploadbutton' type='button' value='上传' style='width: 57px;height: 25px;top: 1px;right: 1px;position: absolute; display:none' onclick=\"startupload('" + field.Name + "')\"></input></div>";
+                        }
+                        else {
+                            var processInstID = $.query.get("processInstID");
+                            $.post("/Workflow/eForm/GetFileInfo", { BizID: processInstID, Name: field.Name }, function (value) {
+                                var ajaxResult = value;
+                                var message = "操作失败";
+                                if (ajaxResult && ajaxResult.Result == 1) {
+                                    var result = ajaxResult.RetValue;
+                                    var items = "";
+                                    if (result.fileItems && result.fileItems.length > 0) {
+                                        items = "<div>附件:</div>";
+                                    }
+
+                                    for (var i = 0; i < result.fileItems.length; i++) {
+                                        var name = result.fileItems[i].substring(result.fileItems[i].lastIndexOf("$") + 1, result.fileItems[i].length);
+                                        var items = items + "<div><a href=\"javascript:void(0)\"  onclick=\"downloadfile('" + result.fileItems[i] + "','" + name + "')\"><img src='/Plugins/Workflow/Content/Themes/Default/Images/attachment.png' style='margin-bottom:-3px'>" + name + "</a></div>";
+                                    }
+                                    $("#" + result.Name).append(items);
+
+                                }
+                            });
+                            item = "<div class=\"control\" parentControl=\"" + field.Container + "\"  id='" + field.Name + "' style=\"position:absolute; left:" + field.X + "px;top:" + field.Y + "px;" + field.CustomStyle + "\"></div>"
+                        }
+                        formitem = formitem + item;
+                        break;
+                    case ControlType.Div:
+                        var item = "<div class=\"control\" parentControl=\"" + field.Container + "\" style=\"" + field.CustomStyle + "position:absolute; left:" + field.X + "px;top:" + field.Y + "px;width:" + field.Width + "px;height:" + field.Height + "px;\"></div>";
+                        formitem = formitem + item;
+                        break;
+                }
+
+            }
+            return formitem;
+        }
+        // alert(myModule);
+        //  $(document).ready(function () {
+        //alert("1");
+        var myModule = angular.module("EForm", []);
+        myModule.directive('eform', function factory() {
+            return {
+                priority: 100,
+                template: ['<div id="divContainer" ng-show="visible" style="height:100%;background: white;"><form id="eform" style="height:100%;">',
+                        '    <div class="body" style="position:relative;overflow: auto;height: 100%;background:white" ng-transclude>' + initUI() + '</div>',
+                        //'    <div class="footer">',
+                        //'        <input type="button" class="button" ng-click="onStart()" value="启动流程" style="display:none"></input>',
+                        // '        <input type="button"  class="button" ng-click="onSumbit()" value="提交"  style="display:none"></input>',
+                        //'        <input type="button"  class="button" ng-click="onCancel()" value="关闭"  style="display:none"></input>',
+                        //'    </div>',
+                        '</form></div>'].join(""),
+                replace: true,
+                transclude: true,
+                restrict: 'E',
+                link: function (scope, element, attrs) {
+                    element.find(".body").find('input').each(function () {
+                        if ($(this).attr("type") != 'radio' && $(this).attr("type") != 'checkbox' && $(this).attr("class") != 'uploadbutton') {
+                            $(this).parent().find("label").css("float", "left");
+                            $(this).parent().find("label").css("height", "22px");
+                            $(this).parent().find("label").css("line-height", "22px");
+                            $(this).css("width", $(this).parent().width() - $(this).parent().find("label").width() - 5 + "px");
+                            $(this).css("height", $(this).parent().height() - 5 + "px");
+                            $(this).css("line-height", $(this).parent().height() - 5 + "px");
+                        }
+                    });
+                    element.find(".body").find('textarea').each(function () {
+                        $(this).parent().find("label").css("float", "left");
+                        $(this).css("width", $(this).parent().width() - $(this).parent().find("label").width() - 5 + "px");
+                        $(this).css("height", $(this).parent().height() - 5 + "px");
+                    });
+                    element.find(".body").find('select').each(function () {
+                        $(this).parent().find("label").css("float", "left");
+                        $(this).css("width", $(this).parent().width() - $(this).parent().find("label").width() - 5 + "px");
+                        $(this).css("height", $(this).parent().height() - 5 + "px");
+                    });
+                    $(".checkbox").each(function () {
+                        if (scope.formvalue[$(this).attr("id")] == 1 || scope.formvalue[$(this).attr("id")] == true) {
+                            scope.formvalue[$(this).attr("id")] = true;
+                        }
+                        else {
+                            scope.formvalue[$(this).attr("id")] = false;
+                        }
+                    });
+                    $(".Wdate").each(function () {
+                        var id = $(this).attr("id");
+                        if (scope.formvalue[id] && scope.formvalue[id].indexOf("T") > 0)
+                            scope.formvalue[id] = scope.formvalue[id].substring(0, scope.formvalue[id].indexOf("T"))
+                        else {
+                            var currentDate = new Date();
+                            scope.formvalue[id] = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate();
+                        }
+                    });
+                    $(".swMain").each(function () {
+                        if ($.browser.msie) {
+                            var steps = $(".swMain ul > li > p > a");
+                            for (var i = 0; i < steps.length; i++) {
+                                var aHerf = $(steps[i]).attr("href");
+                                aHerf = aHerf.substring(aHerf.indexOf("#"), aHerf.length);
+                                $(steps[i]).attr("href", aHerf);
+                            }
+
+                        }
+                        if (ControlType.Wizard == $(this).attr("controlType")) {
+                            $(this).smartWizard({
+                                onShowStep: function (selStep) {
+                                    var selStepID = $(selStep.attr("href")).attr("id");
+                                    $(".control").each(function () {
+                                        var me = $(this);
+                                        if (me.attr("parentControl") == selStepID) {
+                                            me.show();
+                                        }
+                                        else if (me.attr("parentControl") && me.attr("parentControl") != "null") {
+                                            me.hide();
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        else {
+                            $(this).smartWizard({
+                                Tabs: 1,
+                                onShowStep: function (selStep) {
+                                    var selStepID = $(selStep.attr("href")).attr("id");
+                                    $(".control").each(function () {
+                                        var me = $(this);
+                                        if (me.attr("parentControl") == selStepID) {
+                                            me.show();
+                                        }
+                                        else if (me.attr("parentControl") && me.attr("parentControl") != "null") {
+                                            me.hide();
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+
+                    $(".uploadfile").each(function () {
+                        var me = $(this);
+                        var processInstID = $.query.get("processInstID");
+                        var randomName = new Date().getTime();
+                        me.uploadify({
+                            width: 86,
+                            height: 26,
+                            auto: false,
+                            swf: '/Plugins/Resources/Content/Themes/Default/uploadify/uploadify.swf',
+                            uploader: '/Workflow/eForm/Upload',
+                            buttonText: "上传附件",
+                            buttonClass: "uploadclass",
+                            buttonImage: '/Plugins/Resources/Content/Themes/Default/uploadify/upload.png',
+                            fileSizeLimit: 1024 * 1024 * 3, //4M
+                            multi: true,
+                            formData: { 'name': '123', 'processInstID': processInstID },
+                            onUploadStart: function (file) {
+                                me.uploadify("settings", "formData", { 'name': randomName, 'processInstID': processInstID });
+                            },
+                            //选择上传文件后调用
+                            'onSelect': function (file) {
+
+                            },
+                            //返回一个错误，选择文件的时候触发
+                            'onSelectError': function (file, errorCode, errorMsg) {
+                                switch (errorCode) {
+                                    case -100:
+                                        alert("上传的文件数量已经超出系统限制的" + $(me).uploadify('settings', 'queueSizeLimit') + "个文件！");
+                                        break;
+                                    case -110:
+                                        alert("文件 [" + file.name + "] 大小超出系统限制的" + $(me).uploadify('settings', 'fileSizeLimit') + "大小！");
+                                        break;
+                                    case -120:
+                                        alert("文件 [" + file.name + "] 大小异常！");
+                                        break;
+                                    case -130:
+                                        alert("文件 [" + file.name + "] 类型不正确！");
+                                        break;
+                                }
+                            },
+                            //检测FLASH失败调用
+                            'onFallback': function () {
+                                alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+                            },
+                            onUploadSuccess: function (file, data, response) {
+                                var id = me.attr("id");
+                                scope.formvalue[id] = randomName + "$" + file.name;
+
+                            },
+                            'onQueueComplete': function (queueData) {
+                                var result = JSON2.stringify(scope.formvalue);
+                                $.post("/Workflow/eForm/Submit", { json: result, DataSource: form.DataSource, processDefID: processDefID, Entry: entry, processInstID: processInstID, workItemID: workItemID }, function (value) {
+                                    var ajaxResult = value;
+                                    var message = "操作失败";
+                                    if (ajaxResult && ajaxResult.Result == 1) {
+                                        alert("操作成功");
+                                    }
+                                    else {
+                                        alert("操作失败");
+                                    }
+                                    window.parent.parent.$("#actionDialog").dialog("close");
+                                });
+                            }
+                        });
+                    });
+                }
+
+            };
+        });
+        myModule.controller("EFormCtrl", function ($scope) {
+            $scope.form = form;
+            if (!formvalue) {
+                formvalue = new Object();
+            }
+
+
+            $scope.formvalue = formvalue;
+            //if (!$scope.formvalue) {
+            //    $scope.formvalue = new Object();
+            //}
+            $scope.Fields = $scope.form.Fields;
+            $scope.name = $scope.form.Title;
+            $scope.show = true;
+            $scope.dataSource = $scope.form.DataSource;
+            $scope.title = "填写表单";
+            //$scope.getChange = function () {
+            //if ($scope.formvalue[field.Name] == 1) {
+            //    $scope.formvalue[field.Name] = true;
+            //}
+            //else {
+            //    $scope.formvalue[field.Name] = false;
+            //}
+            //   return true;
+            //};
+            $scope.onStart = function () {
+                $.post("/Workflow/eForm/StartProcessInst", { processDefID: $.query.get("processDefID") }, function (value) {
+                    var ajaxResult = value;
+                    var message = "操作失败";
+                    if (ajaxResult && ajaxResult.Result == 1) {
+                        alert("操作成功");
+                    }
+                    else {
+                        alert("操作失败");
+                    }
+                });
+            };
+            $scope.onSumbit = function () {
+                if ($("#eform").validationEngine('validate')) {
+                    $scope.show = true;
+                    var processDefID = $.query.get("processDefID");
+                    var entry = $.query.get("Entry");
+                    var processInstID = $.query.get("processInstID");
+                    var workItemID = $.query.get("workItemID");
+                    var dataSource = $scope.dataSource;
+                    $(".Wdate").each(function () {
+                        $scope.formvalue[$(this).attr("id")] = $(this).val();
+                    });
+                    $(".choosebox").each(function () {
+                        $scope.formvalue[$(this).attr("id")] = $(this).val();
+                        var extendData = $(this).parent().find(":hidden");
+                        $scope.formvalue[extendData.attr("id")] = extendData.val();
+                    });
+                    var result = JSON2.stringify($scope.formvalue);
+                    $.post("/Workflow/eForm/Submit", { json: result, DataSource: dataSource, processDefID: processDefID, Entry: entry, processInstID: processInstID, workItemID: workItemID }, function (value) {
+                        var ajaxResult = value;
+                        var message = "操作失败";
+                        if (ajaxResult && ajaxResult.Result == 1) {
+                            alert("操作成功");
+                        }
+                        else {
+                            alert("操作失败");
+                        }
+                        window.parent.parent.$("#actionDialog").dialog("close");
+                    });
+                }
+                else {
+                    alert("验证出错");
+                }
+            };
+            $scope.onCancel = function () {
+                window.parent.parent.$("#actionDialog").dialog("close");
+            }
+        });
+        function subform() {
+            $(".Wdate").each(function () {
+                formvalue[$(this).attr("id")] = $(this).val();
+            });
+            $(".choosebox").each(function () {
+                formvalue[$(this).attr("id")] = $(this).val();
+                var extendData = $(this).parent().find(":hidden");
+                formvalue[extendData.attr("id")] = extendData.val();
+            });
+            $(".uploadify").each(function () {
+                var me = $(this);
+                me.uploadify('upload', '*');
+            });
+            if ($(".uploadify").length <= 0) {
+                var result = JSON2.stringify(formvalue);
+                $.post("/Workflow/eForm/Submit", { json: result, DataSource: form.DataSource, processDefID: processDefID, Entry: entry, processInstID: processInstID, workItemID: workItemID }, function (value) {
+                    var ajaxResult = value;
+                    var message = "操作失败";
+                    if (ajaxResult && ajaxResult.Result == 1) {
+                        alert("操作成功");
+                    }
+                    else {
+                        alert("操作失败");
+                    }
+                    // window.parent.parent.$("#actionDialog").dialog("close");
+                });
+            }
+        }
+
+        function submit() {
+            if ($("#eform").validationEngine('validate')) {
+                if (typeof (CustormAjaxValidate) !== "undefined" && typeof (CustormAjaxValidate) === "function") {
+                    CustormAjaxValidate(subform);
+                }
+                else {
+                    subform();
+                }
+            }
+            //else {
+            //    alert("验证出错");
+            //}
+        }
+        function cancel() {
+            window.parent.parent.$("#actionDialog").dialog("close");
+        }
+        //angular.bootstrap();
+        //angular.element(document).ready(function () {
+        //    angular.bootstrap(document);
+        //});
+
+        //$(document).bind("DOMContentLoaded", function () {
+        //    angular.bootstrap(document);
+        //});
+        $(window).resize(function () {
+            resizeWindow();
+        });
+        $(document).ready(function () {
+            $("#eform").validationEngine("attach");
+            resizeWindow();
+        });
+        function resizeWindow() {
+            var windowHeight = getWindowHeight();
+            if (windowHeight == 0) return;
+            var paddingHeight = 0;
+            if ($(".commandbar").length > 0) {
+                paddingHeight = $(".commandbar").height() + 2;
+            }
+            document.getElementById("eform").style.height = windowHeight - paddingHeight + "px";
+            document.getElementById("eform").style.width = document.body.offsetWidth + "px";
+        }
+    </script>
+</head>
+<body id="contain" class="ng-cloak" ng-controller="EFormCtrl">
+    @Html.BuilderToolbar()
+    <eform>
+   </eform>
+    <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>
+    <script type="text/javascript">
+        eval(decodeURIComponent(form.Script));
+        var load_css = (function () {
+            var sStyle = document.createElement("style");
+            sStyle.setAttribute("type", "text/css");
+            if (sStyle.styleSheet) { //ie
+                sStyle.styleSheet.cssText = decodeURIComponent(form.Style);
+            } else {
+                var csstext = document.createTextNode(decodeURIComponent(form.Style));
+                sStyle.appendChild(csstext);
+            }
+            document.getElementsByTagName('head')[0].appendChild(sStyle);
+        })();
+    </script>
+</body>
+</html>

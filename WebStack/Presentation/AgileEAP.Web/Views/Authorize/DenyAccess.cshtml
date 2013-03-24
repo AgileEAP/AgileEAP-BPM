@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拒绝访问</title>
+    <style type="text/css">
+    #denyaccess
+    {
+        font: red;
+    }
+    a
+    {
+        text-decoration: none;
+        font: 14px;
+    }
+</style>
+</head>
+<body>
+    <h1>您好，您无访问该页面的权限。</h1>
+    <div id="denyaccess">您好，当前您无权限访问 @Request.QueryString["return"]</div>
+    <div id="because">出错原因可能如下：</div>
+    <div id="denybecause-one">
+        <p>
+            1.该用户无权限访问该页面，请用有访问权限的账号登录。<a href="@Request.QueryString["Login"]">重新登陆
+            </a>
+        </p>
+    </div>
+    <div id="denybecause-second">
+        <p>2.非法访问系统，请先登录。<a href="@Request.QueryString["Login"]">登陆</a></p>
+    </div>
+    <div id="denydecause-three">
+        <p>3.网络异常，请先检查网络是否连接正常。</p>
+    </div>
+    <div id="denydecause-four">
+        <p>4.系统出错，请及时通知管理员。</p>
+    </div>
+    <div>
+        <h3>对不起，您不能访问 @Request.QueryString["return"] <a href="@Request.QueryString["Login"]">
+            请登陆</a></h3>
+    </div>
+</body>
+</html>

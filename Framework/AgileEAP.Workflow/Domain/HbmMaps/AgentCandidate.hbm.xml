@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Workflow.Domain" assembly="AgileEAP.Workflow">
+	<class name="AgileEAP.Workflow.Domain.AgentCandidate, AgileEAP.Workflow" table="WF_AgentCandidate" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="AgentToID" column="AgentToID" />
+		<property name="AgentToName" column="AgentToName" />
+		<property name="AgentToType" column="AgentToType" />
+		<property name="AgentFrom" column="AgentFrom" />
+	</class>
+</hibernate-mapping>

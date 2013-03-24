@@ -1,0 +1,51 @@
+﻿@*@section styles {
+    <link href="@Html.ResolveUrl("~/Themes/Default/Content/tabs.css")" rel="stylesheet" type="text/css" />
+}
+<div id="navRegion">
+    <div id="navTop">
+        <label id="navTitle">
+            虚拟机
+        </label>
+    </div>
+    <div id="navbg">
+        <div id="navContent">
+      
+        </div>
+    </div>
+</div>
+<div id="splitBar">
+</div>
+<div id="contentRegion">
+    <div id="divTab" style="padding-left: 7px; height: 21px;">
+        <a>
+            <div id="divSummary" class="tabBg1" onclick="selectVMOptionTab(1);">
+                摘要
+            </div>
+        </a><a>
+            <div id="divPerformance" class="tabBg2" onclick="selectVMOptionTab(2);">
+                性能
+            </div>
+        </a><a>
+            <div id="divConsole" class="tabBg3" onclick="selectVMOptionTab(3);">
+                控制台
+            </div>
+        </a><a>
+            <div id="divAlarm" class="tabBg3" onclick="selectVMOptionTab(4);">
+                报警
+            </div>
+        </a><a>
+            <div id="divTask" class="tabBg3" onclick="selectVMOptionTab(5);">
+                任务
+            </div>
+        </a><a>
+            <div id="divEvent" class="tabBg5" onclick="selectVMOptionTab(6);">
+                事件
+            </div>
+        </a>
+    </div>
+    <div id="main_bg">
+        <div id="main_bg2">
+        </div>
+    </div>
+</div>
+*@

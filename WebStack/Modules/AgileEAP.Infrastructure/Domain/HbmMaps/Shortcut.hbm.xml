@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.Shortcut, AgileEAP.Infrastructure" table="AC_Shortcut" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="OperatorID" column="OperatorID" />
+		<property name="PrivilegeID" column="PrivilegeID" />
+		<property name="AppID" column="AppID" />
+		<property name="SortOrder" column="SortOrder" />
+		<property name="Icon" column="Icon" />
+	</class>
+</hibernate-mapping>

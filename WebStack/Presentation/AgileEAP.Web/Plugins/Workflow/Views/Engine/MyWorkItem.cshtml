@@ -1,0 +1,45 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@{
+    Layout = "../Shared/_Kendo.cshtml";
+}
+@using AgileEAP.MVC
+@using AgileEAP.Core
+@using AgileEAP.Core.Extensions
+@using AgileEAP.Workflow.Enums
+@using AgileEAP.Plugin.Workflow.Models
+@using AgileEAP.Workflow.Domain
+@using Kendo.Mvc.UI
+@Html.BuilderToolbar()
+@(Html.Kendo().Grid<WorkItemModel>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(o => o.ID).Title("ID").Hidden();
+        columns.Bound(o => o.ProcessInstID).Title("ProcessInstID").Hidden();
+        columns.Bound(o => o.Name).Title("工作项");
+        columns.Bound(o => o.ProcessInstName).Title("所属流程");
+        columns.Bound(o => o.CurrentState).Title("当前状态");
+        columns.Bound(o => o.StartTime).Title("提交时间").Format("{0:yyyy-MM-dd}");
+        columns.Bound(o => o.CreatorName).Title("提交人");
+    })
+    .Events(configurator => configurator.Change("onRowChanage"))
+        .Selectable(selectable => { selectable.Mode(GridSelectionMode.Single); })
+    .Pageable(o =>
+    {
+        o.PageSizes(new int[] { 10, 15, 20 }); o.Messages(m =>
+        {
+            m.ItemsPerPage("项每页");
+        });
+    }).Sortable().Filterable().DataSource(dataSource => dataSource
+        .Ajax()
+        .Read(read => read.Action("MyWorkItem_Filter", "Engine", new { Entry = Request.QueryString["Entry"] })).PageSize(Configure.Get<int>("PageSize", 15)))
+        )
+<script type="text/javascript">
+    function onRowChanage(arg) {
+        var tds = this.select().find("td");
+        var workItemID = tds.eq(0).text();
+        var processInstID = tds.eq(1).text();
+        var url = '/Workflow/Engine/WorkItemDetail?processInstID=' + processInstID + '&workItemID=' + workItemID + '&Entry=' + $.query.get("Entry");
+        window.parent.openOperateDialog('办理工作项', url, 900, 600, 1, 0, 30);
+    }
+</script>

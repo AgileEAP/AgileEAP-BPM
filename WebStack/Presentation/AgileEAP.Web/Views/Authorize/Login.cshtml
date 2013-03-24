@@ -1,0 +1,91 @@
+﻿@using AgileEAP.Web
+@model AgileEAP.MVC.LoginModel
+@{
+    Layout = null;
+    Script.Require("site").AtHead();
+    string currentVersion = Configure.Get("CurrentVersion", "PCI");
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>@(Version.eCloudName)-用户登录</title>
+    <link href="@Html.ResolveUrl("~/Content/Themes/" + @Theme + "/Version/" + @currentVersion + "/Login.css")" rel="stylesheet" type="text/css" />
+    @Html.HeadScripts()
+    @{   if (false)
+         {
+        <script src="/Scripts/jquery-vsdoc.js" type="text/javascript"></script>
+         }
+    }
+    <script language="javascript" type="text/javascript">
+
+    $(function () {
+        var skin = getCookie("currentSkin");
+        if (skin && skin != "") {
+            $("#main").css("background", "url(~/Content/Themes/" + skin + "/Images/loginbg.png) top left no-repeat");
+        }
+    });
+
+    function getWindowHeight() {
+        var windowHeight = 0;
+        if (typeof (window.innerHeight) == 'number') {
+            windowHeight = window.innerHeight;
+        }
+        else {
+            if (document.documentElement && document.documentElement.clientHeight) {
+                windowHeight = document.documentElement.clientHeight;
+            }
+            else {
+                if (document.body && document.body.clientHeight) {
+                    windowHeight = document.body.clientHeight;
+                }
+            }
+        }
+        return windowHeight;
+    }
+    function resizeWindow() {
+        var windowHeight = getWindowHeight();
+
+        document.getElementById("aa").style.height = (windowHeight - 350) / 2 + "px";
+    }
+
+    document.onkeydown = function (event) {
+        e = event ? event : (window.event ? window.event : null);
+        if (e.keyCode == 13) {
+            document.getElementsByTagName("form")[0].submit();
+        }
+    }
+    </script>
+</head>
+<body onresize="resizeWindow()" onload="resizeWindow()" scroll="no">
+    <div id="aa">
+    </div>
+    <div id="mainbg">
+        <img src="/Content/Themes/Default/Version/@currentVersion/Images/loginbg.png" width="700" height="405">
+        <div id="pad" style="margin-top: 30px;">
+            @using (Html.BeginForm())
+            {
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="60" height="42">用户名</td>
+                            <td width="150px">@Html.TextBoxFor(m => m.LoginName)</td>
+                        </tr>
+                        <tr>
+                            <td height="42">密&nbsp;&nbsp;码</td>
+                            <td width="150px">@Html.PasswordFor(m => m.Password)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" valign="top">
+                                <input type="submit" value="登 录" name="B3" class="loginbtn" onfocus="this.blur()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="middle"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</body>
+</html>

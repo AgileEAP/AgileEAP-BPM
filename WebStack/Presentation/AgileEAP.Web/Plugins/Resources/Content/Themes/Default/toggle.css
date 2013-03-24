@@ -1,0 +1,48 @@
+﻿@charset "utf-8";
+/* CSS Document */
+img {border:0px; overflow:hidden;}
+.btn1Div {
+	background:url(/Plugins/eCloud/Content/Themes/Default/Images/SelfPortal/btn_38.gif) top left no-repeat;
+	width:13px;
+	height:18px;
+	float:left;
+	cursor: pointer;
+}
+.btn2Div {
+	background:url(/Plugins/eCloud/Content/Themes/Default/Images/SelfPortal/btn_39.gif) top left no-repeat;
+	width:13px;
+	height:18px;
+	float:left;
+	cursor: pointer;
+}
+#leftDiv {
+	float:left;
+	width:67%;
+}
+#rightDiv {
+	margin-left:0.5%;
+	float:left;
+	width:30.5%;
+}
+.titleDiv {
+	background:#78c8fb url(/Plugins/eCloud/Content/Themes/Default/Images/SelfPortal/tiao_38.jpg) top left no-repeat;
+	height:18px;
+	line-height:18px;
+	color:#FFF;
+	text-align:left;
+	margin-bottom:10px;
+}
+.topDiv {float:left;}
+.bottomDiv {float:right;}
+#btn {
+	background:url(/Plugins/eCloud/Content/Themes/Default/Images/SelfPortal/btn_38.gif) top left no-repeat;
+	width:13px;
+	height:18px;
+	float:left;
+}
+#divRemark {
+	padding-left:25px;
+	padding-right:20px;
+	line-height:18px;
+	margin-bottom:10px;
+}

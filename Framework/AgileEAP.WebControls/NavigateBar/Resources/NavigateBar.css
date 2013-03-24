@@ -1,0 +1,34 @@
+﻿/*==当前导航菜单==*/
+.active_navigate_item
+{
+	color: #FF6600;
+	font-weight: bold;
+	float: left;
+}
+
+.navigate_item
+{
+	float: left;
+}
+
+.navigateBar_left
+{
+}
+
+.navigateBar
+{
+	float: left;
+}
+
+.navigateBar_right
+{
+}
+
+#menubar_container
+{
+	overflow: hidden;
+	width: 2000px;
+	position: relative;
+	height: 28px;
+}
+

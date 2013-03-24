@@ -1,0 +1,9 @@
+﻿Group: 基础应用
+FriendlyName: 智能报表
+SystemName: iReport
+Version: 1.0
+SupportedVersions: 1.0
+Author: AgileEAP 
+DisplayOrder: 1
+FileName:AgileEAP.Plugin.iReport.dll
+LoginUrl:login

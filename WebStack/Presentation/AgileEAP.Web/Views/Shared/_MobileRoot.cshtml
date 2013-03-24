@@ -1,0 +1,79 @@
+﻿@using AgileEAP.Core
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@{
+    var storeLocation = EngineContext.Current.Resolve<AgileEAP.Core.IWebHelper>().GetStoreLocation();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Html.AgileEAPTitle(false)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @*This is used so that themes can inject content into the header*@
+    @Html.Partial("MobileHead")
+    @*custom css*@
+    @Html.AgileEAPCssFiles()
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+    @*do not handle links via ajax by default
+    1. automatically update page URLs (for example, when adding a product to the cart
+    2. process SSL redirections*@
+    <script type="text/javascript">
+          $(document).bind("mobileinit", function () {
+              $.mobile.ajaxEnabled = false;
+          });
+        </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile-1.0.min.js")"></script>
+    <!--Powered by AgileEAPCommerce - http://www.AgileEAPCommerce.com-->
+    <!--Copyright (c) 2008-2011-->
+</head>
+<body>
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-position="inline">
+            @*do not use @Html.Partial("Header")
+            use sections right here so they can be overriden in the views*@
+            @if (IsSectionDefined("top-left-button"))
+            {
+                @RenderSection("top-left-button")
+            }
+            else
+            {
+                <a href="@Url.RouteUrl("HomePage")" data-icon="home">@T("Common.Home")</a>
+            }
+            @*title*@
+            <h1>@Html.AgileEAPTitle(false)</h1>
+            @if (IsSectionDefined("top-right-button"))
+            {
+                @RenderSection("top-right-button")
+            }
+            else
+            {
+                @*<a href="#" data-rel="back" data-icon="back">Back</a>*@
+                @Html.Action("ConfigButton", "Common")
+            }
+        </div>
+        @if (IsSectionDefined("headerlinks"))
+        {
+            @RenderSection("headerlinks")
+        }
+        else
+        {
+            <div data-role="header" data-position="inline">
+                @Html.Action("HeaderLinks", "Common")
+            </div>
+        }
+        <div data-role="content">
+            @RenderBody()
+        </div>
+        @if (IsSectionDefined("footer"))
+        {
+            @RenderSection("footer")
+        }
+        else
+        {
+            <div data-role="footer">
+                @Html.Action("Footer", "Common")
+            </div>
+        }
+    </div>
+</body>
+</html>

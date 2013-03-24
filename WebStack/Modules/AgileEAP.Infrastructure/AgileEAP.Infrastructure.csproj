@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1580F564-DAA6-4513-8B40-5033885AA7E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.Infrastructure</RootNamespace>
+    <AssemblyName>AgileEAP.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AgileEAP.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\AgileEAP\AgileEAP.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\ActionLogHistory.cs" />
+    <Compile Include="Domain\App.cs" />
+    <Compile Include="Domain\CacheData.cs" />
+    <Compile Include="Domain\Calendar.cs" />
+    <Compile Include="Domain\Catalog.cs" />
+    <Compile Include="Domain\Dict.cs" />
+    <Compile Include="Domain\DictItem.cs" />
+    <Compile Include="Domain\BizOrg.cs" />
+    <Compile Include="Domain\CustMenu.cs" />
+    <Compile Include="Domain\Duty.cs" />
+    <Compile Include="Domain\eForm.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\EmployeeOrg.cs" />
+    <Compile Include="Domain\EmployeePosition.cs" />
+    <Compile Include="Domain\MetaData.cs" />
+    <Compile Include="Domain\ObjectRole.cs" />
+    <Compile Include="Domain\Operate.cs" />
+    <Compile Include="Domain\Operator.cs" />
+    <Compile Include="Domain\Organization.cs" />
+    <Compile Include="Domain\Position.cs" />
+    <Compile Include="Domain\Privilege.cs" />
+    <Compile Include="Domain\Resource.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\RolePrivilege.cs" />
+    <Compile Include="Domain\Shortcut.cs" />
+    <Compile Include="Domain\SpecialPrivilege.cs" />
+    <Compile Include="Domain\Module.cs" />
+    <Compile Include="Domain\PersonalParam.cs" />
+    <Compile Include="Domain\PrivateCalendar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\SysParam.cs" />
+    <Compile Include="Domain\UploadFile.cs" />
+    <Compile Include="Service\AuthorizeService.cs" />
+    <Compile Include="Service\Interface\IAuthorizeService.cs" />
+    <Compile Include="Service\Interface\IUtilService.cs" />
+    <Compile Include="Service\UtilService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\HbmMaps\BizOrg.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\CustMenu.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Duty.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Employee.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\EmployeeOrg.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\EmployeePosition.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\MetaData.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\ObjectRole.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Operate.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Operator.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Organization.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Position.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Privilege.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Resource.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Role.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\RolePrivilege.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Shortcut.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\SpecialPrivilege.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\HbmMaps\ActionLogHistory.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\App.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\CacheData.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Calendar.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Catalog.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Dict.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\DictItem.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\Module.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\PersonalParam.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\PrivateCalendar.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\SysParam.hbm.xml" />
+    <EmbeddedResource Include="Domain\HbmMaps\UploadFile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\HbmMaps\eForm.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

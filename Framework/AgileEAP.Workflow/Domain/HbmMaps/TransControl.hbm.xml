@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Workflow.Domain" assembly="AgileEAP.Workflow">
+	<class name="AgileEAP.Workflow.Domain.TransControl, AgileEAP.Workflow" table="WF_TransControl" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="SrcActID" column="SrcActID" />
+		<property name="SrcActName" column="SrcActName" />
+		<property name="DestActID" column="DestActID" />
+		<property name="DestActName" column="DestActName" />
+		<property name="ProcessInstID" column="ProcessInstID" />
+		<property name="TransTime" column="TransTime" />
+		<property name="TransWeight" column="TransWeight" />
+	</class>
+</hibernate-mapping>

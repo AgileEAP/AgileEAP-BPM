@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Resource>
+@using AgileEAP.Core
+@using AgileEAP.MVC
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@using AgileEAP.Web
+@using AgileEAP.Core.Utility;
+@using AgileEAP.Infrastructure.Domain;
+@{
+    var workContext = EngineContext.Current.Resolve<AgileEAP.Core.IWorkContext>();
+    var currentUser = workContext.User;
+    var currentSkin = workContext.Theme;
+    var rootPath = WebUtil.GetRootPath();
+    Script.Require("jQuery").AtHead();
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>导航栏</title>
+    <style type="text/css">
+    ul
+    {
+        padding-left: 10px;
+        margin: 0px;
+        line-height: 26px;
+        height: 26px;
+    }
+
+        ul li
+        {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            line-height: 26px;
+            height: 26px;
+            vertical-align: middle;
+        }
+
+            ul li a
+            {
+                color: #000000;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+                ul li A:link
+                {
+                    color: #000000;
+                }
+
+                ul li A:visited
+                {
+                    color: #000000;
+                }
+
+    .liOver
+    {
+        background-color: #EFF8FE;
+        border: 1px solid #E1F1FE;
+        line-height: 26px;
+        height: 26px;
+    }
+
+    .liOut
+    {
+        background-color: White;
+        line-height: 26px;
+        height: 26px;
+    }
+
+    .liClick
+    {
+        background-color: #C1E2FC;
+        border: 1px solid #88C9FD;
+        line-height: 26px;
+        height: 26px;
+    }
+</style>
+    @Html.HeadScripts()
+    <script type="text/javascript">
+    $(function () {
+        var $content = $("#container");
+        $content.find("ul li").each(function () {
+            //鼠标经过样式
+            $(this).hover(function () {
+                $(this).removeClass("liOut");
+                $(this).addClass("liOver");
+            },
+            function () {
+                $(this).removeClass("liOver");
+                $(this).addClass("liOut");
+            });
+
+            //单击后的样式
+            $(this).click(function () {
+                $(this).siblings().each(function () { $(this).removeClass("liClick"); });
+                $(this).addClass("liClick");
+            });
+        });
+    });
+
+    function openUrl(url) {
+        $("#ifrContentPage", window.parent.document.body).attr("src", url);
+    }
+
+    </script>
+</head>
+<body>
+    <div id="container" style="width: 170px;">
+        <div class="content">
+            <ul>
+                @{ 
+                    if (Model != null)
+                    {
+                       foreach (var menuItem in Model)
+                        {
+                            string urlParam = string.IsNullOrEmpty(menuItem.Entry) ? string.Empty : "?Entry=" + menuItem.Entry;
+                            urlParam += !string.IsNullOrEmpty(menuItem.Argument) && string.IsNullOrEmpty(urlParam) ? "?" + menuItem.Argument : menuItem.Argument;
+                            string navIcon = string.Format("{0}Content/Themes/{1}/Images/NavigateBar/{2}", rootPath, currentSkin, string.IsNullOrEmpty(menuItem.ExpandIcon) ? "tb.png" : menuItem.ExpandIcon);
+                            string url = string.Format("{0}{1}{2}", rootPath, menuItem.URL, urlParam);
+                    <li><a onfocus="this.blur()" onclick="openUrl('@url')">
+                        <img src="@navIcon" style="vertical-align:text-bottom;margin-right: 4px; overflow:hidden" />@menuItem.Text.Trim()
+                    </a></li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

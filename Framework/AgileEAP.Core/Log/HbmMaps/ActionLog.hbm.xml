@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Core.Log" assembly="AgileEAP.Core">
+  <class name="AgileEAP.Core.Log.ActionLog, AgileEAP.Core" table="AB_ActionLog" lazy="true">
+    <id name="ID" column="ID">
+      <generator class="assigned" />
+    </id>
+    <property name="UserName" column="UserName" />
+    <property name="LogType" column="LogType" />
+    <property name="ClientIP" column="ClientIP" />
+    <property name="AppModule" column="AppModule" />
+    <property name="Message" column="Message" />
+    <property name="Content" column="Content" type="StringClob"  />
+    <property name="Result" column="Result" />
+    <property name="UserID" column="UserID" />
+    <property name="CreateTime" column="CreateTime" />
+  </class>
+</hibernate-mapping>

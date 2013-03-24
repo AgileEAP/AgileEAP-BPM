@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Workflow.Domain" assembly="AgileEAP.Workflow">
+	<class name="AgileEAP.Workflow.Domain.ProcessDef, AgileEAP.Workflow" table="WF_ProcessDef" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" column="Name" />
+		<property name="Text" column="Text" />
+		<property name="Content" column="Content" type="StringClob" />
+		<property name="CategoryID" column="CategoryID" />
+		<property name="CurrentState" column="CurrentState" />
+		<property name="CurrentFlag" column="CurrentFlag" />
+		<property name="Startor" column="Startor" />
+		<property name="IsActive" column="IsActive" />
+		<property name="Version" column="Version" />
+		<property name="Description" column="Description" />
+		<property name="CreateTime" column="CreateTime" />
+		<property name="Creator" column="Creator" />
+		<property name="ModifyTime" column="ModifyTime" />
+		<property name="Modifier" column="Modifier" />
+	</class>
+</hibernate-mapping>

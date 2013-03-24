@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="AgileEAP.Administration.PageMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%=HtmlExtensions.RequireStyles("oldsite_default") %>
+    <%=HtmlExtensions.RequireScripts("oldsite") %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script language="javascript" type="text/javascript">
+        function getSkin() {
+            var skin = "<%=Skin.ToLower()%>";
+            return skin;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="navigation" style="vertical-align: top" runat="server">
+    </div>
+    <div id="page">
+        <agile:CommandBar ID="commandBar" runat="server" />
+        <div id="page_container">
+            <asp:ContentPlaceHolder ID="contentPlace" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div id="actionDialog">
+    </div>
+    <div id="promptMsg">
+    </div>
+    <div id="loadingBar" style="height: 0px; border: 0px; font-size: 0px; overflow: hidden;">
+    </div>
+    <agile:HidTextBox ID="hidCurrentId" runat="server" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Generic context menu styles */
+.contextMenu
+{
+    position: absolute;
+    width: 150px;
+    z-index: 99999;
+    border: solid 1px #CCC;
+    background: #EEE;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+    font-size: 11px;
+}
+
+    .contextMenu LI
+    {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .contextMenu A
+    {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        line-height: 20px;
+        height: 20px;
+        background-position: 6px center;
+        background-repeat: no-repeat;
+        outline: none;
+        padding: 1px 5px;
+        padding-left: 28px;
+    }
+
+    .contextMenu LI.hover A
+    {
+        color: #FFF;
+        background-color: #3399FF;
+    }
+
+    .contextMenu LI.disabled A
+    {
+        color: #AAA;
+        cursor: default;
+    }
+
+    .contextMenu LI.hover.disabled A
+    {
+        background-color: transparent;
+    }
+
+    .contextMenu LI.separator
+    {
+        border-top: solid 1px #CCC;
+    }
+
+    /*
+	Adding Icons
+	
+	You can add icons to the context menu by adding
+	classes to the respective LI element(s)
+*/
+
+    .contextMenu LI.edit A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_edit.png);
+    }
+
+    .contextMenu LI.cut A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/cut.png);
+    }
+
+    .contextMenu LI.copy A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_copy.png);
+    }
+
+    .contextMenu LI.paste A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_paste.png);
+    }
+
+    .contextMenu LI.delete A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_delete.png);
+    }
+
+    .contextMenu LI.AddFolder A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/AddFolder.png);
+    }
+
+    .contextMenu LI.EditFolder A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/EditFolder.png);
+    }
+
+    .contextMenu LI.DeleteFolder A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/DeleteFolder.png);
+    }
+
+
+    .contextMenu LI.AddModel A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/AddModel.png);
+    }
+
+    .contextMenu LI.EditModel A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/EditModel.png);
+    }
+
+    .contextMenu LI.DeleteModel A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/DeleteModel.png);
+    }
+
+    .contextMenu LI.AddReport A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/AddReport.png);
+    }
+
+    .contextMenu LI.EditReport A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/EditReport.png);
+    }
+
+    .contextMenu LI.DeleteReport A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/DeleteReport.png);
+    }
+
+    .contextMenu LI.ExecuteReport A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/ExecuteReport.png);
+    }
+
+
+
+    .contextMenu LI.startvm A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/ActionBar/VMplay.png);
+    }
+
+    .contextMenu LI.powoffvm A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/SelfPortal/control-stop-square.png);
+    }
+
+    .contextMenu LI.stopvm A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/SelfPortal/control-pause.png);
+    }
+
+    .contextMenu LI.restartvm A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/SelfPortal/arrow-circle-315.png);
+    }
+
+    .contextMenu LI.openconsole A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/SelfPortal/monitor2.png);
+    }
+
+    .contextMenu LI.editvm A
+    {
+        background-image: url(/Plugins/eClient/Content/Themes/default/Images/SelfPortal/edit.png);
+    }
+
+    .contextMenu LI.edit A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_edit.png);
+    }
+
+    .contextMenu LI.cutcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/cut.png);
+    }
+
+    .contextMenu LI.copycontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_copy.png);
+    }
+
+    .contextMenu LI.pastecontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_paste.png);
+    }
+
+    .contextMenu LI.delcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/page_white_delete.png);
+    }
+
+    .contextMenu LI.leftcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/left.png);
+    }
+
+    .contextMenu LI.centercontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/center.png);
+    }
+
+    .contextMenu LI.rightcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/right.png);
+    }
+       .contextMenu LI.upcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/up.png);
+    }
+
+    .contextMenu LI.middlecontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/middle.png);
+    }
+
+    .contextMenu LI.bottomcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/position/bottom.png);
+    }
+       .contextMenu LI.attrcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/attr.png);
+    }
+          .contextMenu LI.formcontrol A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/ContextMenu/form.png);
+    }
+/*.contextMenu LI.editvm A
+    {
+        background-image: url(/Plugins/Resources/Content/Themes/Default/Images/edit.png);
+    }*/

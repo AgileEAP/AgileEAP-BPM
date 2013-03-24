@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.Core", "AgileEAP.Core\AgileEAP.Core.csproj", "{EC0B1B39-E2F4-4BE3-878F-8E6DBAD1E579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.WebControls", "AgileEAP.WebControls\AgileEAP.WebControls.csproj", "{43ADB08F-8069-4038-B950-E1AFE942B23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.MVC", "AgileEAP.MVC\AgileEAP.MVC.csproj", "{75FD4163-333C-4DD5-854D-2EF294E45D94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.Workflow", "AgileEAP.Workflow\AgileEAP.Workflow.csproj", "{0F58FC8C-E441-409D-A97F-A5596B4A10DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{92D67FB9-EEE6-4245-874B-C9FDE918DFEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.Workflow.UnitTests", "Tests\AgileEAP.Workflow.UnitTests\AgileEAP.Workflow.UnitTests.csproj", "{EC21B4A7-0A58-4CD1-967D-0CF055DDE299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.MVC.UnitTests", "Tests\AgileEAP.MVC.UnitTests\AgileEAP.MVC.UnitTests.csproj", "{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileEAP.Core.UnitTests", "Tests\AgileEAP.Core.UnitTests\AgileEAP.Core.UnitTests.csproj", "{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{99E6593D-2C7B-4EF6-98FB-B433F9E77113}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC0B1B39-E2F4-4BE3-878F-8E6DBAD1E579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0B1B39-E2F4-4BE3-878F-8E6DBAD1E579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0B1B39-E2F4-4BE3-878F-8E6DBAD1E579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0B1B39-E2F4-4BE3-878F-8E6DBAD1E579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43ADB08F-8069-4038-B950-E1AFE942B23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43ADB08F-8069-4038-B950-E1AFE942B23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43ADB08F-8069-4038-B950-E1AFE942B23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43ADB08F-8069-4038-B950-E1AFE942B23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FD4163-333C-4DD5-854D-2EF294E45D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FD4163-333C-4DD5-854D-2EF294E45D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FD4163-333C-4DD5-854D-2EF294E45D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FD4163-333C-4DD5-854D-2EF294E45D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F58FC8C-E441-409D-A97F-A5596B4A10DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F58FC8C-E441-409D-A97F-A5596B4A10DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F58FC8C-E441-409D-A97F-A5596B4A10DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F58FC8C-E441-409D-A97F-A5596B4A10DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC21B4A7-0A58-4CD1-967D-0CF055DDE299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC21B4A7-0A58-4CD1-967D-0CF055DDE299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC21B4A7-0A58-4CD1-967D-0CF055DDE299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC21B4A7-0A58-4CD1-967D-0CF055DDE299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC21B4A7-0A58-4CD1-967D-0CF055DDE299} = {92D67FB9-EEE6-4245-874B-C9FDE918DFEE}
+		{AE95EBC2-E5AF-4740-B7B9-2BAF0626F11E} = {92D67FB9-EEE6-4245-874B-C9FDE918DFEE}
+		{DD276F1B-B0AE-45FE-9DF0-9D6C4067AAA6} = {92D67FB9-EEE6-4245-874B-C9FDE918DFEE}
+	EndGlobalSection
+EndGlobal

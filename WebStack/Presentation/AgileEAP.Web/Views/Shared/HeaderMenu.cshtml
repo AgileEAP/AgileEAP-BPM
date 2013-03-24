@@ -1,0 +1,72 @@
+﻿@using AgileEAP.Core
+@using AgileEAP.Core.Extensions
+@using AgileEAP.Core.Utility
+@using AgileEAP.MVC
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@using AgileEAP.Web
+@using AgileEAP.Infrastructure.Domain
+@{
+    var workContext = EngineContext.Current.Resolve<AgileEAP.Core.IWorkContext>();
+    var currentUser = workContext.User;
+    var currentSkin = workContext.Theme;
+    var menuItems = ViewData["MenuItems"] as IList<Resource>;
+}
+<script type="text/javascript">
+    $(function () {
+        var activeMenuID = $("#headerMenu li:eq(0)").attr("id");
+        $("#headerMenu a").mouseover(function () {
+            $(this).attr("class", "currentmenu_a");
+        });
+
+        $("#headerMenu a").mouseout(function () {
+            $(this).removeAttr("class");
+        });
+
+        $("#headerMenu a").click(function () {
+            if (activeMenuID != $(this).parent().attr("id")) {
+                $("#" + activeMenuID).removeAttr("class");
+                activeMenuID = $(this).parent().attr("id");
+                $("#" + activeMenuID).attr("class", "currentmenu")
+            }
+        });
+
+        $("#headerMenu li").mouseover(function () {
+            $(this).attr("class", "currentmenu_li");
+        });
+
+        $("#headerMenu li").mouseout(function () {
+            if (activeMenuID == $(this).attr("id")) {
+                $("#" + activeMenuID).attr("class", "currentmenu");
+            }
+            else {
+                $(this).removeAttr("class");
+            }
+        });
+
+        $("#" + activeMenuID).find("a:first").click();
+    });
+
+</script>
+<ul id="headerMenu">
+    @{
+        if (menuItems != null)
+        {
+            var i = 0;
+            foreach (var menu in menuItems)
+            {
+                string navIcon = string.Format("/Content/Themes/{0}/Images/Menu/{1}", currentSkin, string.IsNullOrEmpty(menu.ExpandIcon) ? "默认.gif" : menu.ExpandIcon);
+                WriteLiteral(string.Format("<li id='{0}' class='{1}'><a href=\"#\" onclick=\"menuNavigate('{2}?menuID={0}','{4}','{3}','{5}') \">{3}</a></li>",
+                        menu.ID,
+                        i++ == 0 ? "currentmenu" : "",
+                        string.IsNullOrEmpty(menu.URL) ? "Navigate" : menu.URL,
+                        menu.Text,
+                        menu.OpenMode.Cast<MenuTarget>(MenuTarget.NavigateFrame).ToString(), navIcon));
+            
+        <li style="color: #EEEEEE;">
+            <img width="2" height="28" style="float: left;" src="/Content/Themes/@currentSkin/Images/header_menu_split.gif" alt=""/>
+        </li>
+            }
+        }
+    }
+</ul>

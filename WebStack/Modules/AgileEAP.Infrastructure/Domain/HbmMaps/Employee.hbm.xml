@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.Employee, AgileEAP.Infrastructure" table="OM_Employee" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="Code" column="Code" />
+		<property name="LoginName" column="LoginName" />
+		<property name="Name" column="Name" />
+		<property name="OperatorID" column="OperatorID" />
+		<property name="Gender" column="Gender" />
+		<property name="Birthday" column="Birthday" />
+		<property name="Nation" column="Nation" />
+		<property name="Birthplace" column="Birthplace" />
+		<property name="Nativeplace" column="Nativeplace" />
+		<property name="PoliticsStatus" column="PoliticsStatus" />
+		<property name="WorkFromDate" column="WorkFromDate" />
+		<property name="HealthStatus" column="HealthStatus" />
+		<property name="IndustrialGrade" column="IndustrialGrade" />
+		<property name="Speciality" column="Speciality" />
+		<property name="PositionName" column="PositionName" />
+		<property name="Position" column="Position" />
+		<property name="PostGrade" column="PostGrade" />
+		<property name="Status" column="Status" />
+		<property name="CardType" column="CardType" />
+		<property name="CardNo" column="CardNo" />
+		<property name="InDate" column="InDate" />
+		<property name="OutDate" column="OutDate" />
+		<property name="ZipCode" column="ZipCode" />
+		<property name="Email" column="Email" />
+		<property name="Fax" column="Fax" />
+		<property name="Mobile" column="Mobile" />
+		<property name="MSN" column="MSN" />
+		<property name="OfficePhone" column="OfficePhone" />
+		<property name="Address" column="Address" />
+		<property name="Director" column="Director" />
+		<property name="MajorOrgID" column="MajorOrgID" />
+		<property name="Photo" column="Photo" />
+		<property name="Creator" column="Creator" />
+		<property name="CreateTime" column="CreateTime" />
+    <property name="CorpID" column="CorpID" />
+    <property name="OwnerOrg" column="OwnerOrg" />
+	</class>
+</hibernate-mapping>

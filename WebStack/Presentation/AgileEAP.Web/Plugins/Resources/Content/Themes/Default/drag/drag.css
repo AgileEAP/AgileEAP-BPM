@@ -1,0 +1,18 @@
+﻿#splitBar
+{
+    float: left;
+    position: absolute;
+    z-index: 20;
+    cursor: col-resize;
+    display: inline;
+    overflow: hidden;
+    width: 4px;
+    background: #D6D7D6;
+    left: 189px;
+    top: 75px;
+}
+
+#page
+{
+    text-align: left;
+}

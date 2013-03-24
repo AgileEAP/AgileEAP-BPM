@@ -1,0 +1,111 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.Core
+@using AgileEAP.MVC
+@using AgileEAP.Core.Infrastructure
+@using AgileEAP.Core.Infrastructure.DependencyManagement
+@using AgileEAP.Web
+@{
+    var workContext = EngineContext.Current.Resolve<AgileEAP.Core.IWorkContext>();
+    var currentUser = workContext.User;
+    var currentSkin = workContext.Theme;
+    var displayMiniProfiler = workContext.IsDebug;// EngineContext.Current.Resolve<AgileEAP.Core.Domain.StoreInformationSettings>().DisplayMiniProfilerInPublicStore;
+    string currentVersion = Configure.Get("CurrentVersion", "PCI");
+
+    Style.Require("jQueryUI_" + Theme);
+    Style.Require("site_" + Theme);
+    Style.Require("site_layout_" + Theme);
+    Script.Require("site").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("processbar").AtHead();
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Version.eCloudName</title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @RenderSection("styles", false)
+    @Html.HeadScripts()
+    @*This is used so that themes can inject content into the header*@ @*  @Html.Partial("Head")*@
+    @*Favicon - upload upload favicon.ico file to the root directory*@ @*  @Html.Action("WidgetsByZone", "Widget", new { widgetZone = AgileEAP.Core.Cms.WidgetZone.HeadHtmlTag })*@
+    @*    @if (displayMiniProfiler)
+    {
+        @StackExchange.Profiling.MiniProfiler.RenderIncludes();
+    }*@
+    <style type="text/css">
+    html {
+        height: 100%;
+    }
+</style>
+    <script type="text/javascript" language="javascript">
+    $("#mainbody").height($("#masterpage").height() - $("#header").height() - $("#footer").height());
+
+    var navObject =
+        {
+            navFrameHtml: "<div id=\"navRegion\">"
+                + "<div id=\"navTop\">"
+                + "<img id=\"navIcon\" alt=\"\" src=\"\" style=\"margin: 2px 0px 0px 10px;\"/><label id=\"navTitle\" ></label>"
+                + "</div>"
+                + "<div id=\"navbg\">"
+                + "<div id=\"navContent\">"
+                + "<iframe id=\"ifrNavPage\" name=\"ifrNavPage\" frameborder=\"0\" scrolling=\"auto\" height=\"100%\"></iframe>"
+                + "</div></div>"
+                + "</div>"
+                + "<div id=\"splitBar\"></div>"
+                + "<div id=\"contentRegion\">"
+                + "<iframe id=\"ifrContentPage\"   name=\"ifrContentPage\" frameborder=\"0\" scrolling=\"auto\" height=\"100%\" width=\"100%\"></iframe>"
+                + "</div>",
+            mainFrameHtml: "<iframe id=\"ifrMainFrame\"   name=\"ifrMainFrame\" frameborder=\"0\" scrolling=\"auto\" width=\"100%\" height=\"100%\" ></iframe>"
+        };
+
+    function menuNavigate(url, target, text, navIcon) {
+        try {
+            var ifr = null;
+            if (target == "NavigateFrame") {
+                ifr = $("#ifrNavPage");
+                if (!ifr[0]) {
+                    $("#mainbody").html(navObject.navFrameHtml);
+                    ifr = $("#ifrNavPage");
+                    $("#ifrContentPage").attr("src", "Empty.htm");
+                }
+                ifr.attr("src", url);
+                $("#navTitle").text(text);
+                $("#navIcon").attr("src", navIcon);
+            }
+            else if (target == "MainFrame") {
+                ifr = $("#ifrMainFrame");
+                if (!ifr[0]) {
+                    $("#mainbody").html(navObject.mainFrameHtml);
+                    ifr = $("#ifrMainFrame");
+                }
+                ifr.attr("src", url);
+            }
+        } catch (e) { }
+    }
+    //$(document).ready(function () {
+    //    $("#contentRegion").width($("#mainbody").width() - 189 - 90);
+    //});
+    </script>
+    <!--Powered by trh --Copyright (c) 2010-@DateTime.Now.Year-->
+</head>
+<body>
+    <div id="masterpage">
+        @Html.Partial("Header")
+        @Html.Partial("HeaderMenu")
+        <div class="clear">
+        </div>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+        @Html.Partial("Footer")
+    </div>
+    <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+    <div id="loadingBar" style="height: 0px; border: 0px; overflow: hidden; font-size: 0px;">
+    </div>
+</body>
+</html>

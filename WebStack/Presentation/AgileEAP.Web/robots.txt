@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /bin/
+Disallow: /install
+Disallow: /login
+Disallow: /logout

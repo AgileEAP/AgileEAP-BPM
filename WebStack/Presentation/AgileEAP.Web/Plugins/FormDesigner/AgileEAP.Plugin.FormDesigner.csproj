@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DEC3DD3-A6CF-4068-8752-2BD3D1CADDD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.Plugin.FormDesigner</RootNamespace>
+    <AssemblyName>AgileEAP.Plugin.FormDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\WebStack\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AgileEAP.Core">
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.MVC">
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.3.0.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.3.0.1\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc, Version=2012.3.1114.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\packages\KendoUIWeb.2012.3.1114\lib\Mvc3\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Lib\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <None Include="Views\Form\Form.cshtml" />
+    <None Include="Views\Home\ChartConfigure.cshtml" />
+    <None Include="Views\Home\DataCtrlConfigure.cshtml" />
+    <None Include="Views\Home\TextConfigure.cshtml" />
+    <Compile Include="MenuProvider.cs" />
+    <Compile Include="Models\FormDataModel.cs" />
+    <Compile Include="Models\FormModel.cs" />
+    <Compile Include="Models\SaveEFormModel.cs" />
+    <Compile Include="Models\TableInfoModel.cs" />
+    <Compile Include="Models\TreeNodeModel.cs" />
+    <Compile Include="FormDesignerPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceManifest.cs" />
+    <Compile Include="RouteProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="File\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Views\Home\ButtonConfigure.cshtml" />
+    <None Include="Views\Home\ChoiceBox.cshtml" />
+    <None Include="Views\Home\Choosebox.cshtml" />
+    <None Include="Views\Home\ConfigureControl.cshtml" />
+    <None Include="Views\Home\FormDesigner.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\SystemControl.cshtml" />
+    <None Include="Views\Home\TreeConfigure.cshtml" />
+    <None Include="Views\Home\WizardConfigure.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Themes\Default\ConfigureControl.css" />
+    <Content Include="Content\Themes\Default\eForm.css" />
+    <Content Include="Content\Themes\Default\FormDesigner.css" />
+    <Content Include="Content\Themes\Default\FormUI.css" />
+    <Content Include="Content\Themes\Default\Images\attachment.png" />
+    <Content Include="Content\Themes\Default\Images\background.png" />
+    <Content Include="Content\Themes\Default\Images\blankImg.png" />
+    <Content Include="Content\Themes\Default\Images\button.png" />
+    <Content Include="Content\Themes\Default\Images\center.png" />
+    <Content Include="Content\Themes\Default\Images\chart.png" />
+    <Content Include="Content\Themes\Default\Images\checkbox.png" />
+    <Content Include="Content\Themes\Default\Images\Combox.png" />
+    <Content Include="Content\Themes\Default\Images\datatable.png" />
+    <Content Include="Content\Themes\Default\Images\date.png" />
+    <Content Include="Content\Themes\Default\Images\Div.png" />
+    <Content Include="Content\Themes\Default\Images\dropdown.png" />
+    <Content Include="Content\Themes\Default\Images\email.png" />
+    <Content Include="Content\Themes\Default\Images\fullScreen.png" />
+    <Content Include="Content\Themes\Default\Images\Grid.png" />
+    <Content Include="Content\Themes\Default\Images\hidden.png" />
+    <Content Include="Content\Themes\Default\Images\img.png" />
+    <Content Include="Content\Themes\Default\Images\input.png" />
+    <Content Include="Content\Themes\Default\Images\left.png" />
+    <Content Include="Content\Themes\Default\Images\lineChart.png" />
+    <Content Include="Content\Themes\Default\Images\New.gif" />
+    <Content Include="Content\Themes\Default\Images\Open.png" />
+    <Content Include="Content\Themes\Default\Images\position\bottom.png" />
+    <Content Include="Content\Themes\Default\Images\position\center.png" />
+    <Content Include="Content\Themes\Default\Images\position\left.png" />
+    <Content Include="Content\Themes\Default\Images\position\middle.png" />
+    <Content Include="Content\Themes\Default\Images\position\right.png" />
+    <Content Include="Content\Themes\Default\Images\position\up.png" />
+    <Content Include="Content\Themes\Default\Images\radio.png" />
+    <Content Include="Content\Themes\Default\Images\Redo.gif" />
+    <Content Include="Content\Themes\Default\Images\restoreScreen.png" />
+    <Content Include="Content\Themes\Default\Images\right.png" />
+    <Content Include="Content\Themes\Default\Images\Save.png" />
+    <Content Include="Content\Themes\Default\Images\square.gif" />
+    <Content Include="Content\Themes\Default\Images\sysInput.png" />
+    <Content Include="Content\Themes\Default\Images\Tabs.png" />
+    <Content Include="Content\Themes\Default\Images\text.png" />
+    <Content Include="Content\Themes\Default\Images\textarea.png" />
+    <Content Include="Content\Themes\Default\Images\Undo.gif" />
+    <Content Include="Content\Themes\Default\Images\upload.png" />
+    <Content Include="Content\Themes\Default\Images\Wizard.png" />
+    <Content Include="Description.txt" />
+    <Content Include="Scripts\ConfigureControl.js" />
+    <Content Include="Scripts\FormDesigner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\AgileEAP.Infrastructure\AgileEAP.Infrastructure.csproj">
+      <Project>{1580f564-daa6-4513-8b40-5033885aa7e2}</Project>
+      <Name>AgileEAP.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,30 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Script.Require("site").AtHead();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>报表系统</title>
+    @Html.HeadCss()
+
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div class="logo">
+            </div>
+        </div>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            @Html.Partial("Footer")
+        </div>
+    </div>
+    @Html.HeadScripts()
+    @Html.FootScripts()
+</body>
+</html>

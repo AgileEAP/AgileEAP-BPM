@@ -1,0 +1,73 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using AgileEAP.Core
+@using AgileEAP.Core.Extensions
+@using AgileEAP.Core.Plugins
+@using AgileEAP.Infrastructure.Domain
+@using Kendo.Mvc.UI
+@{    
+    ViewBag.Title = "插件管理";
+    Layout = "~/Views/Shared/_Kendo.cshtml";
+}
+
+@Html.BuilderToolbar()
+@(Html.Kendo().Grid<eForm>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(o => o.ID).Title("ID").Hidden();
+        columns.Bound(o => o.Name).Title("名称");
+        columns.Bound(o => o.AppID).Title("所属应用");
+        columns.Bound(o => o.Creator).Title("创建者");
+        columns.Bound(o => o.CreateTime).Title("创建时间").Format("{0:yyyy-MM-dd}");
+    })
+    .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+    .Pageable(o =>
+    {
+        o.PageSizes(new int[] { 10, 15, 20 }); o.Messages(m =>
+        {
+            m.ItemsPerPage("项每页");
+        });
+    }).Sortable().Filterable().DataSource(dataSource => dataSource
+        .Ajax()//.Action("Form_Filter", "Home")
+        .Read(read => read.Url("/FormDesigner/Home/Form_Filter")).PageSize(Configure.Get<int>("PageSize", 15)))
+        )
+<script type="text/javascript">
+    function newForm() {
+        window.parent.showDialog("actionDialog", "表单设计器", "/FormDesigner", 1050, 700);
+    }
+
+    function designForm() {
+        var row = $("#grid").find(".k-state-selected");
+        var formID = row.find("td").eq(0).text()
+        if (formID) {
+            alert("请选择表单");
+            return;
+        }
+        window.parent.showDialog("actionDialog", "表单设计器", "/FormDesigner?eFormID=" + formID, 1050, 700);
+    }
+
+    function deleteForm() {
+        var row = $("#grid").find(".k-state-selected");
+        var formID = row.find("td").eq(0).text()
+        if (formID) {
+            alert("请选择表单");
+            return;
+        }
+
+        if (!confirm("你确定要删除该表单定义吗?")) {
+            return;
+        }
+
+        var processbar = window.parent.$("#processbar");
+        processbar.processbar({ message: '正在处理...' });
+        $.post("/FormDesigner/Home/DeleteForm", { formID: formID }, function (ajaxResult) {
+            processbar.complete();
+            if (ajaxResult && ajaxResult.Result == 1) {
+                row.remove();
+            }
+            alert(ajaxResult.PromptMsg);
+        });
+    }
+
+</script>

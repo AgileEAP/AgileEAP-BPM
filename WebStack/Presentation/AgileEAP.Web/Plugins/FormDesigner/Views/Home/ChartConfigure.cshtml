@@ -1,0 +1,161 @@
+﻿@inherits AgileEAP.MVC.ViewEngines.Razor.WebViewPage
+@using AgileEAP.MVC
+@using System.Web.Mvc.Html
+@{ 
+    Script.Require("jQuery").AtHead();
+
+    Script.Require("jQueryUI").AtHead();
+    Script.Require("tab").AtHead();
+    Script.Require("site").AtHead();
+    Script.Require("dialog").AtHead();
+    Script.Require("jstree").AtHead();
+    Script.Require("ConfigureControljs").AtHead();
+
+
+
+    Style.Require("site_" + Theme);
+    Style.Require("tab_" + Theme);
+    Style.Require("smoothnessjQueryUI_" + Theme);
+    Style.Require("ConfigureControl_" + Theme);
+    
+}
+<!DOCTYPE html>
+<html class="ng-app" id="ng-app" ng-app>
+<head>
+    <title>@Version.eClientName</title>
+    @Html.Metas()
+    @Html.HeadCss()
+    @Html.HeadScripts()
+    <script type="text/javascript">
+        var form = null;
+        var field = null;
+        function getValue(retValue, retItems) {
+            alert(retItems);
+            $("#control_datasource").val(retItems);
+            field.DataSource = retItems;
+        }
+        $(document).ready(function () {
+            $("#configure_tabs").tabs();
+            $("#save")
+                .button()
+                .click(function (event) {
+                    event.preventDefault();
+                    var controlOldID = $.query.get("ControlID");
+                    var controlType = $.query.get("ControlType");
+                    if (typeof (parent.setContorlValue) == "function") {
+                        parent.setContorlValue({ExtendData: $("#extendData").val(), ControlType: controlType, OldID: controlID, ID: $("#controlId").val(), Name: $("#controlId").val(), Text: $("#controlName").val(), DataType: $("#data_type").val(), Width: $("#controlWidth").val(), Height: $("#controlHeight").val(), DataSource: $("#control_datasource").val() }, 1);
+                    }
+                    else {
+                        parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.setContorlValue({ExtendData: $("#extendData").val(), ControlType: controlType, OldID: controlID, ID: $("#controlId").val(), Name: $("#controlId").val(), Text: $("#controlName").val(), DataType: $("#data_type").val(), Width: $("#controlWidth").val(), Height: $("#controlHeight").val(), DataSource: $("#control_datasource").val() }, 1);
+                    }
+                    window.parent.$("#actionDialog2").dialog("close");
+
+                });
+            $("#cancel")
+                .button()
+                .click(function (event) {
+                    event.preventDefault();
+                    window.parent.$("#actionDialog2").dialog("close");
+                });
+            $("#extendData").click(function () {
+                configure.getDataSource({ ID: this.id, form: form });
+            });
+            $("#control_datasource").click(function () {
+                openDialog2({
+                    content:'<div id="tree"  class="container"> </div>',
+                    showModal: true,
+                    width: 470,
+                    resizable: false,
+                    customdialogSylte: { footer: "border:0px;text-align:center;" },
+                    buttons: {
+                        '确 定': function () {
+                          configure.getTreeDataSource({ id: "tree" }, getValue);
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+                configure.getTreeDataSource({ id: "tree", checkedItems: $("#control_datasource").val(), dataSource: form.DataSource });
+            });
+           
+            var controlID = $.query.get("ControlID");
+            var controlType = $.query.get("ControlType");
+            var me = null;
+            if (parent.form) {
+                form = parent.form;
+                me = parent.document.getElementById(controlID);
+            }
+            else {
+                form = parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.form;
+                me = parent.$("#actionDialog").find("#bg_div_iframe")[0].contentWindow.document.getElementById(controlID);
+            }
+            var fields = form.Fields;
+            for (var i = 0; i < fields.length; i++) {
+                if (fields[i].Name == controlID) {
+                    $("#controlId").val(fields[i].Name);
+                    $("#controlName").val(fields[i].Text);
+                    $("#data_type").val(fields[i].DataType);
+                    $("#extendData").val(fields[i].ExtendData);
+                    $("#controlWidth").val($(me).width());
+                    $("#controlHeight").val($(me).height());
+                    if (fields[i].DataSource) {
+                        $("#control_datasource").val(fields[i].DataSource);
+                    }
+                    field = fields[i];
+                }
+            }
+
+
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <div id="configure_data">
+            <div class="container">
+                <div class="data_left">控件ID</div>
+                <input type="text" class="data_right" id="controlId" />
+            </div>
+             <div class="container">
+                <div class="data_left">关联ID</div>
+                <input type="text" class="data_right" id="extendData" />
+            </div>
+            <div class="container">
+                <div class="data_left">标题</div>
+                <input type="text" class="data_right" id="controlName" />
+            </div>
+            <div class="container">
+                <div class="data_left">数据源</div>
+                <input type="text" class="data_right" id="control_datasource" />
+            </div>
+            
+            <div class="container">
+                <div class="data_left">类型</div>
+                <select id="data_type" class="data_right">
+                    <option value="line">曲线图</option>
+                      <option value="column">柱状图</option>
+                      <option value="pie">饼图</option>
+                      <option value="area">区域图</option>
+                </select>
+            </div>
+            <div id="configure_data_width" class="container">
+                <div class="data_left_two">宽度</div>
+                <input id="controlWidth" type="text" class="data_right_two" />
+            </div>
+            <div id="configure_data_height">
+                <div class="data_left_two">高度</div>
+                <input id="controlHeight" type="text" class="data_right_two" />
+            </div>
+            <div id="btnchoose">
+                <input type="button" id="save" value="确定" />
+                <input type="button" id="cancel" value="取消" />
+            </div>
+        </div>
+    </form>
+   @*  <div id="actionDialog" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>
+    <div id="actionDialog2" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>
+    <div id="actionDialog3" style="height: 0px; border: 0px; overflow: hidden; font-size: 13px;">
+    </div>*@
+</body>
+</html>

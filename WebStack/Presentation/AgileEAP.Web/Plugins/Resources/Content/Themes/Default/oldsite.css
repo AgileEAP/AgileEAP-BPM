@@ -1,0 +1,441 @@
+﻿/*==
+/* 站点基本样式
+/*===母版页Page.Master==*/
+#page
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+/*==page中间主体==*/
+#page_container
+{
+    width: 100%;
+    height: 88%;
+    border: 0px;
+    float: left;
+}
+/*==page中间主体gridview==*/
+.page_container_gridview
+{
+    /*	max-height:460px; 	height:auto !important; 	height:460px;*/
+    overflow: auto;
+}
+.page_container_gridview ul
+{
+    list-style: none;
+    margin: 0px;
+}
+.page_container_gridview ul li
+{
+    float: left;
+    display: block;
+    margin: 0 5px 3px 0;
+    vertical-align: middle;
+}
+/*===div-table  div定义table布局==*/
+/*<table>*/
+.div_block
+{
+    width: 100%; /*这里定义宽度100% 使内容能够撑满屏幕 如果去掉 则往中间挤*/
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding-top: 5px;
+}
+.block_title
+{
+    color: #15428B;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    height: 20px;
+    margin: 2px auto 2px 20px;
+}
+/*==两列的table 用 dl dt dd 布局==*/
+/*==标题用作说明 如：姓名，性别==*/
+.rowlable
+{
+    width: 150px;
+    padding-left: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+/*==内容 用作用户输入 一般放textbox控件==*/
+.rowinput
+{
+}
+/*===四列的table div处理==*/
+/*<tr>*/
+.div_row
+{
+    width: 100%;
+    height: 25px;
+}
+/*<td> 标题  用作说明*/
+.div_row_lable
+{
+    width: 20%;
+    text-align: right;
+    float: left;
+    height: 25px;
+    vertical-align: text-bottom;
+}
+/*<td>  内容 用作用户输入*/
+.div_row_input
+{
+    width: 29%;
+    text-align: left;
+    float: left;
+    height: 25px;
+}
+/*<label> 文字*/
+.label
+{
+    margin-right: 5px;
+}
+/*==div-查询窗口==*/
+#filterDialog
+{
+    display: block;
+    width: 100%;
+}
+/*==功能按钮控件 ==*/
+.commandbar
+{
+    padding: 0;
+    margin: 0; /*padding-left: 4px;*/
+  /*  height: 26px;===QLJ 2011.7.13*/
+  height:auto;
+    width: 100%;
+    background-color: #daeff6;
+    float: left;
+}
+/*==按钮常态下样式==*/
+.commanditem
+{
+    background-position: center center;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 10px;
+    height: 22px;
+    font-size: 13px;
+    text-align: center;
+    float: left;
+    margin-top: 2px;
+    line-height: 22px;
+    background-color: Transparent;
+    color: #15428B;
+    font-family: "微软雅黑" , "黑体" , "宋体";
+}
+/*==按钮得到焦点==*/
+.commanditem_over
+{
+    background-position: center center;
+    border: Transparent 1px solid;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 10px;
+    margin-bottom: 1px;
+    height: 22px;
+    font-size: 13px;
+    text-align: center;
+    float: left;
+    margin-top: 1px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #15428B;
+    border-left: #2C59AA 1px solid;
+    border-bottom: #2C59AA 1px solid;
+    border-right: #2C59AA 1px solid;
+    border-top: #2C59AA 1px solid;
+    background-color: #C3DAF5;
+    font-family: "微软雅黑" , "黑体" , "宋体";
+}
+.commanditem_first
+{
+    display: none;
+}
+.commanditem_last
+{
+    display: none;
+}
+/*==服务器控件样式==*/
+/*==Combox==*/
+#multipleComboxContainer
+{
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+#singleComboxContainer
+{
+	/*position: relative;*/
+    padding: 0;
+    margin: 0;
+}
+.cbList
+{
+    border: 1px solid #ccc;
+    display:none;
+    position: relative !important;
+    position:absolute;
+    float: none;
+    background-color: #ffffff;
+    width: 150px;
+    overflow:auto;
+    font-size: 12px;
+    z-index: 1001;
+    padding: 0px;
+     margin:0px !important;
+     margin: 20px 0px 0px -160px;
+    height:auto!important;
+    min-height:70px;
+    height:70px;
+}
+.textbox_combox
+{
+	width:150px;
+}
+#cbItems
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 150px;
+    padding: 0px;
+    margin: 0px;   
+}
+#cbItems ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    line-height: 15px;
+    list-style-position:inside;
+}
+#cbItems ul li
+{
+    margin: 0px;
+    padding: 0px;
+}
+#cbItems ul li a
+{
+  /*  display: block; border-bottom: 1px dashed #C39C4E;*/
+    padding: 2px 0px 2px 5px;
+    text-decoration: none;
+    color: #666666;
+    width: 110px;
+    font-size: 12px;
+}
+#cbItems ul li a:hover, #cbItems ul li a:focus
+{
+    color: #000000;
+    background-color: #eeeeee;
+}
+/*==GridView ===*/
+/*== girdview 底部 ==*/
+.gridview_footer
+{
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    margin-top: 5px;
+}
+/*== 底部输入框 ==*/
+.gridview_footer input
+{
+    background-color: #fff;
+    font-weight: bold;
+    height: 14px;
+    text-align: center;
+    width: 20px;
+    border: solid 1px White;
+    padding: 0 2px 0 2px;
+    margin: 0;
+    border-bottom-color: Silver;
+}
+/*== gridview内容列表 table形式显示==*/
+.gridview
+{
+    width: 98%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px #CCC solid;
+    margin: 10px auto;
+}
+.gridview .hidden
+{
+    display: none;
+}
+/*==内容列表(table)头部==*/
+.gridview th
+{
+    font-weight: normal;
+    font-size: 12px;
+    font-weight: bold; /*color: #2C59AA;*/
+    text-indent: 4px;
+    text-align: center; /* background: url(/Plugins/eCloud/Content/Themes/Default/Images/th.gif);*/
+    background-color: #eeeeee;
+    height: 22px;
+    padding: 0; /* border-color: #B5D6E6;*/
+    border: 1px #CCC solid;
+}
+/*==内容列表(table)头部内容==*/
+.gridview td
+{
+    font-size: 12px;
+    text-align: center;
+}
+/*==内容列表(table) 行==*/
+.gridview .gridview_row
+{
+    font-size: 13px;
+}
+/*==内容列表(table) 行 鼠标焦点在行上==*/
+.gridview .rowover
+{
+    background-color: #c1ebff;
+    font-size: 13px;
+}
+/*==内容列表(table) 行 当前行失去焦点==*/
+.gridview .rowout
+{
+    background-color: White;
+    font-size: 13px;
+}
+/*==内容列表(table) 行 当前行==*/
+.gridview .rowcurrent
+{
+    background-color: #DAEFF6;
+    font-size: 13px;
+}
+/*== TextBox ==*/
+.text
+{
+    float: left;
+}
+.multitext
+{
+    float: left;
+    height: 100px;
+    width: 450px;
+}
+.textreadonly
+{
+    background-color: #F0F0F0;
+    border: #F0F0F0 1px solid;
+    padding: 0.1em 0.3ex;
+    width: 150px;
+    float: left;
+}
+/*== 日期控件 ==*/
+.odate_img
+{
+    width: 16px;
+    height: 22px;
+    background-image: url(/Plugins/eCloud/Content/Themes/Default/Images/datePicker.gif);
+    float: left;
+}
+.input
+{
+    margin: 0px;
+    margin-left: 5px;
+}
+/*== 验证控件错误提示 ==*/
+#errorMsg
+{
+    text-align: left;
+    color: Red;
+}
+#promptMsg
+{
+    color: Red;
+}
+/*==按钮==*/
+.btn
+{
+    text-align: center;
+    height: 25px;
+    cursor: hand;
+    margin-right: 5px;
+    float: left;
+    padding-top: 3px;
+    border: 1px solid #82A9DF;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/btn.gif) repeat-x;
+}
+.btn_delete
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/delete.png) center no-repeat;
+    height: 10px;
+}
+.btn_up
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/moveup.png) center no-repeat;
+    height: 10px;
+}
+.btn_down
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/movedown.png) center no-repeat;
+    height: 10px;
+}
+.btn_save
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/save.png) center no-repeat;
+    height: 10px;
+}
+.btn_handle
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/handleorder.png) center no-repeat;
+    height: 16px;
+}
+.btn_add
+{
+    cursor: pointer;
+    background: url(/Plugins/eCloud/Content/Themes/Default/Images/Button/add.png) center no-repeat;
+}
+
+/*****AjaxGrid异步查询Gredview样式****/
+.ajax_grid_view
+{
+    width: 100%;
+    /*overflow: auto;*/
+    float: left;   
+}
+#grid_toolbar
+{
+    height: 25px;
+    list-style: none;
+    margin: 0px;
+    text-align:center;
+    margin:0 auto;
+}
+#grid_toolbar li
+{
+    /*float: left;*/
+    display:inline;
+    margin: 0 5px 3px 0;
+    vertical-align: middle;
+    height: 26px;
+    width: 20px;
+    line-height:26px;
+}
+#grid_toolbar li img
+{
+    padding-top:5px;
+}
+#grid_toolbar li input
+{
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;    
+}

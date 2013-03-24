@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CD5058C-17B8-407B-9F84-46544F0F9B99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileEAP.Plugin.Workflow</RootNamespace>
+    <AssemblyName>AgileEAP.Plugin.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\WebStack\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AgileEAP.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.MVC, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.WebControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileEAP.Workflow, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\AgileEAP\AgileEAP.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.3.0.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.3.0.1\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\..\..\..\Lib\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\Packages\Autofac.WebApi.3.0.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptBuildTask">
+      <HintPath>..\..\..\..\..\Lib\Packages\javascript-build-task.1.0.0\lib\net35\JavaScriptBuildTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>..\..\..\..\..\Lib\Packages\javascript-build-task.1.0.0\lib\net35\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\..\..\Lib\packages\KendoUIWeb.2012.3.1114\lib\Mvc3\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\Packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Lib\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="ClientBin\AgileEAP.WorkflowDesigner.Silverlight.xap" />
+    <Content Include="Content\Themes\Default\Images\attachment.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\AutoActivity6.png" />
+    <Content Include="Content\Themes\Default\Images\chooseActivityForm.png" />
+    <Content Include="Content\Themes\Default\Images\chooseBox.png" />
+    <Content Include="Content\Themes\Default\Images\comboxIcon.gif" />
+    <Content Include="Content\Themes\Default\Images\EndActivity.png" />
+    <Content Include="Content\Themes\Default\Images\EndActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\EndActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\EndActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\EndActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\EndActivity6.png" />
+    <Content Include="Content\Themes\Default\Images\formControlConfig.gif" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity.png" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\ManualActivity6.png" />
+    <Content Include="Content\Themes\Default\Images\orgtree.gif" />
+    <Content Include="Content\Themes\Default\Images\ProcessActivity.png" />
+    <Content Include="Content\Themes\Default\Images\ProcessActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\ProcessActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\ProcessActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\ProcessActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\RouterActivity6.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\StartActivity6.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity2.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity3.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity4.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity5.png" />
+    <Content Include="Content\Themes\Default\Images\SubflowActivity6.png" />
+    <Content Include="Content\Themes\Default\eForm.css" />
+    <Content Include="Description.txt" />
+    <Content Include="Notes.txt" />
+    <Content Include="OpenApi\WorkflowService.svc" />
+    <Content Include="Pages\ActivityManager.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\ActivityTransition.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\ChooseParticipantor.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\FormControlConfigure.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\MyWorkItem.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\MyWorkItemDetail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\MyWorkItem.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\MyWorkItemDetail.aspx" />
+    <Content Include="Pages\ProcessChart.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\ProcessDefDetail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\ProcessDefManager.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\ProcessInstManager.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Scripts\Base.js" />
+    <Content Include="Scripts\WorkflowConfigure.js" />
+    <Content Include="Views\Monitor\TraceLog.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\DesignController.cs" />
+    <Compile Include="Controllers\eFormController.cs" />
+    <Compile Include="Controllers\EngineController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
+    <Compile Include="DependencyRegistrar.cs" />
+    <Compile Include="Master\Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProcessDefModel.cs" />
+    <Compile Include="Models\ProcessInstModel.cs" />
+    <Compile Include="Models\TraceLogModel.cs" />
+    <Compile Include="Models\WorkflowTransitionModel.cs" />
+    <Compile Include="Models\WorkItemModel.cs" />
+    <Compile Include="OpenApi\WorkflowApiController.cs" />
+    <Compile Include="PageExtension.cs" />
+    <Compile Include="Pages\ActivityManager.aspx.cs">
+      <DependentUpon>ActivityManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ActivityManager.aspx.designer.cs">
+      <DependentUpon>ActivityManager.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ActivityTransition.aspx.cs">
+      <DependentUpon>ActivityTransition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ActivityTransition.aspx.designer.cs">
+      <DependentUpon>ActivityTransition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChooseParticipantor.aspx.cs">
+      <DependentUpon>ChooseParticipantor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ChooseParticipantor.aspx.designer.cs">
+      <DependentUpon>ChooseParticipantor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormControlConfigure.aspx.cs">
+      <DependentUpon>FormControlConfigure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormControlConfigure.aspx.designer.cs">
+      <DependentUpon>FormControlConfigure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyWorkItem.aspx.cs">
+      <DependentUpon>MyWorkItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MyWorkItem.aspx.designer.cs">
+      <DependentUpon>MyWorkItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyWorkItemDetail.aspx.cs">
+      <DependentUpon>MyWorkItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MyWorkItemDetail.aspx.designer.cs">
+      <DependentUpon>MyWorkItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProcessChart.aspx.cs">
+      <DependentUpon>ProcessChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProcessChart.aspx.designer.cs">
+      <DependentUpon>ProcessChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProcessDefDetail.aspx.cs">
+      <DependentUpon>ProcessDefDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProcessDefDetail.aspx.designer.cs">
+      <DependentUpon>ProcessDefDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProcessDefManager.aspx.cs">
+      <DependentUpon>ProcessDefManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProcessDefManager.aspx.designer.cs">
+      <DependentUpon>ProcessDefManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProcessInstManager.aspx.cs">
+      <DependentUpon>ProcessInstManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProcessInstManager.aspx.designer.cs">
+      <DependentUpon>ProcessInstManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PluginRouteHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceManifest.cs" />
+    <Compile Include="RouteProvider.cs" />
+    <None Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <None Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <None Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <None Include="Views\eForm\Index.cshtml" />
+    <None Include="Views\Engine\WorkItemDetail.cshtml" />
+    <None Include="Views\Engine\MyWorkItem.cshtml" />
+    <None Include="Views\Engine\Process.cshtml" />
+    <None Include="Views\Engine\StartProcess.cshtml" />
+    <None Include="Views\Monitor\ProcessInst.cshtml" />
+    <None Include="Views\Monitor\TraceLog.cshtml" />
+    <None Include="Views\Monitor\Transition.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\_Kendo.cshtml" />
+    <Compile Include="WebApiConfig.cs" />
+    <Compile Include="WorkflowPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\Page.Master">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Views\Design\DrawWorkflow.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

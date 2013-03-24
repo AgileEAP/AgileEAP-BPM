@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="AgileEAP.Infrastructure.Domain" assembly="AgileEAP.Infrastructure">
+	<class name="AgileEAP.Infrastructure.Domain.BizOrg, AgileEAP.Infrastructure" table="OM_BizOrg" lazy="true">
+		<id name="ID" column="ID">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" column="Name" />
+		<property name="Grade" column="Grade" />
+		<property name="ParentID" column="ParentID" />
+		<property name="BizType" column="BizType" />
+		<property name="OrgID" column="OrgID" />
+		<property name="SortOrder" column="SortOrder" />
+		<property name="GovernPosition" column="GovernPosition" />
+		<property name="Creator" column="Creator" />
+		<property name="CreateTime" column="CreateTime" />
+	</class>
+</hibernate-mapping>
